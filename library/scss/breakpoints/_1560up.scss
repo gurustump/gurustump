@@ -1,0 +1,48 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Super Large Monitor Stylesheet
+
+You can add some advanced styles here if you like. This kicks in
+on larger screens.
+
+******************************************************************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+#container {
+	#content {
+		margin-bottom:500px;
+	}
+}
+.wrap, .header .wrap {
+	margin: 0 auto;
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	height:500px;
+}
+
+
+/******************************************
+INDIVIDUAL PAGES
+******************************************/
+
+/******************************************
+HOME PAGE
+******************************************/
+body.home {
+	.home-logo {
+		h1 {
+			font-size:6em;
+		}
+		h2 {
+			font-size:2.5em;
+		}
+	}
+}

@@ -94,13 +94,13 @@ var timeToWaitForLast = 100;
  * then we can swap out those images since they are located in a data attribute.
 */
 function loadGravatars() {
-  // set the viewport using the function above
-  viewport = updateViewportDimensions();
-  // if the viewport is tablet or larger, we load in the gravatars
-  if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
+	// set the viewport using the function above
+	viewport = updateViewportDimensions();
+	// if the viewport is tablet or larger, we load in the gravatars
+	if (viewport.width >= 768) {
+		jQuery('.comment img[data-gravatar]').each(function(){
+			jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+		});
 	}
 } // end function
 
@@ -109,12 +109,88 @@ function loadGravatars() {
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
+	var win = $(window);
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
+	// Check what page we're on
+	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
+	
+	/*
+	* You can remove this if you don't need it
+	* Let's fire off the gravatar function
+	*/
+	//loadGravatars();
+	
+	win.resize(function() {
+		waitForFinalEvent( function() {
+			mobileDeviceBodyClass();
+			headerHeight();
+		}, timeToWaitForLast, 'resizeWindow');
+	});
+	
+	win.scroll(function() {
+		headerHeight();
+	});
 
+	// Mobile device classes
+	function mobileDeviceType() {
+		if (win.width() > 1024) {
+			return false;
+		} else if (win.width() < 768) {
+			return 'mobile';
+		} else {
+			return 'tablet';
+		}
+	}
+	function mobileDeviceBodyClass() {
+		if (mobileDeviceType() == 'mobile') {
+			$('body').addClass('mobile').removeClass('tablet');
+		} else if (mobileDeviceType() == 'tablet') {
+			$('body').addClass('tablet').removeClass('mobile');
+		} else {
+			$('body').removeClass('mobile tablet');
+		}
+	}
+	mobileDeviceBodyClass();
+	
+	function headerHeight() {
+		var scrollTrigger = 0;
+		var secondaryScrollTrigger = isHome ? $('.HOME_LOGO').outerHeight()*.65: 0;
+		console.log(scrollTrigger);
+		console.log(secondaryScrollTrigger);
+		console.log(win.scrollTop())
+		if (win.scrollTop() > scrollTrigger) {
+			$('html').addClass('scrolled');
+		} else {
+			$('html').removeClass('scrolled');
+		}
+		if (win.scrollTop() > secondaryScrollTrigger) {
+			$('html').addClass('secondary-scrolled');
+		} else {
+			$('html').removeClass('secondary-scrolled');
+		}
+	}
+	
+	// Hide wp admin bar
+	$('#wpadminbar').addClass('hidden').append('<div class="wpadminbar-activator"></div>').hover(
+		function() {
+			$(this).removeClass('hidden');
+		},
+		function() {
+			$(this).addClass('hidden');
+		}
+	)
+	
+	// Control mobile main nav
+	$('.TRIGGER_NAV').click(function(e) {
+		e.preventDefault();
+		$(this).add('.MAIN_NAV').toggleClass('active');
+		$('html').toggleClass('mobile-nav-active');
+	});
+	
+	$('.MAIN_NAV').on('click','a',function(e) {
+		if (mobileDeviceType()) {
+			$('.TRIGGER_NAV').click();
+		}
+	});
 
 }); /* end of as page load scripts */

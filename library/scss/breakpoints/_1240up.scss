@@ -2,10 +2,69 @@
 Site Name: 
 Author: 
 
-Stylesheet: Super Large Monitor Stylesheet
+Stylesheet: Large Monitor Stylesheet
 
 You can add some advanced styles here if you like. This kicks in
 on larger screens.
 
 ******************************************************************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+#container {
+	#content, body.home & #content {
+		padding-top:105px;
+	}
+	#content {
+		margin-bottom:400px;
+	}
+}
+.wrap {
+	max-width:1472px;
+	margin:0 120px;
+}
+#logo {
+	font-size:4em;
+	height:105px;
+	line-height:105px;
+}
+.main-nav li a {
+	font-size:20px;
+	height:105px;
+	line-height:105px;
+}
+html.scrolled {
+	#container #content, body.home & #container #content {
+		padding-top:65px;
+	}
+	#logo, .main-nav > li > a {
+		height:65px;
+		line-height:65px;
+	}
+}
 
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	height:400px;
+}
+
+/******************************************
+INDIVIDUAL PAGES
+******************************************/
+
+/******************************************
+HOME PAGE
+******************************************/
+body.home {
+	.home-logo {
+		h1 {
+			font-size:5em;
+		}
+		h2 {
+			font-size:2.09em;
+		}
+	}
+}

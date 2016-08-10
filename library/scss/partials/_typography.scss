@@ -56,7 +56,9 @@ $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
  i imported this one in the functions file so bones would look sweet.
  don't forget to remove it for your site.
 */
-$lato:              'Lato', $sans-serif;
+$bodyfont:              'Open Sans', $sans-serif;
+$headingfont:              'Dosis', $sans-serif;
+$buttonfont:			$headingfont;
 
 /*
 some nice typographical defaults

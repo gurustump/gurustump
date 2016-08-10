@@ -1,0 +1,48 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+#container {
+	#content, body.home & #content {
+		padding-top:65px;
+	}
+}
+#logo {
+	font-size:3em;
+	height:65px;
+	line-height:65px;
+}
+#container #content, #logo {
+	@include transition(all 275ms);
+}
+
+
+/******************************************
+INDIVIDUAL PAGES
+******************************************/
+
+/******************************************
+HOME PAGE
+******************************************/
+body.home {
+	.home-logo {
+		.title-box {
+			left:5%;
+		}
+		h1 {
+			font-size:4em;
+		}
+		h2 {
+			font-size:1.68em;
+		}
+	}
+}
