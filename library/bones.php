@@ -202,6 +202,19 @@ function bones_theme_support() {
 			'chat'               // chat transcript
 		)
 	);
+	add_theme_support( 'html5',
+		array(
+			//'aside',             // title less blurb
+			'gallery',           // gallery of images
+			//'link',              // quick link to other site
+			//'image',             // an image
+			//'quote',             // a quick quote
+			//'status',            // a Facebook like status update
+			'video',             // video
+			//'audio',             // audio
+			//'chat'               // chat transcript
+		)
+	);
 
 	// wp menus
 	add_theme_support( 'menus' );

@@ -604,6 +604,14 @@ html.secondary-scrolled .main-nav > li a:hover, html.secondary-scrolled .main-na
   display: none;
 }
 
+/******************************************
+INDEX PAGE
+******************************************/
+/* line 118, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-index .main-nav > li:hover > a, body.page-template-page-index .main-nav ul, body.page-template-page-index .main-nav a:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 /*
 you can call the larger styles if you want, but there's really no need
 */

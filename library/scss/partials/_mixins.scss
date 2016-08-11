@@ -69,12 +69,24 @@ really slow down your CSS. Don't overdo it.
 
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
 @mixin css-gradient($from: #dfdfdf, $to: #f8f8f8, $vstart:"", $vend:"", $hstart:"", $hend:"" ) {
+	$webkitDirectionString1: "";
+	$otherBrowserDirectionString: "";
+	$basicDirectionString: "";
+	@if $vstart or $vend or $hstart or $hend {
+		$webkitDirectionString1: linear, unquote($hstart) unquote($vstart), unquote($hstart) unquote($vend), ;
+		$otherBrowserDirectionString: unquote($hstart) unquote($vstart), ;
+		$basicDirectionString: to unquote($hend) unquote($vend), ;
+	} @else {
+		$webkitDirectionString1: "";
+		$otherBrowserDirectionString: "";
+		$basicDirectionString: "";
+	}
 	background-color: $to;
-	background-image: -webkit-gradient(linear, unquote($hstart) unquote($vstart), unquote($hstart) unquote($vend), from($from), to($to));
-	background-image: -webkit-linear-gradient(unquote($hstart) unquote($vstart), $from, $to);
-	background-image: -moz-linear-gradient(unquote($hstart) unquote($vstart), $from, $to);
-	background-image: -o-linear-gradient(unquote($hstart) unquote($vstart), $from, $to);
-	background-image: linear-gradient(to unquote($hend) unquote($vend), $from, $to);
+	background-image: -webkit-gradient($webkitDirectionString1 from($from), to($to));
+	background-image: -webkit-linear-gradient($otherBrowserDirectionString $from, $to);
+	background-image: -moz-linear-gradient($otherBrowserDirectionString $from, $to);
+	background-image: -o-linear-gradient($otherBrowserDirectionString $from, $to);
+	background-image: linear-gradient($basicDirectionString $from, $to);
 }
 @mixin css-gradient-3($color, $color1, $loc1, $color2, $loc2, $color3, $loc3, $startLoc:top) {
 	background:-webkit-linear-gradient($startLoc, $color1 $loc1, $color2 $loc2, $color3 $loc3);

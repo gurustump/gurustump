@@ -110,9 +110,20 @@ function loadGravatars() {
 */
 jQuery(document).ready(function($) {
 	var win = $(window);
+	
+	// Hide wp admin bar
+	$('#wpadminbar').addClass('hidden').append('<div class="wpadminbar-activator"></div>').hover(
+		function() {
+			$(this).removeClass('hidden');
+		},
+		function() {
+			$(this).addClass('hidden');
+		}
+	)
 
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
+	if (typeof isIndex === "undefined") var isIndex = $('body').hasClass('page-template-page-index');
 	
 	/*
 	* You can remove this if you don't need it
@@ -170,16 +181,6 @@ jQuery(document).ready(function($) {
 		}
 	}
 	
-	// Hide wp admin bar
-	$('#wpadminbar').addClass('hidden').append('<div class="wpadminbar-activator"></div>').hover(
-		function() {
-			$(this).removeClass('hidden');
-		},
-		function() {
-			$(this).addClass('hidden');
-		}
-	)
-	
 	// Control mobile main nav
 	$('.TRIGGER_NAV').click(function(e) {
 		e.preventDefault();
@@ -192,5 +193,20 @@ jQuery(document).ready(function($) {
 			$('.TRIGGER_NAV').click();
 		}
 	});
+	
+	function simpleAutoCarousel(container, duration) {
+		var simpleAutoCarouselInteval = setInterval(function() {
+			var active = container.find('.active');
+			var next = active.next().length > 1 ? active.next() : active.siblings().first();
+			active.removeClass('active');
+			next.addClass('active');
+			console.log('interval');
+		}, duration);
+	}
+	
+	if (isIndex) {
+		console.log('working')
+		simpleAutoCarousel($('.SUBHEAD_CAROUSEL'), 15000);
+	}
 
 }); /* end of as page load scripts */

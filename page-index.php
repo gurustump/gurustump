@@ -5,14 +5,24 @@
 ?>
 
 <?php get_header(); ?>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div class="sub-header">
-				<?php 
-				while ( have_posts() ) : the_post();
-					if ( get_post_gallery() ) :
-						print_r( get_post_galleries_images(false));
-					endif; 
-				endwhile;
-				?>
+				<header class="page-header">
+					<h1 class="page-title"><?php the_title(); ?></h1>
+				</header>
+				<ul class="rotating-gallery SUBHEAD_CAROUSEL">
+					<?php $headerGalleryMeta = get_post_meta(get_the_ID(), '_gurustump_page_index_gallery', true);
+					$headerGalleryIdsString = substr($headerGalleryMeta, strpos($headerGalleryMeta, 'ids="') + 5);
+					$headerGalleryIdsString = substr($headerGalleryIdsString, 0, -1*(strlen($headerGalleryIdsString) - strpos($headerGalleryIdsString, '"')));
+					$headerGalleryIdsArray = explode(',',$headerGalleryIdsString);
+					foreach ($headerGalleryIdsArray as $key => $image) {
+						$imageSrc = wp_get_attachment_image_src($image, 'extra-large');
+						?>
+						<li<?php echo $key == 0 ? ' class="active"' : ''; ?> style="background-image:url(<?php echo $imageSrc[0]; ?>)">
+							<?php /* <img src="<?php echo $imageSrc[0]; ?>" /> */ ?>
+						</li>
+					<?php }; ?>
+				</ul>
 			</div>
 			<div id="content">
 
@@ -20,20 +30,8 @@
 
 						<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-								<header class="article-header">
-
-									<h1 class="page-title"><?php the_title(); ?></h1>
-
-									<p class="byline vcard">
-										<?php printf( __( 'Posted <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-									</p>
-
-
-								</header>
+							<div id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> >
 
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php
@@ -64,29 +62,11 @@
 
 								<footer class="article-footer">
 
-                  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+				  <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
 								</footer>
+							</div>
 
-								<?php comments_template(); ?>
-
-							</article>
-
-							<?php endwhile; else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-											<header class="article-header">
-												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-											<section class="entry-content">
-												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
 
 						</main>
 
@@ -95,6 +75,7 @@
 				</div>
 
 			</div>
+			<?php endwhile; endif; ?>
 
 
 <?php get_footer(); ?>

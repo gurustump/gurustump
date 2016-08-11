@@ -109,3 +109,14 @@ NAVIGATION STYLES
 .trigger-nav {
 	display:none;
 }
+	
+/******************************************
+INDEX PAGE
+******************************************/
+body.page-template-page-index {
+	.main-nav {
+		& > li:hover > a, ul, a:hover{
+			background:rgba($black, .5);
+		}
+	}
+}
