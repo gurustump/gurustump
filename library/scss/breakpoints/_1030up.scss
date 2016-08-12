@@ -30,6 +30,7 @@ NAVIGATION STYLES
 	border: 0;
 	overflow:visible;
 	background:none;
+	margin-right:-12px;
 	ul {
 		background:$black url(../images/bg-body.png);
 		margin-top:0;
@@ -75,9 +76,6 @@ NAVIGATION STYLES
 					display:block;
 					border-top:1px solid rgba($white, .1);
 				}
-				&:first-child a {
-					border-top:0;
-				}
 				ul {
 					top:0;
 					left:100%;
@@ -109,14 +107,72 @@ NAVIGATION STYLES
 .trigger-nav {
 	display:none;
 }
+
 	
+/******************************************
+INDIVIDUAL PAGES
+******************************************/
+	
+body.page-template-page-index, body.home {
+	.main-nav {
+		& > li:hover > a, ul, a:hover{
+			background:rgba($black, .5);
+		}
+	}
+}
+/******************************************
+HOME PAGE
+******************************************/
+body.home {
+	.promo {
+		&.services {
+			& > ul > li {
+				padding-left:50px;
+				&:first-child {
+					padding-left:0;
+					padding-right:50px;
+				}
+			}
+		}
+	}
+}
 /******************************************
 INDEX PAGE
 ******************************************/
 body.page-template-page-index {
-	.main-nav {
-		& > li:hover > a, ul, a:hover{
-			background:rgba($black, .5);
+	#container {
+		.sub-header {
+			.page-header {
+				top:50%;
+				@include transform(translate(-50%, -50%));
+				.page-title {
+					font-size:3em;
+				}
+			}
+			.index-menu {
+				text-align:center;
+				font-size:2.5em;
+				& > li {
+					display:inline-block;
+					a {
+						@include transition(background-color .375s);
+						border-bottom:0;
+						display:block;
+						padding:5px 15px;
+						@include tri-before(bottom, 20px, 15px, $orange, 0, block, none, nocenter);
+						&:before {
+							position:relative;
+							left:50%;
+							top:-12px;
+							@include transform(translateX(-50%));
+						}
+						&:hover {
+							color:$link-color;
+							background-color:rgba($black, .5);
+						}
+					}
+				}
+			}
 		}
 	}
 }

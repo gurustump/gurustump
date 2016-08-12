@@ -23,6 +23,21 @@
 						</li>
 					<?php }; ?>
 				</ul>
+				<nav class="index-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<?php wp_nav_menu(array(
+							 'container' => false,                           // remove nav container
+							 'container_class' => 'menu',                 // class of container (should you choose to use it)
+							 'menu' => __( 'Video Index Menu', 'bonestheme' ),  // nav name
+							 'menu_class' => 'index-menu',               // adding custom nav class
+							 'theme_location' => 'video-index',                 // where it's located in the theme
+							 'before' => '',                                 // before the menu
+							   'after' => '',                                  // after the menu
+							   'link_before' => '',                            // before each link
+							   'link_after' => '',                             // after each link
+							   'depth' => 0,                                   // limit the depth of the nav
+							 'fallback_cb' => ''                             // fallback function (if there is one)
+					)); ?>
+				</nav>
 			</div>
 			<div id="content">
 

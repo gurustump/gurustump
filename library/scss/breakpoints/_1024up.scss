@@ -35,11 +35,16 @@ HOME PAGE
 ******************************************/
 body.home {
 	.home-logo {
-		.title-box {
-			left:5%;
-		}
 		h1 {
 			font-size:4em;
+			span {
+				&:after {
+					height:220px;
+					width:250px;
+					right:-250px;
+					top:-60px;
+				}
+			}
 		}
 		h2 {
 			font-size:1.68em;

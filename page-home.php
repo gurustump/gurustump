@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Custom Home Page
+ Template Name: Home Page
  *
  * This is your custom page template. You can create as many of these as you need.
  * Simply name is "page-whatever.php" and in add the "Template Name" title at the
@@ -14,27 +14,25 @@
 ?>
 
 <?php get_header(); ?>
-			<div id="content">
-				<div  class="home-logo HOME_LOGO">
-					<video class="bg-video" id="home_sizzle" autoplay loop>
-						<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.mp4" type="video/mp4"></source>
-						<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.webm" type="video/webm"></source>
-						<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.ogv" type="video/ogg"></source>
-					</video>
-					<div class="title-box">
-						<div class="title-box-inner">
-							<h1><?php bloginfo('name'); ?></h1>
-							<h2><?php bloginfo('description'); ?></h2>
-						</div>
+			<div  class="home-logo HOME_LOGO">
+				<video class="bg-video" id="home_sizzle" autoplay loop>
+					<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.mp4" type="video/mp4"></source>
+					<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.webm" type="video/webm"></source>
+					<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.ogv" type="video/ogg"></source>
+				</video>
+				<div class="title-box">
+					<div class="title-box-inner">
+						<h1><span><?php bloginfo('name'); ?></span></h1>
+						<h2><?php bloginfo('description'); ?></h2>
 					</div>
 				</div>
-				<div id="inner-content" class="wrap cf">
+			</div>
+			<div id="content">
+				<div id="inner-content" class=" cf">
 						<main id="main" class="content-primary cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-							<article id="post-<?php the_ID(); ?>" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-								<header class="article-header">
-								</header>
-								<section class="entry-content cf" itemprop="articleBody">
+							<div id="post-<?php the_ID(); ?>">
+								<section class="cf" itemprop="articleBody">
 									<?php
 										// the content (pretty self explanatory huh)
 										the_content();
@@ -53,7 +51,7 @@
 										*/
 									?>
 								</section>
-							</article>
+							</div>
 							<?php endwhile;  endif; ?>
 						</main>
 				</div>

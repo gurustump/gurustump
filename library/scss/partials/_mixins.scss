@@ -157,7 +157,7 @@ probably best not to use it. I mean, were you going to anyway? */
 
 
 // triangles
-@mixin tri($direction, $girth, $length, $color, $margin:0, $display:inline-block, $float:none) {
+@mixin tri($direction, $girth, $length, $color, $margin:0, $display:inline-block, $float:none, $center:vcenter) {
 	&:after {
 		content:"";
 		width:0;
@@ -172,7 +172,38 @@ probably best not to use it. I mean, were you going to anyway? */
 			border-left:$girth solid transparent;
 			border-right:$girth solid transparent;
 		}
-		@include v-center;
+		@if $center == 'vcenter' {
+			@include v-center;
+		}
+		@if $direction == 'left' {
+			border-right:$length solid $color;
+		} @else if  $direction == 'right' {
+			border-left:$length solid $color;
+		} @else if  $direction == 'top' {
+			border-bottom:$length solid $color;
+		} @else {
+			border-top:$length solid $color;
+		}
+	}
+}
+@mixin tri-before($direction, $girth, $length, $color, $margin:0, $display:inline-block, $float:none, $center:vcenter) {
+	&:before {
+		content:"";
+		width:0;
+		height:0;
+		display:$display;
+		float:$float;
+		margin:$margin;
+		@if $direction == 'left' or $direction =='right' {
+		border-top:$girth solid transparent;
+		border-bottom:$girth solid transparent;
+		} @else {
+			border-left:$girth solid transparent;
+			border-right:$girth solid transparent;
+		}
+		@if $center == 'vcenter' {
+			@include v-center;
+		}
 		@if $direction == 'left' {
 			border-right:$length solid $color;
 		} @else if  $direction == 'right' {

@@ -114,7 +114,7 @@ LAYOUT & GRID STYLES
 	}
 }
 .wrap {
-	margin: 0 auto;
+	margin:0 15px;;
 }
 
 /*********************
@@ -227,6 +227,7 @@ HEADER STYLES
 		color: $white;
 		display:block;
 		padding-left:12px;
+		margin-left:-12px;
 		outline:none;
 	}
 }
@@ -1013,7 +1014,7 @@ FOOTER STYLES
 	width:100%;
 	z-index:-1;
 	background:url(../images/jack-dark.jpg) no-repeat 80% 0 / cover;
-	border-top:10px solid $black;
+	border-top:2px solid $black;
 	@include box-sizing;
 }
 
@@ -1098,6 +1099,14 @@ html body {
 INDIVIDUAL PAGES
 ******************************************/
 	
+body.home, body.page-template-page-index {
+	.header {
+		@include css-gradient($black, rgba($black, 0));
+		html.scrolled & {
+			background:rgba(0,0,0,.8);
+		}
+	}
+}
 /******************************************
 HOME PAGE
 ******************************************/
@@ -1113,7 +1122,7 @@ body.home {
 		background:url(../images/jack.jpg) no-repeat 80% 0 / cover;
 		background:url(../images/bg-mesh.png);
 		border:solid $black;
-		border-width:10px 0;
+		border-width:2px 0;
 		position:relative;
 		min-height:200px;
 		max-height:600px;
@@ -1135,9 +1144,6 @@ body.home {
 			margin-top:30%;
 		}
 		.bg-video {
-			height:100%;
-			position:absolute;
-			z-index:0;
 			display:none;
 		}
 		.title-box {
@@ -1175,111 +1181,106 @@ body.home {
 	.promo {
 		padding:50px 0 30px;
 		@include clearfix;
-	}
-	.services {
-		color:$white;
-		h2 {
-			font-size:1.8em;
-			text-align:center;
-			margin-bottom:1em;
-			color:$orange;
-		}
-		.description {
-			padding:30px 0 20px;
-			border-top:1px solid rgba($white, .2);
-			border-bottom:1px solid rgba($white, .2);
-			margin:0 auto 50px;
-			width:50%;
-			max-width:800px;
-		}
-		& > ul > li {
-			margin-bottom:50px;
-		}
-		h3 {
-			text-align:center;
-			padding-bottom:280px;
-			position:relative;
-			&:before, &:after {
-				content:"";
-				width:270px;
-				height:270px;
-				@include border-radius(50%);
-				position:absolute;
-				bottom:0;
-				left:50%;
-				@include transform(translateX(-50%));
+		&.lead {
+			h2 {
+				font-size:1.8em;
+				text-align:center;
+				margin-bottom:1em;
+				color:$orange;
 			}
-			&:before {
-				background:url(../images/bg-mesh-orange.png);
+			.description {
+				padding:30px 0 20px;
+				border-top:1px solid rgba($white, .2);
+				margin:0 auto;
+				max-width:800px;
 			}
 		}
-		.video h3 {
-			&:after {
-				background:url(../images/ic-camera-lg.png) no-repeat 10px bottom;
-				background-size:contain;
+		&.services {
+			color:$white;
+			& > ul > li {
+				margin-bottom:80px;
 			}
-		}
-		.web h3 {
-			&:after {
-				background:url(../images/ic-webdev-lg.png) no-repeat 50% 50%;
-				background-size:80%;
-			}
-		}
-		ul.modules {
-			float:left;
-			position:relative;
-			left:50%;
-			@include transform(translateX(-50%));
-			max-width:450px;
-			@include clearfix;
-			& > li {
-				border:4px solid $orange;
-				padding:10px 15px;
-				@include border-radius(20px);
-				overflow:hidden;
-				margin-bottom:20px;
-				h4 {
-					margin:-10px -15px 10px;
-					padding:10px 15px;
-					background:$btnbgcolor;
+			h3 {
+				text-align:center;
+				padding-bottom:210px;
+				margin-bottom:0;
+				position:relative;
+				&:before, &:after {
+					content:"";
+					width:200px;
+					height:200px;
+					@include border-radius(50%);
+					position:absolute;
+					bottom:0;
+					left:50%;
+					@include transform(translateX(-50%));
+				}
+				&:before {
+					background:url(../images/bg-mesh-orange.png);
 				}
 			}
-			ul.info > li {
-				margin-bottom:8px;
+			.video h3 {
+				&:after {
+					background:url(../images/ic-camera-lg.png) no-repeat 10px bottom;
+					background-size:contain;
+				}
 			}
-		}
-		.actions {
-			clear:left;
-			text-align:center;
+			.web h3 {
+				&:after {
+					background:url(../images/ic-webdev-lg.png) no-repeat 50% 50%;
+					background-size:80%;
+				}
+			}
+			ul.modules {
+				@include clearfix;
+				& > li {
+					border:solid rgba($orange, .3);
+					border-width:0 1px;
+					padding:25px;
+					overflow:hidden;
+					h4 {
+						margin:-10px -15px 20px;
+						padding:10px 15px;
+						background:$btnbgcolor;
+					}
+				}
+				ul.info {
+					margin-left:15px;
+					& > li {
+						margin-bottom:15px;
+					}
+				}
+			}
+			.actions {
+				clear:left;
+				text-align:center;
+			}
 		}
 	}
 }
-	
+
 /******************************************
 INDEX PAGE
 ******************************************/
 body.page-template-page-index {
-	.header {
-		@include css-gradient($black, rgba($black, 0));
-		html.scrolled & {
-			background:rgba(0,0,0,.8);
-		}
-	}
 	#container {
 		.sub-header {
 			position:relative;
 			z-index:2;
 			width:100%;
-			height:90%;
+			height:100%;
 			.page-header {
+				width:100%;
+				@include box-sizing;
 				position:absolute;
-				top:50%;
+				top:20%;
 				left:50%;
-				@include transform(translate(-50%, -50%));
+				@include transform(translate(-50%, 0));
 				background:rgba($black, .5);
 				color:$white;
-				padding:50px 70px;
+				padding:20px 0;
 				z-index:3;
+				text-align:center;
 			}
 			.rotating-gallery {
 				& > li {
@@ -1298,6 +1299,28 @@ body.page-template-page-index {
 					}
 					img {
 						width:100%;
+					}
+				}
+			}
+			.index-menu {
+				background:rgba($black, .5);
+				position:absolute;
+				bottom:0;
+				left:0;
+				width:100%;
+				font-family:$headingfont;
+				text-transform:uppercase;
+				font-size:1.6em;
+				border:0;
+				font-size:1.7em;
+				a {
+					border:0;
+					position:relative;
+					padding:5px 0 5px 15px;
+					@include tri-before(right, 7px, 7px, $orange, 0, inline-block, left, vcenter);
+					&:before {
+						position:absolute;
+						left:0;
 					}
 				}
 			}
