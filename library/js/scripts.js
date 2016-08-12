@@ -165,7 +165,7 @@ jQuery(document).ready(function($) {
 	
 	function headerHeight() {
 		var scrollTrigger = 0;
-		var secondaryScrollTrigger = isHome ? $('.HOME_LOGO').outerHeight()*.65: 0;
+		var secondaryScrollTrigger = isHome ? $('.HOME_LOGO').outerHeight()*.50: 0;
 		console.log(scrollTrigger);
 		console.log(secondaryScrollTrigger);
 		console.log(win.scrollTop())
