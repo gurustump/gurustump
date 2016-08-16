@@ -112,6 +112,16 @@ POSTS & CONTENT STYLES
 	}
 
 } /* end .entry-content */
+/* image gallery styles */
+.thumb-index {
+	.thumb-index-list {
+		@include clearfix;
+		& > li {
+			float:left;
+			width:50%;
+		}
+	}
+}
 
 /*********************
 FOOTER STYLES

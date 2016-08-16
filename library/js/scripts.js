@@ -124,6 +124,7 @@ jQuery(document).ready(function($) {
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
 	if (typeof isIndex === "undefined") var isIndex = $('body').hasClass('page-template-page-index');
+	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('page-template-page-gallery');
 	
 	/*
 	* You can remove this if you don't need it
@@ -194,6 +195,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
+	$('.OV_CLOSE').click(function(e) {
+		e.preventDefault();
+		$(this).closest('.OV').removeClass('active');
+	});
+	
 	function simpleAutoCarousel(container, duration) {
 		var simpleAutoCarouselInteval = setInterval(function() {
 			var active = container.find('.active');
@@ -205,8 +211,45 @@ jQuery(document).ready(function($) {
 	}
 	
 	if (isIndex) {
-		console.log('working')
 		simpleAutoCarousel($('.SUBHEAD_CAROUSEL'), 15000);
+	}
+	
+	if (isVideo) {
+		var player;
+		var playerContainer = $('.VID_PLAYER_OV');
+		var playerCurrentIDInput = playerContainer.find('.VID_PLAYER_CURRENT_ID');
+		var closeButton = $('.VID_PLAYER_OV .OV_CLOSE');
+		window.onYouTubeIframeAPIReady = function(){
+			player = new YT.Player('video_player', {
+				width:1280,
+				height:720,
+				playerVars:{
+					
+				}/*,
+				events: {
+					onReady: initializeVideo
+				}*/
+			});
+		}
+		console.log(player);
+		$('.VID_THUMBS_LIST a.VIDEO_PLAY').click(function(e) {
+			var videoID = $(this).attr('data-video-ID');
+			if (videoID) {
+				console.log(videoID);
+				e.preventDefault();
+				playerContainer.addClass('active');
+				if (videoID != playerCurrentIDInput.val()) {
+					console.log(videoID);
+					console.log(playerCurrentIDInput.val());
+					playerCurrentIDInput.val(videoID);
+					player.cueVideoById(videoID);
+				}
+				player.playVideo();
+			}
+		});
+		closeButton.click(function() {
+			player.pauseVideo();
+		});
 	}
 
 }); /* end of as page load scripts */

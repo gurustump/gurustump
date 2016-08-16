@@ -19,7 +19,7 @@ LAYOUT & GRID STYLES
 		margin-bottom:400px;
 	}
 }
-.wrap {
+.wrap, .header .wrap {
 	max-width:1472px;
 	margin:0 120px;
 }
@@ -40,6 +40,16 @@ html.scrolled {
 	#logo, .main-nav > li > a {
 		height:65px;
 		line-height:65px;
+	}
+}
+
+/* image gallery styles */
+.thumb-index {
+	.thumb-index-list {
+		@include clearfix;
+		& > li {
+			width:25%;
+		}
 	}
 }
 

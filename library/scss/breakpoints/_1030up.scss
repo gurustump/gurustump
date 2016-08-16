@@ -9,8 +9,11 @@ be seen on the Desktop.
 
 ******************************************************************/
 
-.wrap {
+.wrap, .header .wrap {
 	margin:0 80px;
+}
+#logo {
+	margin-left:0;
 }
 /*********************
 NAVIGATION STYLES

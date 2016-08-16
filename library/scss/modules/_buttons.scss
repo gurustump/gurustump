@@ -29,6 +29,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 	font-family:$buttonfont;
 	text-transform:uppercase;
 	text-decoration:none;
+	text-align:center;
 	color:$white;
 	font-size:1.2em;
 	height:35px;
@@ -67,4 +68,8 @@ and it will create a button dependant on those variables.
 .btn-blue, .btn-blue:visited {
 	@extend %btn;
 	border-color:$blue;
+}
+.btn-gallery {
+	@extend %btn;
+	@include border-radius(0);
 }

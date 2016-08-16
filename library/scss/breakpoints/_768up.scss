@@ -43,6 +43,15 @@ HEADER STYLES
 	line-height:55px;
 }
 
+/* image gallery styles */
+.thumb-index {
+	.thumb-index-list {
+		@include clearfix;
+		& > li {
+			width:33.3%;
+		}
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES
@@ -240,7 +249,7 @@ body.home {
 					display:block;
 					height:200px;
 					width:220px;
-					background:url(../images/jack-card-gray.png) no-repeat;
+					background:url(../images/jack-card-small.png) no-repeat;
 					background-size:cover;
 					position:absolute;
 					right:-220px;

@@ -127,6 +127,11 @@ function bones_scripts_and_styles() {
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
+		// youtube iframe api
+		if (is_page_template('page-gallery.php')) {
+			wp_register_script( 'youtube-api', 'https://www.youtube.com/iframe_api', array(), '', true );
+		}
+
 		// register main stylesheet
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -153,6 +158,9 @@ function bones_scripts_and_styles() {
 		using the google cdn. That way it stays cached
 		and your site will load faster.
 		*/
+		if (is_page_template('page-gallery.php')) {
+			wp_enqueue_script( 'youtube-api' );
+		}
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bones-js' );
 

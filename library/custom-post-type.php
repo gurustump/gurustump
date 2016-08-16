@@ -88,7 +88,7 @@ register_taxonomy( 'show_cat',
 		'show_admin_column' => true, 
 		'show_ui' => true,
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'media-item-cat' ),
+		'rewrite' => array( 'slug' => 'show-category' ),
 	)
 );
 

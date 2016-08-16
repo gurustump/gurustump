@@ -45,7 +45,13 @@
 		<?php // end analytics ?>
 
 	</head>
-
+	<?php // modify body class
+	$galleryType = get_post_meta(get_the_ID(), '_gurustump_page_gallery_type', true);
+	if ($galleryType == 'movie-gallery') {
+		add_filter( 'body_class', function( $classes ) {
+			return array_merge($classes, array('video-gallery'));
+		});
+	} ?>
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">

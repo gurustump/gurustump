@@ -257,10 +257,25 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
+/* image gallery styles */
+/* line 149, ../scss/partials/_mixins.scss */
+.thumb-index .thumb-index-list:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 119, ../scss/breakpoints/_481up.scss */
+.thumb-index .thumb-index-list > li {
+  float: left;
+  width: 50%;
+}
+
 /*********************
 FOOTER STYLES
 *********************/
-/* line 120, ../scss/breakpoints/_481up.scss */
+/* line 130, ../scss/breakpoints/_481up.scss */
 .footer {
   height: 300px;
   background-position: 70% 0;
@@ -273,7 +288,7 @@ INDIVIDUAL PAGES
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 138, ../scss/breakpoints/_481up.scss */
+/* line 148, ../scss/breakpoints/_481up.scss */
 body.home {
   /*.services {
   	h3 {
@@ -292,27 +307,27 @@ body.home {
   	}
   }*/
 }
-/* line 139, ../scss/breakpoints/_481up.scss */
+/* line 149, ../scss/breakpoints/_481up.scss */
 body.home .home-logo {
   background-position: 70% 0;
   min-height: 300px;
 }
-/* line 142, ../scss/breakpoints/_481up.scss */
+/* line 152, ../scss/breakpoints/_481up.scss */
 body.home .home-logo:after {
   content: "";
   display: block;
   width: 100%;
   margin-top: 30%;
 }
-/* line 148, ../scss/breakpoints/_481up.scss */
+/* line 158, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h1, body.home .home-logo h2 {
   color: white;
 }
-/* line 151, ../scss/breakpoints/_481up.scss */
+/* line 161, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h1 {
   font-size: 3.5em;
 }
-/* line 154, ../scss/breakpoints/_481up.scss */
+/* line 164, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h2 {
   font-size: 1.44em;
 }
@@ -358,31 +373,45 @@ HEADER STYLES
   line-height: 55px;
 }
 
+/* image gallery styles */
+/* line 149, ../scss/partials/_mixins.scss */
+.thumb-index .thumb-index-list:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 50, ../scss/breakpoints/_768up.scss */
+.thumb-index .thumb-index-list > li {
+  width: 33.3%;
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 51, ../scss/breakpoints/_768up.scss */
+/* line 60, ../scss/breakpoints/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
 
-/* line 55, ../scss/breakpoints/_768up.scss */
+/* line 64, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 60, ../scss/breakpoints/_768up.scss */
+/* line 69, ../scss/breakpoints/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
-/* line 65, ../scss/breakpoints/_768up.scss */
+/* line 74, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 73, ../scss/breakpoints/_768up.scss */
+/* line 82, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -407,7 +436,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 181, ../scss/breakpoints/_768up.scss */
+/* line 190, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -423,17 +452,17 @@ INDIVIDUAL PAGES
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 204, ../scss/breakpoints/_768up.scss */
+/* line 213, ../scss/breakpoints/_768up.scss */
 body.home .home-logo {
   height: 100%;
   position: relative;
   max-height: none;
 }
-/* line 208, ../scss/breakpoints/_768up.scss */
+/* line 217, ../scss/breakpoints/_768up.scss */
 body.home .home-logo:before {
   display: none;
 }
-/* line 211, ../scss/breakpoints/_768up.scss */
+/* line 220, ../scss/breakpoints/_768up.scss */
 body.home .home-logo .bg-video {
   display: block;
   min-height: 100%;
@@ -448,7 +477,7 @@ body.home .home-logo .bg-video {
   transform: translate(-50%, -50%);
   z-index: 0;
 }
-/* line 221, ../scss/breakpoints/_768up.scss */
+/* line 230, ../scss/breakpoints/_768up.scss */
 body.home .home-logo .title-box {
   height: auto;
   width: 100%;
@@ -461,7 +490,7 @@ body.home .home-logo .title-box {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 228, ../scss/breakpoints/_768up.scss */
+/* line 237, ../scss/breakpoints/_768up.scss */
 body.home .home-logo .title-box .title-box-inner {
   position: static;
   top: 0;
@@ -471,31 +500,31 @@ body.home .home-logo .title-box .title-box-inner {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 234, ../scss/breakpoints/_768up.scss */
+/* line 243, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 {
   font-size: 3em;
 }
-/* line 236, ../scss/breakpoints/_768up.scss */
+/* line 245, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 span {
   position: relative;
 }
-/* line 238, ../scss/breakpoints/_768up.scss */
+/* line 247, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 span:after {
   content: "";
   display: block;
   height: 200px;
   width: 220px;
-  background: url(../images/jack-card-gray.png) no-repeat;
+  background: url(../images/jack-card-small.png) no-repeat;
   background-size: cover;
   position: absolute;
   right: -220px;
   top: -68px;
 }
-/* line 251, ../scss/breakpoints/_768up.scss */
+/* line 260, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h2 {
   font-size: 1.23em;
 }
-/* line 257, ../scss/breakpoints/_768up.scss */
+/* line 266, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li {
   float: left;
   width: 50%;
@@ -506,32 +535,32 @@ body.home .promo.services > ul > li {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 262, ../scss/breakpoints/_768up.scss */
+/* line 271, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li:first-child {
   border-right: 1px solid rgba(255, 165, 0, 0.3);
   margin-left: -1px;
   padding-left: 0;
   padding-right: 30px;
 }
-/* line 268, ../scss/breakpoints/_768up.scss */
+/* line 277, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li h3 {
   margin-bottom: 45px;
 }
-/* line 272, ../scss/breakpoints/_768up.scss */
+/* line 281, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li {
   padding-left: 0;
   padding-right: 0;
   border-width: 0;
 }
-/* line 276, ../scss/breakpoints/_768up.scss */
+/* line 285, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li h4 {
   margin: 0 0 20px;
 }
-/* line 279, ../scss/breakpoints/_768up.scss */
+/* line 288, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li ul.info {
   margin-left: 30px;
 }
-/* line 285, ../scss/breakpoints/_768up.scss */
+/* line 294, ../scss/breakpoints/_768up.scss */
 body.home .promo.services h2 {
   font-size: 2.5em;
   margin-bottom: 50px;
@@ -540,7 +569,7 @@ body.home .promo.services h2 {
 /******************************************
 INDEX PAGE
 ******************************************/
-/* line 299, ../scss/breakpoints/_768up.scss */
+/* line 308, ../scss/breakpoints/_768up.scss */
 body.page-template-page-index #container .sub-header .page-header {
   padding: 50px 70px;
 }
@@ -556,14 +585,19 @@ be seen on the Desktop.
 
 ******************************************************************/
 /* line 12, ../scss/breakpoints/_1030up.scss */
-.wrap {
+.wrap, .header .wrap {
   margin: 0 80px;
+}
+
+/* line 15, ../scss/breakpoints/_1030up.scss */
+#logo {
+  margin-left: 0;
 }
 
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 19, ../scss/breakpoints/_1030up.scss */
+/* line 22, ../scss/breakpoints/_1030up.scss */
 .main-nav-container {
   float: right;
   position: static;
@@ -571,12 +605,12 @@ NAVIGATION STYLES
   width: auto;
   height: auto;
 }
-/* line 25, ../scss/breakpoints/_1030up.scss */
+/* line 28, ../scss/breakpoints/_1030up.scss */
 .main-nav-container > h5 {
   display: none;
 }
 
-/* line 29, ../scss/breakpoints/_1030up.scss */
+/* line 32, ../scss/breakpoints/_1030up.scss */
 .main-nav {
   border: 0;
   overflow: visible;
@@ -586,18 +620,18 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 34, ../scss/breakpoints/_1030up.scss */
+/* line 37, ../scss/breakpoints/_1030up.scss */
 .main-nav ul {
   background: black url(../images/bg-body.png);
   margin-top: 0;
 }
-/* line 38, ../scss/breakpoints/_1030up.scss */
+/* line 41, ../scss/breakpoints/_1030up.scss */
 .main-nav > li {
   float: left;
   position: relative;
   /* showing sub-menus */
 }
-/* line 41, ../scss/breakpoints/_1030up.scss */
+/* line 44, ../scss/breakpoints/_1030up.scss */
 .main-nav > li a {
   border-bottom: 0;
   -webkit-transition: background-color 0.5s, color 0.5s;
@@ -611,22 +645,22 @@ NAVIGATION STYLES
   line-height: 65px;
   padding: 0 12px;
 }
-/* line 49, ../scss/breakpoints/_1030up.scss */
+/* line 52, ../scss/breakpoints/_1030up.scss */
 .main-nav > li a:hover, .main-nav > li a:focus {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
   color: orange;
 }
-/* line 53, ../scss/breakpoints/_1030up.scss */
+/* line 56, ../scss/breakpoints/_1030up.scss */
 html.secondary-scrolled .main-nav > li a:hover, html.secondary-scrolled .main-nav > li a:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 58, ../scss/breakpoints/_1030up.scss */
+/* line 61, ../scss/breakpoints/_1030up.scss */
 .main-nav > li li a {
   height: 55px;
   line-height: 55px;
 }
-/* line 62, ../scss/breakpoints/_1030up.scss */
+/* line 65, ../scss/breakpoints/_1030up.scss */
 .main-nav > li ul.sub-menu,
 .main-nav > li ul.children {
   margin-top: 0;
@@ -643,7 +677,7 @@ html.secondary-scrolled .main-nav > li a:hover, html.secondary-scrolled .main-na
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-/* line 73, ../scss/breakpoints/_1030up.scss */
+/* line 76, ../scss/breakpoints/_1030up.scss */
 .main-nav > li ul.sub-menu li a,
 .main-nav > li ul.children li a {
   padding-left: 10px;
@@ -651,13 +685,13 @@ html.secondary-scrolled .main-nav > li a:hover, html.secondary-scrolled .main-na
   display: block;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 79, ../scss/breakpoints/_1030up.scss */
+/* line 82, ../scss/breakpoints/_1030up.scss */
 .main-nav > li ul.sub-menu li ul,
 .main-nav > li ul.children li ul {
   top: 0;
   left: 100%;
 }
-/* line 92, ../scss/breakpoints/_1030up.scss */
+/* line 95, ../scss/breakpoints/_1030up.scss */
 .main-nav > li:hover > ul {
   top: auto;
   opacity: 1;
@@ -665,7 +699,7 @@ html.secondary-scrolled .main-nav > li a:hover, html.secondary-scrolled .main-na
 }
 
 /* end .nav */
-/* line 107, ../scss/breakpoints/_1030up.scss */
+/* line 110, ../scss/breakpoints/_1030up.scss */
 .trigger-nav {
   display: none;
 }
@@ -673,7 +707,7 @@ html.secondary-scrolled .main-nav > li a:hover, html.secondary-scrolled .main-na
 /******************************************
 INDIVIDUAL PAGES
 ******************************************/
-/* line 118, ../scss/breakpoints/_1030up.scss */
+/* line 121, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index .main-nav > li:hover > a, body.page-template-page-index .main-nav ul, body.page-template-page-index .main-nav a:hover, body.home .main-nav > li:hover > a, body.home .main-nav ul, body.home .main-nav a:hover {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -681,11 +715,11 @@ body.page-template-page-index .main-nav > li:hover > a, body.page-template-page-
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 129, ../scss/breakpoints/_1030up.scss */
+/* line 132, ../scss/breakpoints/_1030up.scss */
 body.home .promo.services > ul > li {
   padding-left: 50px;
 }
-/* line 131, ../scss/breakpoints/_1030up.scss */
+/* line 134, ../scss/breakpoints/_1030up.scss */
 body.home .promo.services > ul > li:first-child {
   padding-left: 0;
   padding-right: 50px;
@@ -694,7 +728,7 @@ body.home .promo.services > ul > li:first-child {
 /******************************************
 INDEX PAGE
 ******************************************/
-/* line 145, ../scss/breakpoints/_1030up.scss */
+/* line 148, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .page-header {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -703,20 +737,20 @@ body.page-template-page-index #container .sub-header .page-header {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 148, ../scss/breakpoints/_1030up.scss */
+/* line 151, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .page-header .page-title {
   font-size: 3em;
 }
-/* line 152, ../scss/breakpoints/_1030up.scss */
+/* line 155, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .index-menu {
   text-align: center;
   font-size: 2.5em;
 }
-/* line 155, ../scss/breakpoints/_1030up.scss */
+/* line 158, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .index-menu > li {
   display: inline-block;
 }
-/* line 157, ../scss/breakpoints/_1030up.scss */
+/* line 160, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .index-menu > li a {
   -webkit-transition: background-color 0.375s;
   -moz-transition: background-color 0.375s;
@@ -739,7 +773,7 @@ body.page-template-page-index #container .sub-header .index-menu > li a:before {
   border-right: 20px solid transparent;
   border-top: 15px solid orange;
 }
-/* line 163, ../scss/breakpoints/_1030up.scss */
+/* line 166, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .index-menu > li a:before {
   position: relative;
   left: 50%;
@@ -750,7 +784,7 @@ body.page-template-page-index #container .sub-header .index-menu > li a:before {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-/* line 169, ../scss/breakpoints/_1030up.scss */
+/* line 172, ../scss/breakpoints/_1030up.scss */
 body.page-template-page-index #container .sub-header .index-menu > li a:hover {
   color: orange;
   background-color: rgba(0, 0, 0, 0.5);
