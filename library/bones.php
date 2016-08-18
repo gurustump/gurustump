@@ -128,7 +128,7 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// youtube iframe api
-		if (is_page_template('page-gallery.php')) {
+		if (is_page_template('page-gallery.php') || is_singular('shows')) {
 			wp_register_script( 'youtube-api', 'https://www.youtube.com/iframe_api', array(), '', true );
 		}
 
@@ -158,7 +158,7 @@ function bones_scripts_and_styles() {
 		using the google cdn. That way it stays cached
 		and your site will load faster.
 		*/
-		if (is_page_template('page-gallery.php')) {
+		if (is_page_template('page-gallery.php') || is_singular('shows')) {
 			wp_enqueue_script( 'youtube-api' );
 		}
 		wp_enqueue_script( 'jquery' );

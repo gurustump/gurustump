@@ -50,7 +50,7 @@ function show_custom_type() {
 			'query_var' => true,
 			'menu_position' => 8,
 			//'menu_icon' => get_stylesheet_directory_uri() . '/library/images/media-item-icon.png',
-			'rewrite'	=> array( 'slug' => 'shows', 'with_front' => false ),
+			'rewrite'	=> array( 'slug' => 'videos', 'with_front' => false ),
 			//'has_archive' => 'show',
 			'has_archive' => false,
 			'hierarchical' => false,

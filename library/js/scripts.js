@@ -104,6 +104,24 @@ function loadGravatars() {
 	}
 } // end function
 
+// get query string parameters
+// http://stackoverflow.com/questions/4656843/jquery-get-querystring-from-url
+function getQueryString() {
+	var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+		// if the key in the query string has no value, set the value to true
+        if (hash[1] == undefined) {
+			hash[1] = true;
+		}
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 
 /*
  * Put all your regular jQuery in here.
@@ -124,7 +142,8 @@ jQuery(document).ready(function($) {
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
 	if (typeof isIndex === "undefined") var isIndex = $('body').hasClass('page-template-page-index');
-	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('page-template-page-gallery');
+	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('page-template-page-gallery') || $('body').hasClass('single-shows');
+	if (typeof isSingleShow === "undefined") var isSingleShow = $('body').hasClass('single-shows');
 	
 	/*
 	* You can remove this if you don't need it
@@ -167,9 +186,6 @@ jQuery(document).ready(function($) {
 	function headerHeight() {
 		var scrollTrigger = 0;
 		var secondaryScrollTrigger = isHome ? $('.HOME_LOGO').outerHeight()*.50: 0;
-		console.log(scrollTrigger);
-		console.log(secondaryScrollTrigger);
-		console.log(win.scrollTop())
 		if (win.scrollTop() > scrollTrigger) {
 			$('html').addClass('scrolled');
 		} else {
@@ -200,13 +216,18 @@ jQuery(document).ready(function($) {
 		$(this).closest('.OV').removeClass('active');
 	});
 	
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$('.OV').removeClass('active');
+		}
+	});
+	
 	function simpleAutoCarousel(container, duration) {
 		var simpleAutoCarouselInteval = setInterval(function() {
 			var active = container.find('.active');
 			var next = active.next().length > 1 ? active.next() : active.siblings().first();
 			active.removeClass('active');
 			next.addClass('active');
-			console.log('interval');
 		}, duration);
 	}
 	
@@ -216,32 +237,101 @@ jQuery(document).ready(function($) {
 	
 	if (isVideo) {
 		var player;
+		var videoUpdateInterval;
+		var nextVideoTriggered = false;
+		var nextPlayCountdownNumber = 15;
 		var playerContainer = $('.VID_PLAYER_OV');
-		var playerCurrentIDInput = playerContainer.find('.VID_PLAYER_CURRENT_ID');
+		var playerWrap = playerContainer.find('.VID_PLAYER_WRAPPER');
+		var vid_player_current_id = playerContainer.find('.VID_PLAYER_CURRENT_ID');
+		var vid_next_id = playerContainer.find('.VID_NEXT_ID');
+		var vid_next_page = playerContainer.find('.VID_NEXT_PAGE');
+		var vid_next_title = playerContainer.find('.VID_NEXT_TITLE');
+		var vid_next_thumb = playerContainer.find('.VID_NEXT_THUMB');
+		var vid_credits_timecode = playerContainer.find('.VID_CREDITS_TIMECODE');
+		var next_play_countdown = $('.NEXT_PLAY_COUNTDOWN');
 		var closeButton = $('.VID_PLAYER_OV .OV_CLOSE');
+		function videoIntervalCheck() {
+			clearInterval(videoUpdateInterval);
+			if (vid_credits_timecode.val() != '') {
+				videoUpdateInterval = setInterval(function () {
+					if (parseInt(player.getCurrentTime()) > parseInt(vid_credits_timecode.val())) {
+						if (!nextVideoTriggered) {
+							playerWrap.addClass('next-video-triggered');
+							if (document.exitFullscreen) {
+								document.exitFullscreen();
+							} else if (document.msExitFullscreen) {
+								document.msExitFullscreen();
+							} else if (document.mozCancelFullScreen) {
+								document.mozCancelFullScreen();
+							} else if (document.webkitExitFullscreen) {
+								document.webkitExitFullscreen();
+							}
+							nextVideoTriggered = true;
+							nextPlayCountdownNumber = parseInt(player.getDuration()) - parseInt(vid_credits_timecode.val()) < 12 ? parseInt(player.getDuration()) - parseInt(vid_credits_timecode.val()) : 12
+						} else {
+							nextPlayCountdownNumber = nextPlayCountdownNumber - 1;
+						}
+						next_play_countdown.text(nextPlayCountdownNumber);
+						if (nextPlayCountdownNumber <= 0) {
+							clearVideoIntervalCheck();
+							if (isSingleShow) {
+								location.href = $('.VID_NEXT_PAGE').attr('href') + '?autoplay';
+							} else {
+								$('.VIDEO_PLAY').each(function() {
+									if ($(this).attr('data-video-ID') == vid_next_id.val()) {
+										$(this).click();
+										return false;
+									}
+								});
+							}
+						}
+					}
+				}, 1000);
+			}
+		}
+		function clearVideoIntervalCheck() {
+			clearInterval(videoUpdateInterval);
+			playerWrap.removeClass('next-video-triggered');
+		}
 		window.onYouTubeIframeAPIReady = function(){
 			player = new YT.Player('video_player', {
 				width:1280,
 				height:720,
-				playerVars:{
-					
-				}/*,
 				events: {
-					onReady: initializeVideo
-				}*/
+					/*onReady: function() {
+						clearInterval(videoUpdateInterval);
+
+						videoUpdateInterval = setInterval(function () {
+							console.log(player.getCurrentTime());
+							console.log(player.getDuration());
+						}, 1000)
+					},*/
+					onStateChange : function(e) {
+						console.log(e.data);
+						if (e.data == 1 && !mobileDeviceType()) {
+							videoIntervalCheck() ;
+						} else {
+							clearVideoIntervalCheck();
+						}
+					}
+				}
 			});
 		}
-		console.log(player);
-		$('.VID_THUMBS_LIST a.VIDEO_PLAY').click(function(e) {
+		$('.VID_THUMBS_LIST a.VIDEO_PLAY, .TRIGGER_VIDEO').click(function(e) {
 			var videoID = $(this).attr('data-video-ID');
 			if (videoID) {
-				console.log(videoID);
 				e.preventDefault();
 				playerContainer.addClass('active');
-				if (videoID != playerCurrentIDInput.val()) {
-					console.log(videoID);
-					console.log(playerCurrentIDInput.val());
-					playerCurrentIDInput.val(videoID);
+				if (videoID != vid_player_current_id.val()) {
+					vid_player_current_id.val(videoID);
+					vid_next_id.val($(this).attr('data-next-ID'));
+					vid_next_page.attr('href', $(this).attr('data-next-page'));
+					vid_next_title.text($(this).attr('data-next-title'));
+					vid_next_thumb.attr({
+						'src':$(this).attr('data-next-thumb-src'),
+						'alt':$(this).attr('data-next-title')
+					});
+					vid_credits_timecode.val($(this).attr('data-credits-timecode'));
 					player.cueVideoById(videoID);
 				}
 				player.playVideo();
@@ -249,7 +339,24 @@ jQuery(document).ready(function($) {
 		});
 		closeButton.click(function() {
 			player.pauseVideo();
+			clearVideoIntervalCheck();
 		});
+		$(document).keyup(function(e) {
+			if (e.keyCode == 27) {
+				player.pauseVideo();
+				clearVideoIntervalCheck();
+			}
+		});
+		$('.CANCEL_AUTOPLAY').click(function(e) {
+			e.preventDefault();
+			clearVideoIntervalCheck();
+		});
+	}
+	if (isSingleShow) {
+		var queryString = getQueryString();
+		if (queryString['autoplay']) {
+			$('.TRIGGER_VIDEO').click();
+		}
 	}
 
 }); /* end of as page load scripts */

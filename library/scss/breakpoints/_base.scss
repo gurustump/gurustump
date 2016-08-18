@@ -117,7 +117,7 @@ LAYOUT & GRID STYLES
 	margin:0;
 }
 .wrap {
-	margin:0 15px;;
+	margin:0 15px;
 }
 
 /*********************
@@ -173,12 +173,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-	font-size:2.5em;
 	line-height: 1.333em;
 }
 
 h2, .h2 {
-	font-size:2em;
+	font-size:1.9em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
 }
@@ -223,7 +222,7 @@ HEADER STYLES
 #logo {
 	font-size:2.2em;
 	text-transform:uppercase;
-	margin-left:15px;
+	margin:0 0 0 15px;
 	height:50px;
 	line-height:50px;
 	a {
@@ -425,7 +424,8 @@ POSTS & CONTENT STYLES
 .single-title,
 .page-title,
 .entry-title {
-	margin: 0;
+	margin-top:0;
+	margin-bottom:0;
 }
 
 .single-title {}
@@ -485,9 +485,6 @@ POSTS & CONTENT STYLES
 	}
 
 	table {
-		width: 100%;
-		border: 1px solid $gray;
-		margin-bottom: 1.5em;
 
 		caption {
 			margin: 0 0 7px;
@@ -499,19 +496,14 @@ POSTS & CONTENT STYLES
 	}
 
 	tr {
-		border-bottom: 1px solid $gray;
 
 		&:nth-child(even) {
-			background-color: $light-gray;
 		}
 	}
 
 	td {
-		padding: 7px;
-		border-right: 1px solid $gray;
 
 		&:last-child {
-			border-right: 0;
 		}
 	}
 
@@ -666,55 +658,11 @@ POSTS & CONTENT STYLES
 				text-align:center;
 				color:$white;
 			}
-			.btn-play, .video-details {
-				text-transform:uppercase;
-				position:relative;
-				padding-top:58px;
+			.btn-play, .btn-info {
 				width:50%;
 				float:left;
 				text-align:center;
-				color:$white;
-				border:0;
 				@include v-center;
-				&:before {
-					content:"";
-					width:50px;
-					height:50px;
-					display:block;
-					border:3px solid $white;
-					@include border-radius(50%);
-					position:absolute;
-					@include transform(translateX(-50%));
-					top:0;
-					@include transition(background-color .375s);
-				}
-				&:after {
-					top:28px;
-				}
-				&:before, &:after {
-					position:absolute;
-					left:50%;
-				}
-				&:hover {
-					&:before {
-						background-color:rgba($white, .2);
-					}
-				}
-			}
-			.btn-play {
-				@include tri(right, 13px, 22px, $white, 0, block, none, false);
-				&:after {
-					@include transform(translate(-40%, -50%));
-				}
-			}
-			.video-details {
-				&:after {
-					content:"";
-					background:url(../images/ic-info.png) no-repeat;
-					width:14px;
-					height:32px;
-					@include transform(translate(-7px, -50%));
-				}
 			}
 		}
 	}
@@ -732,18 +680,9 @@ POSTS & CONTENT STYLES
 	top:0;
 	left:0;
 	z-index:9999;
-	.ov-inner-wrapper {
-		opacity:0;
-		height:100%;
-		width:100%;
-		background:rgba($black, .9);
-		@include transition(opacity .375s);
-}
+	background:rgba($black, .9);
 	&.active {
 		display:block;
-		.ov-inner-wrapper {
-			opacity:1;
-		}
 	}
 	.ov-close {
 		position:absolute;
@@ -775,13 +714,24 @@ POSTS & CONTENT STYLES
 	}
 	&.vid-player-container {
 		.vid-player-wrapper {
+			height:720px;
+			width:1280px;
+			max-height:100%;
+			max-width:100%;
+			position:absolute;
+			left:50%;
+			top:50%;
+			@include transform(translate(-50%, -50%));
 			& > iframe {
 				max-height:100%;
 				max-width:100%;
 				position:absolute;
-				left:50%;
-				top:50%;
-				@include transform(translate(-50%, -50%));
+				right:0;
+				top:0;
+				z-index:1;
+			}
+			.vid-playing-next {
+				display:none;
 			}
 		}
 	}
@@ -1488,6 +1438,93 @@ body.page-template-page-index {
 			#main {
 				position:relative;
 			}
+		}
+	}
+}
+
+/******************************************
+VIDEO GALLERY PAGE
+******************************************/
+body.video-gallery {
+	.simple-page-heading {
+		background:rgba($black, .5);
+		margin:0;
+		padding:15px 0;
+	}
+}
+
+/******************************************
+SINGLE VIDEO (SHOW) PAGE
+******************************************/
+body.single-shows {
+	.video-wrapper {
+		margin:0 -15px 15px;
+	}
+	.video-controls {
+		position:relative;
+		display:block;
+		border:none;
+		.btn-play {
+			position:absolute;
+			width:100%;
+			height:100%;
+			padding:0;
+			@include transition(background-color, .375s);
+			&:hover {
+				background-color:rgba($black,.5);
+				&:before {
+					background-color:rgba($white, .1);
+				}
+			}
+			&:before {
+				background-color:rgba($black, .7);
+				top:50%;
+				@include transform(translate(-50%,-50%));
+			}
+			&:after {
+				top:50%;
+			}
+		}
+	}
+	.video-thumb {
+		border-bottom:0;
+		outline:none;
+		img {
+			width:100%;
+			height:auto;
+			display:block;
+		}
+	}
+	article {
+		color:$white;
+	}
+	.show-title {
+		margin-bottom:10px;
+	}
+	.show-info {
+		font-size:.8em;
+		border-top:1px solid rgba($white, .2);
+		border-bottom:1px solid rgba($white, .2);
+	}
+	.show-info, .cast-crew {
+		margin:0 -15px;
+	}
+	.show-content {
+		margin-top:10px;
+	}
+	.cast-crew {
+		border-top:1px solid rgba($white, .2);
+		.data-table {
+			width:100%;
+		}
+	}
+	.data-table {
+		.subheading {
+			background:rgba($white, .1);
+		}
+		td {
+			padding:7px 15px;
+			vertical-align:top;
 		}
 	}
 }

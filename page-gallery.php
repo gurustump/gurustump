@@ -23,8 +23,9 @@
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-
-							<h1 class="page-title wrap"><?php the_title(); ?></h1>
+								<div class="simple-page-heading">
+									<h1 class="wrap"><?php the_title(); ?></h1>
+								</div>
 								<?php if (get_the_content()) { ?>
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php the_content(); ?>
@@ -59,11 +60,33 @@
 													?>
 													<li class="<?php echo trim($show_cat_class_string); ?>">
 														<!--<pre><?php print_r( $show_cats ); ?></pre>-->
+														<?php if ($itemMeta['_gurustump_show_next_video'][0] == '') {
+															$nextVideoUrl = '';
+															$nextVideoID = '';
+															$nextVideoTitle = '';
+															$nextVideoThumb = '';
+															$creditsTimecode = '';
+														} else {
+															$nextVideoUrl = get_permalink($itemMeta['_gurustump_show_next_video'][0]);
+															$nextVideoMeta = get_post_meta($itemMeta['_gurustump_show_next_video'][0]);
+															$nextVideoID = $nextVideoMeta['_gurustump_show_video_ID'][0];
+															$nextVideoTitle = get_the_title($itemMeta['_gurustump_show_next_video'][0]);
+															$nextVideoThumbArray = wp_get_attachment_image_src(get_post_thumbnail_id($itemMeta['_gurustump_show_next_video'][0]), 'movie-thumb', true);
+															$nextVideoThumb = $nextVideoThumbArray[0];
+															$creditsTimecode = $itemMeta['_gurustump_show_credits_timecode'][0];
+														} ?>
 														<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
 														<div class="actions">
 															<span class="item-head"><span><?php the_title(); ?></span></span>
-															<a class="btn-play VIDEO_PLAY" href="<?php the_permalink(); ?>" data-video-ID="<?php echo $itemMeta['_gurustump_show_video_ID'][0]; ?>">Play Movie</a>
-															<a class="video-details" href="<?php the_permalink(); ?>">View Details</a>
+															<a class="btn-play VIDEO_PLAY" href="<?php the_permalink(); ?>" 
+																data-video-ID="<?php echo $itemMeta['_gurustump_show_video_ID'][0]; ?>"
+																data-next-ID="<?php echo $nextVideoID; ?>"
+																data-next-page="<?php echo $nextVideoUrl; ?>"
+																data-next-title="<?php echo $nextVideoTitle; ?>"
+																data-next-thumb-src="<?php echo $nextVideoThumb; ?>"
+																data-credits-timecode="<?php echo $creditsTimecode; ?>"
+															>Play Movie</a>
+															<a class="btn-info" href="<?php the_permalink(); ?>">View Details</a>
 														</div>
 													</li>
 												<?php } ?>

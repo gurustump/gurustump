@@ -1,56 +1,171 @@
 <?php get_header(); ?>
-
 			<div id="content">
 
 				<div id="inner-content" class="wrap cf">
 
 					<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Movie">
-
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<?php $showMeta = get_post_meta(get_the_ID()); ?>
+						<?php $showMeta = get_post_meta(get_the_ID()); 
+						$nextVideoMeta = get_post_meta($showMeta['_gurustump_show_next_video'][0]); 
+						$nextVideoThumbArray = wp_get_attachment_image_src(get_post_thumbnail_id($showMeta['_gurustump_show_next_video'][0]), 'movie-thumb', true); ?>
 						<div class="video-wrapper">
-							<div class="video-controls">
-								<a class="video-thumb TRIGGER_VIDEO" href="#">
+							<a class="video-controls TRIGGER_VIDEO" href="#"
+								data-video-ID="<?php echo $showMeta['_gurustump_show_video_ID'][0]; ?>"
+								data-next-ID="<?php echo $nextVideoMeta['_gurustump_show_video_ID'][0]; ?>"
+								data-next-page="<?php echo get_permalink($showMeta['_gurustump_show_next_video'][0]); ?>"
+								data-next-title="<?php echo get_the_title($showMeta['_gurustump_show_next_video'][0]); ?>"
+								data-next-thumb-src="<?php echo $nextVideoThumbArray[0]; ?>"
+								data-credits-timecode="<?php echo $showMeta['_gurustump_show_credits_timecode'][0]; ?>">
+								<span class="video-thumb">
 									<?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>
-								</a>
-								<a class="btn TRIGGER_VIDEO" href="#">Play</a>
-								<div class="vid-playing-next-mobile VID_PLAYING_NEXT_MOBILE">
-									<p>Going to next video in <span class="next-play-countdown NEXT_PLAY_COUNTDOWN_MOBILE">10</span> seconds:</p>
-									<h3><a href="<?php echo get_permalink($itemMeta['_skinsplex_media_item_next_video'][0]); ?>"><?php echo get_the_title($itemMeta['_skinsplex_media_item_next_video'][0]); ?></a></h3>
-									<a class="video-thumb" href="<?php echo get_permalink($itemMeta['_skinsplex_media_item_next_video'][0]); ?>">
-										<?php echo get_the_post_thumbnail($itemMeta['_skinsplex_media_item_next_video'][0], 'media-item-thumb'); ?>
-									</a>
-									<div class="actions">
-										<a class="cancel CANCEL_AUTOPLAY_MOBILE">Cancel Next Video</a>
-										<a href="<?php echo get_permalink($itemMeta['_skinsplex_media_item_next_video'][0]); ?>">Go Now</a>
-									</div>
-								</div>
-							</div>
-							<?php
-								/*
-								 * Ah, post formats. Nature's greatest mystery (aside from the sloth).
-								 *
-								 * So this function will bring in the needed template file depending on what the post
-								 * format is. The different post formats are located in the post-formats folder.
-								 *
-								 *
-								 * REMEMBER TO ALWAYS HAVE A DEFAULT ONE NAMED "format.php" FOR POSTS THAT AREN'T
-								 * A SPECIFIC POST FORMAT.
-								 *
-								 * If you want to remove post formats, just delete the post-formats folder and
-								 * replace the function below with the contents of the "format.php" file.
-								*/
-								get_template_part( 'post-formats/format', get_post_format() );
-							?>
+								</span>
+								<span class="btn-play" href="#"></span>
+							</a>
 						</div>
+						<article id="post-<?php the_ID(); ?>" role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+							<?php // checking whether this is in the preview media-item category
+							$mediaItemCatTerms = get_the_terms( get_the_ID(), 'media_item_cat'); 
+							$isPreview = false;
+							if ($mediaItemCatTerms) {
+								foreach ($mediaItemCatTerms as $term) {
+									if ($term->slug == 'previews') {
+										$isPreview = true;
+										break;
+									}
+								}
+							} ?> 
+							<header class="show-header">
+								<h1 class="show-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+								<?php if ($showMeta['_gurustump_show_duration'][0] || $showMeta['_gurustump_show_age_restriction'][0] || $showMeta['_gurustump_show_country'][0] || $itemMeta['_gurustump_show_imdb_url'][0] || $itemMeta['_gurustump_show_view_url'][0]) { ?>
+								<div class="show-info">
+									<table class="data-table">
+										<?php if ($showMeta['_gurustump_show_duration'][0]) { ?>
+										<tr>
+											<td>Duration</td>
+											<td><?php echo $showMeta['_gurustump_show_duration'][0]; ?> min.</td>
+										<tr>
+										<?php } ?>
+									<?php if ($itemMeta['_gurustump_show_imdb_url'][0]) { ?>
+									<tr>
+										<td>IMDb Page</td>
+										<td><a href="<?php echo $itemMeta['_gurustump_show_imdb_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_gurustump_show_imdb_url'][0]; ?></a></td>
+									<tr>
+									<?php } ?>
+									<?php if ($itemMeta['_gurustump_show_view_url'][0]) { ?>
+									<tr>
+										<td>Watch this film</td>
+										<td><a href="<?php echo $itemMeta['_gurustump_show_view_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_gurustump_show_view_url'][0]; ?></a></td>
+									<tr>
+									<?php } ?>
+										<?php if ($showMeta['_gurustump_show_age_restriction'][0]) { ?>
+										<tr>
+											<td>Age Restriction</td>
+											<td><?php echo $showMeta['_gurustump_show_age_restriction'][0]; ?></td>
+										<tr>
+										<?php } ?>
+										<?php if ($showMeta['_gurustump_show_country'][0]) { ?>
+										<tr>
+											<td>Country</td>
+											<td><?php echo $showMeta['_gurustump_show_country'][0]; ?></td>
+										<tr>
+										<?php } ?>
+									</table>
+								</div>
+								<?php } ?>
+							</header> <?php // end article header ?>
+							<div class="show-content cf">
+								<?php the_content(); ?>
+							</div>
+							<div class="show-details">
+								<?php if ($showMeta['_gurustump_show_director'][0] || $showMeta['_gurustump_show_producer'][0] || $showMeta['_gurustump_show_writer'][0] || $showMeta['_gurustump_show_cast'][0]) { ?>
+								<div class="cast-crew">
+									<table class="data-table">
+										<?php if ($showMeta['_gurustump_show_director'][0]) { 
+										$directorArray = explode(',',$showMeta['_gurustump_show_director'][0]);
+										?>
+										<tr>
+											<td>Director</td>
+											<td><?php
+												foreach($directorArray as $key => $item) { ?>
+													<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($directorArray) ? '' : ', '; ?>
+												<?php }
+											?></td>
+										</tr>
+										<?php } ?>
+										<?php if ($showMeta['_gurustump_show_producer'][0]) {
+										$producerArray = explode(',',$showMeta['_gurustump_show_producer'][0]);
+										?>
+										<tr>
+											<td>Producer</td>
+											<td><?php
+												foreach($producerArray as $key => $item) { ?>
+													<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($producerArray) ? '' : ', '; ?>
+												<?php }
+											?></td>
+										</tr>
+										<?php } ?>
+										<?php if ($showMeta['_gurustump_show_writer'][0]) {
+										$writerArray = explode(',',$showMeta['_gurustump_show_writer'][0]);
+										?>
+										<tr>
+											<td>Writer</td>
+											<td><?php
+												foreach($writerArray as $key => $item) { ?>
+													<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($writerArray) ? '' : ', '; ?>
+												<?php }
+											?></td>
+										</tr>
+										<?php } ?>
+										<?php $castMeta = get_post_meta(get_the_ID(), '_gurustump_show_cast', true);
+										if (count($castMeta[0]) > 0) { ?>
+										<tr class="subheading">
+											<td colspan="2">Cast</td>
+										</tr>
+											<?php foreach($castMeta as $key => $castmember) { 
+												$castmemberArray = explode(',',$castmember[name]);
+												?>
+												<tr class="cast">
+													<td><?php echo $castmember[character]; ?></td>
+													<td><?php
+														foreach($castmemberArray as $key => $item) { ?>
+															<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($castmemberArray) ? '' : ', '; ?>
+														<?php }
+													?></td>
+												</tr>
+											<?php } ?>
+										<?php } ?>
+										<?php $crewMeta = get_post_meta(get_the_ID(), '_gurustump_show_other_crew', true);
+										if (count($crewMeta[0]) > 0) { ?>
+										<tr class="subheading">
+											<td colspan="2">Other Crew</td>
+										</tr>
+											<?php foreach($crewMeta as $key => $crewmember) { 
+												$crewmemberArray = explode(',',$crewmember[name]);
+												?>
+												<tr class="crew">
+													<td><?php echo $crewmember[title]; ?></td>
+													<td><?php
+														foreach($crewmemberArray as $key => $item) { ?>
+															<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($crewmemberArray) ? '' : ', '; ?>
+														<?php }
+													?></td>
+												</tr>
+											<?php } ?>
+										<?php } ?>
+									</table>
+								</div>
+								<?php } ?>
+							</div> <?php // end show details ?>
+						</article> <?php // end article ?>
 						<?php endwhile; endif; ?>
 
 					</main>
 
-					<?php get_sidebar(); ?>
+					<?php // get_sidebar(); ?>
 
 				</div>
 
 			</div>
+			<?php include 'library/includes/video-player.php'; ?>
 
 <?php get_footer(); ?>

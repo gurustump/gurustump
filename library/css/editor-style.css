@@ -423,7 +423,7 @@ body#tinymce.wp-editor a {
 }
 /* line 97, ../scss/partials/_normalize.scss */
 body#tinymce.wp-editor a:focus {
-  outline: thin dotted;
+  outline: 0;
 }
 /* line 105, ../scss/partials/_normalize.scss */
 body#tinymce.wp-editor a:active,

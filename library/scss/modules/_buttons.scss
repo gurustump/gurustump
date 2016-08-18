@@ -40,6 +40,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 	border:4px solid $orange;
 	background-color:$btnbgcolor;
 	cursor:pointer;
+	outline:none;
 	@include transition(background-color 0.375s ease-in-out);
 
 	// hovering on the btn
@@ -72,4 +73,56 @@ and it will create a button dependant on those variables.
 .btn-gallery {
 	@extend %btn;
 	@include border-radius(0);
+}
+
+%btn-circle {
+	text-transform:uppercase;
+	position:relative;
+	padding-top:58px;
+	text-align:center;
+	color:$white !important;
+	border:0;
+	outline:none;
+	@include v-center;
+	&:before {
+		content:"";
+		width:50px;
+		height:50px;
+		display:block;
+		border:3px solid $white;
+		@include border-radius(50%);
+		position:absolute;
+		@include transform(translateX(-50%));
+		top:0;
+		@include transition(background-color .375s);
+	}
+	&:after {
+		top:28px;
+	}
+	&:before, &:after {
+		position:absolute;
+		left:50%;
+	}
+	&:hover {
+		&:before {
+			background-color:rgba($white, .2);
+		}
+	}
+}
+.btn-play {
+	@extend %btn-circle;
+	@include tri(right, 13px, 22px, $white, 0, block, none, false);
+	&:after {
+		@include transform(translate(-40%, -50%));
+	}
+}
+.btn-info {
+	@extend %btn-circle;
+	&:after {
+		content:"";
+		background:url(../images/ic-info.png) no-repeat;
+		width:14px;
+		height:32px;
+		@include transform(translate(-7px, -50%));
+	}
 }

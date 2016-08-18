@@ -24,6 +24,9 @@ LAYOUT & GRID STYLES
 #container #content, #logo {
 	@include transition(all 275ms);
 }
+h1, .h1 {
+	font-size:2.5em;
+}
 
 
 /******************************************
@@ -49,5 +52,26 @@ body.home {
 		h2 {
 			font-size:1.68em;
 		}
+	}
+}
+
+/******************************************
+SINGLE VIDEO (SHOW) PAGE
+******************************************/
+body.single-shows {
+	#main {
+		@include clearfix;
+	}
+	.video-wrapper {
+		float:left;
+		width:50%;
+	}
+	article {
+		float:left;
+		width:50%;
+		@include box-sizing;
+		padding-left:25px;
+		// padding-right:25px;
+		// background:rgba(255,255,255,.05);
 	}
 }
