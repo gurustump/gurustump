@@ -329,6 +329,24 @@ body.page-template-page-index {
 }
 
 /******************************************
+VIDEO GALLERY PAGE
+******************************************/
+body.video-gallery {
+	.body-content {
+		@include clearfix;
+		& > div {
+			float:left;
+			width:70%;
+			margin-right:2%;
+		}
+		& > select {
+			float:left;
+			width:28%;
+		}
+	}
+}
+
+/******************************************
 SINGLE VIDEO (SHOW) PAGE
 ******************************************/
 body.single-shows {

@@ -142,7 +142,8 @@ jQuery(document).ready(function($) {
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
 	if (typeof isIndex === "undefined") var isIndex = $('body').hasClass('page-template-page-index');
-	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('page-template-page-gallery') || $('body').hasClass('single-shows');
+	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('video-gallery') || $('body').hasClass('single-shows');
+	if (typeof isVideoGallery === "undefined") var isVideoGallery = $('body').hasClass('video-gallery');
 	if (typeof isSingleShow === "undefined") var isSingleShow = $('body').hasClass('single-shows');
 	
 	/*
@@ -291,6 +292,23 @@ jQuery(document).ready(function($) {
 			});
 			galOv.addClass('ready');
 		}
+	}
+	
+	if (isVideoGallery) {
+		var catSelect = $('.CAT_SELECT');
+		var thumbsList = $('.VID_THUMBS_LIST');
+		function makeCatSelection() {
+			console.log(catSelect.val());
+			if (catSelect.val() == '') {
+				thumbsList.children('li').addClass('selected');
+			} else {
+				thumbsList.children('li').removeClass('selected').filter('.'+catSelect.val()).addClass('selected');
+			}
+		}
+		makeCatSelection();
+		catSelect.change(function() {
+			makeCatSelection();
+		});
 	}
 	
 	if (isVideo) {

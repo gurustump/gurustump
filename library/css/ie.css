@@ -610,9 +610,32 @@ body.page-template-page-index #container .sub-header .page-header {
 }
 
 /******************************************
+VIDEO GALLERY PAGE
+******************************************/
+/* line 149, ../scss/partials/_mixins.scss */
+body.video-gallery .body-content:after {
+  content: ".";
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+/* line 337, ../scss/breakpoints/_768up.scss */
+body.video-gallery .body-content > div {
+  float: left;
+  width: 70%;
+  margin-right: 2%;
+}
+/* line 342, ../scss/breakpoints/_768up.scss */
+body.video-gallery .body-content > select {
+  float: left;
+  width: 28%;
+}
+
+/******************************************
 SINGLE VIDEO (SHOW) PAGE
 ******************************************/
-/* line 335, ../scss/breakpoints/_768up.scss */
+/* line 353, ../scss/breakpoints/_768up.scss */
 body.single-shows .video-wrapper {
   margin-left: 0;
   margin-right: 0;

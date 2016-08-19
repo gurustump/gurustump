@@ -22,16 +22,25 @@
 						<main id="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+								<?php $galleryType = get_post_meta(get_the_ID(), '_gurustump_page_gallery_type', true); ?>
 								<div class="simple-page-heading">
 									<h1 class="wrap"><?php the_title(); ?></h1>
 								</div>
-								<?php if (get_the_content()) { ?>
-								<section class="entry-content cf" itemprop="articleBody">
-									<?php the_content(); ?>
+								<section class="body-content wrap cf" itemprop="articleBody">
+									<?php if (get_the_content()) { ?>
+									<div class="body-content-inner"><?php the_content(); ?></div>
+									<?php } ?>
+									<?php if ($galleryType == 'movie-gallery') { ?>
+										<?php $showCats = (get_terms('show_cat')); ?>
+										<select class="CAT_SELECT">
+											<option value="">All</option>
+											<?php foreach($showCats as $cat) { ?>?
+											<option value="cat-<?php echo $cat->slug; ?>"<?php echo $cat->slug == 'featured' ? ' selected="selected"' : ''; ?>><?php echo $cat->name; ?></option>
+											<?php } ?>
+										</select>
+									<?php } ?>
 								</section>
-								<?php }
-								$galleryType = get_post_meta(get_the_ID(), '_gurustump_page_gallery_type', true);
+								<?php 
 								if ($galleryType == 'movie-gallery') {
 									$items = get_posts(array(
 											'posts_per_page'=>-1,
