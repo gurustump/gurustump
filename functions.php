@@ -335,8 +335,7 @@ function gurustump_gallery_shortcode( $attr ) {
 		'size'       => 'thumbnail',
 		'include'    => '',
 		'exclude'    => '',
-		'link'       => '',
-		'galtype'  => ''
+		'link'       => ''
 	), $attr, 'gallery'));
 
 	$id = intval($id);
@@ -417,7 +416,7 @@ function gurustump_gallery_shortcode( $attr ) {
 	}
 
 	$size_class = sanitize_html_class( $size );
-	$gallery_div = "<div class='thumb-index'>\n\t<div class='thumb-index-inner wrap'>\n\t\t<ul id='$selector' class='gallery".($galtype == 'sponsor' ? " sponsor-gallery SPONSOR_GALLERY" : " GALLERY")." galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	$gallery_div = "<div class='thumb-index'>\n\t<div class='thumb-index-inner'>\n\t\t<ul id='$selector' class='thumb-index-list gallery GALLERY galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
 
 	/**
 	 * Filter the default gallery shortcode CSS styles.
@@ -439,19 +438,15 @@ function gurustump_gallery_shortcode( $attr ) {
 			$image_output = wp_get_attachment_link( $id, $size, true, false );
 
 		$image_meta  = wp_get_attachment_metadata( $id );
-		$large_image = wp_get_attachment_image_src($id,'large');
+		$xl_image = wp_get_attachment_image_src($id,'extra-large');
 
-		$orientation = '';
-		if ( isset( $image_meta['height'], $image_meta['width'] ) )
-			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
-
-		$output .= "<{$itemtag} class='gallery-item {$orientation}'>";
+		$output .= "<{$itemtag} class='gallery-item GALLERY_ITEM'>";
 		$output .= "
 			$image_output
-			<input class='IMG_SRC' type='hidden' value='{$large_image[0]}' />
-			<input class='IMG_WIDTH' type='hidden' value='{$large_image[1]}' />
-			<input class='IMG_HEIGHT' type='hidden' value='{$large_image[2]}' />
-			<input class='IMG_RESIZED' type='hidden' value='{$large_image[3]}' />";
+			<input class='IMG_SRC' type='hidden' value='{$xl_image[0]}' />
+			<input class='IMG_WIDTH' type='hidden' value='{$xl_image[1]}' />
+			<input class='IMG_HEIGHT' type='hidden' value='{$xl_image[2]}' />
+			<input class='IMG_RESIZED' type='hidden' value='{$xl_image[3]}' />";
 			$itemContent = "<span class='item-content'><span class='view-item'>View Image</span>";
 				if ( $captiontag && trim($attachment->post_excerpt) ) {
 					$itemContent .= "
@@ -459,16 +454,9 @@ function gurustump_gallery_shortcode( $attr ) {
 						" . wptexturize($attachment->post_excerpt) . "
 						</{$captiontag}>";
 				}
-				if ( $galtype == 'sponsor') {
-					$itemLink = get_post_meta($id, '_gallery_link_url', true);
-					$itemContent .="<span class='item-link'>".$itemLink."</span>";
-				}
 			$itemContent .= "</span>"; // end item-content
-			if ($galtype == 'sponsor') {
-				$output .= wp_get_attachment_link( $id, $size, false, false, $itemContent);
-			} else {
-				$output .= $itemContent;
-			}
+			$output .= $itemContent;
+			
 		$output .= "</{$itemtag}>";
 		if ( ! $html5 && $columns > 0 && ++$i % $columns == 0 ) {
 			$output .= '<br style="clear: both" />';

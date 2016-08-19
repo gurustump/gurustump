@@ -46,6 +46,15 @@ html.scrolled {
 /* image gallery styles */
 .thumb-index {
 	.thumb-index-list {
+		margin-right:-.5%;
+		& > li {
+			width:24.5%;
+			margin:0 .5% .5% 0;
+		}
+	}
+}
+.video-thumb-index {
+	.thumb-index-list {
 		@include clearfix;
 		& > li {
 			width:25%;

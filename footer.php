@@ -25,6 +25,18 @@
 			</footer>
 
 		</div>
+		
+		<div class="overlays">
+			<figure id="gallery_item_ov" class="ov gallery-item-ov GALLERY_ITEM_OV OV">
+				<figcaption></figcaption>
+				<img src="" alt="" />
+				<div class="actions">
+					<a href="#" class="prev PREV">Previous</a>
+					<a href="#" class="next NEXT">Next</a>
+				</div> 
+				<a href="#" class="ov-close OV_CLOSE">Close</a>
+			</figure>
+		</div>
 
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>

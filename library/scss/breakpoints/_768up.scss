@@ -53,6 +53,15 @@ HEADER STYLES
 /* image gallery styles */
 .thumb-index {
 	.thumb-index-list {
+		margin-right:-.66%;
+		& > li {
+			width:32.66%;
+			margin:0 .66% .66% 0;
+		}
+	}
+}
+.video-thumb-index {
+	.thumb-index-list {
 		@include clearfix;
 		& > li {
 			width:33.3%;

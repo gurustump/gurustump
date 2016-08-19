@@ -30,21 +30,20 @@
 								<section class="entry-content cf" itemprop="articleBody">
 									<?php the_content(); ?>
 								</section>
-								<?php } 
-								//$mediaItemCat = get_post_meta(get_the_ID(), '_skinsplex_index_grid_select', true); 
+								<?php }
 								$galleryType = get_post_meta(get_the_ID(), '_gurustump_page_gallery_type', true);
 								if ($galleryType == 'movie-gallery') {
 									$items = get_posts(array(
 											'posts_per_page'=>-1,
-											'post_type'=>'shows',
+											'post_type'=>'shows'/*,
 											'orderby'=>'title',
-											'order'=>'ASC'/*,
+											'order'=>'ASC',
 											'media_item_cat'=> $mediaItemCat*/
 									));
 									if (count($items) > 0) { 
 									?>
 									
-									<div class="thumb-index video-thumb-index">
+									<div class="video-thumb-index">
 										<div class="thumb-index-inner">
 											<ul class="thumb-index-list VID_THUMBS_LIST">
 												<?php global $post;

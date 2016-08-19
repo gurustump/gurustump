@@ -23,17 +23,6 @@
 							</a>
 						</div>
 						<article id="post-<?php the_ID(); ?>" role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-							<?php // checking whether this is in the preview media-item category
-							$mediaItemCatTerms = get_the_terms( get_the_ID(), 'media_item_cat'); 
-							$isPreview = false;
-							if ($mediaItemCatTerms) {
-								foreach ($mediaItemCatTerms as $term) {
-									if ($term->slug == 'previews') {
-										$isPreview = true;
-										break;
-									}
-								}
-							} ?> 
 							<header class="show-header">
 								<h1 class="show-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 								<?php if ($showMeta['_gurustump_show_duration'][0] || $showMeta['_gurustump_show_age_restriction'][0] || $showMeta['_gurustump_show_country'][0] || $itemMeta['_gurustump_show_imdb_url'][0] || $itemMeta['_gurustump_show_view_url'][0]) { ?>
@@ -43,31 +32,31 @@
 										<tr>
 											<td>Duration</td>
 											<td><?php echo $showMeta['_gurustump_show_duration'][0]; ?> min.</td>
-										<tr>
+										</tr>
 										<?php } ?>
-									<?php if ($itemMeta['_gurustump_show_imdb_url'][0]) { ?>
+									<?php if ($showMeta['_gurustump_show_imdb_url'][0]) { ?>
 									<tr>
 										<td>IMDb Page</td>
-										<td><a href="<?php echo $itemMeta['_gurustump_show_imdb_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_gurustump_show_imdb_url'][0]; ?></a></td>
-									<tr>
+										<td><a href="<?php echo $showMeta['_gurustump_show_imdb_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_imdb_url'][0]; ?></a></td>
+									</tr>
 									<?php } ?>
-									<?php if ($itemMeta['_gurustump_show_view_url'][0]) { ?>
+									<?php if ($showMeta['_gurustump_show_view_url'][0]) { ?>
 									<tr>
-										<td>Watch this film</td>
-										<td><a href="<?php echo $itemMeta['_gurustump_show_view_url'][0]; ?>" target="_blank"><?php echo $itemMeta['_gurustump_show_view_url'][0]; ?></a></td>
-									<tr>
+										<td>On the web</td>
+										<td><a href="<?php echo $showMeta['_gurustump_show_view_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_view_url'][0]; ?></a></td>
+									</tr>
 									<?php } ?>
 										<?php if ($showMeta['_gurustump_show_age_restriction'][0]) { ?>
 										<tr>
 											<td>Age Restriction</td>
 											<td><?php echo $showMeta['_gurustump_show_age_restriction'][0]; ?></td>
-										<tr>
+										</tr>
 										<?php } ?>
 										<?php if ($showMeta['_gurustump_show_country'][0]) { ?>
 										<tr>
 											<td>Country</td>
 											<td><?php echo $showMeta['_gurustump_show_country'][0]; ?></td>
-										<tr>
+										</tr>
 										<?php } ?>
 									</table>
 								</div>
@@ -157,6 +146,14 @@
 								<?php } ?>
 							</div> <?php // end show details ?>
 						</article> <?php // end article ?>
+						<div class="show-gallery">
+							<?php if ($showMeta['_gurustump_show_gallery_heading'][0]) { ?>
+							<h2><?php echo $showMeta['_gurustump_show_gallery_heading'][0]; ?></h2>
+							<?php } ?>
+							<?php if ($showMeta['_gurustump_show_gallery'][0]) {
+								echo do_shortcode($showMeta['_gurustump_show_gallery'][0]);
+							} ?>
+						</div>
 						<?php endwhile; endif; ?>
 
 					</main>

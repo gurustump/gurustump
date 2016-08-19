@@ -126,6 +126,9 @@ function bones_scripts_and_styles() {
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		
+		// imgpreload https://github.com/farinspace/jquery.imgpreload
+		wp_register_script( 'imgpreload', get_stylesheet_directory_uri() . '/library/js/libs/jquery.imgpreload.min.js', array('jquery'), '1.6.2', false );
 
 		// youtube iframe api
 		if (is_page_template('page-gallery.php') || is_singular('shows')) {
@@ -162,6 +165,7 @@ function bones_scripts_and_styles() {
 			wp_enqueue_script( 'youtube-api' );
 		}
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'imgpreload' );
 		wp_enqueue_script( 'bones-js' );
 
 	}

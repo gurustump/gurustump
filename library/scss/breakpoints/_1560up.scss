@@ -20,6 +20,17 @@ LAYOUT & GRID STYLES
 	margin: 0 auto;
 }
 
+/* image gallery styles */
+.thumb-index {
+	.thumb-index-list {
+		margin-right:-.33%;
+		& > li {
+			width:19.66%;
+			margin:0 .33% .33% 0;
+		}
+	}
+}
+
 /*********************
 FOOTER STYLES
 *********************/

@@ -217,7 +217,7 @@ jQuery(document).ready(function($) {
 	});
 	
 	$(document).keyup(function(e) {
-		if (e.keyCode == 27) {
+		if (e.keyCode == 27 || e.which == 27) {
 			$('.OV').removeClass('active');
 		}
 	});
@@ -233,6 +233,64 @@ jQuery(document).ready(function($) {
 	
 	if (isIndex) {
 		simpleAutoCarousel($('.SUBHEAD_CAROUSEL'), 15000);
+	}
+	
+	// GALLERY OVERLAY
+	$('#gallery_item_ov').on('click', '.PREV, .NEXT', function(e) {
+		e.preventDefault();
+		if ($(this).hasClass('disabled')) { return false; }
+		if ($(this).hasClass('PREV')) {
+			$('#gallery_item_ov').data('current').prev().click();
+		} else if ($(this).hasClass('NEXT')) {
+			$('#gallery_item_ov').data('current').next().click();
+		}
+		//setGalleryOvSize();
+	});
+	$('.GALLERY').on('click', '.GALLERY_ITEM', function(e) {
+		e.preventDefault();
+		var thisItem = $(this);
+		var galOv = $('#gallery_item_ov');
+		var ovImg = galOv.children('img');
+		galOv.addClass('active').removeClass('ready').data('current',thisItem);
+		readyCount = 0;
+		// Wait long enough for CSS transition (.375 seconds) to complete the fade out of the previous image before removing its src attribute
+		setTimeout(function() {
+			ovImg.attr('src','');
+			showImageWhenReady(galOv,ovImg,imgSrc);
+		}, 375);
+		var imgSrc = thisItem.find('.IMG_SRC').val();
+		$.imgpreload(imgSrc, function() {
+			showImageWhenReady(galOv,ovImg,imgSrc);
+		});
+		var imgPreloadArray = [];
+		if (thisItem.prev().length > 0) {
+			imgPreloadArray.push(thisItem.prev().find('.IMG_SRC').val());
+		}
+		if (thisItem.next().length > 0) {
+			imgPreloadArray.push(thisItem.next().find('.IMG_SRC').val());
+		}
+		if (thisItem.is(':first-child')) {
+			$('#gallery_item_ov .PREV').addClass('disabled');
+		} else {
+			$('#gallery_item_ov .PREV').removeClass('disabled');
+		}
+		if (thisItem.is(':last-child')) {
+			$('#gallery_item_ov .NEXT').addClass('disabled');
+		} else {
+			$('#gallery_item_ov .NEXT').removeClass('disabled');
+		}
+		$.imgpreload(imgPreloadArray);
+	});
+	// Both the fade out of the previous image and the load of the next image must be complete before the new image can fade in. Both events run this function.
+	function showImageWhenReady(galOv,ovImg,imgSrc) {
+		readyCount ++;
+		if (readyCount > 1) {
+			ovImg.attr({
+				'src':imgSrc,
+				'alt':$(this).find('img').attr('alt')
+			});
+			galOv.addClass('ready');
+		}
 	}
 	
 	if (isVideo) {
@@ -342,7 +400,7 @@ jQuery(document).ready(function($) {
 			clearVideoIntervalCheck();
 		});
 		$(document).keyup(function(e) {
-			if (e.keyCode == 27) {
+			if (e.keyCode == 27 || e.which == 27) {
 				player.pauseVideo();
 				clearVideoIntervalCheck();
 			}

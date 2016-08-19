@@ -66,6 +66,9 @@ body.single-shows {
 		float:left;
 		width:50%;
 	}
+	.show-info, .cast-crew {
+		margin-right:0;
+	}
 	article {
 		float:left;
 		width:50%;
@@ -73,5 +76,11 @@ body.single-shows {
 		padding-left:25px;
 		// padding-right:25px;
 		// background:rgba(255,255,255,.05);
+	}
+	.thumb-index {
+		.thumb-index-inner {
+			margin-left:0;
+			margin-right:0;
+		}
 	}
 }
