@@ -28,25 +28,25 @@
 								<?php if ($showMeta['_gurustump_show_duration'][0] || $showMeta['_gurustump_show_age_restriction'][0] || $showMeta['_gurustump_show_country'][0] || $itemMeta['_gurustump_show_imdb_url'][0] || $itemMeta['_gurustump_show_view_url'][0]) { ?>
 								<div class="show-info">
 									<table class="data-table">
-										<?php if ($showMeta['_gurustump_show_duration'][0]) { ?>
+										<?php /* if ($showMeta['_gurustump_show_duration'][0]) { ?>
 										<tr>
 											<td>Duration</td>
 											<td><?php echo $showMeta['_gurustump_show_duration'][0]; ?> min.</td>
 										</tr>
+										<?php } */ ?>
+										<?php if ($showMeta['_gurustump_show_imdb_url'][0]) { ?>
+										<tr>
+											<td>IMDb Page</td>
+											<td><a href="<?php echo $showMeta['_gurustump_show_imdb_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_imdb_url'][0]; ?></a></td>
+										</tr>
 										<?php } ?>
-									<?php if ($showMeta['_gurustump_show_imdb_url'][0]) { ?>
-									<tr>
-										<td>IMDb Page</td>
-										<td><a href="<?php echo $showMeta['_gurustump_show_imdb_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_imdb_url'][0]; ?></a></td>
-									</tr>
-									<?php } ?>
-									<?php if ($showMeta['_gurustump_show_view_url'][0]) { ?>
-									<tr>
-										<td>On the web</td>
-										<td><a href="<?php echo $showMeta['_gurustump_show_view_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_view_url'][0]; ?></a></td>
-									</tr>
-									<?php } ?>
-										<?php if ($showMeta['_gurustump_show_age_restriction'][0]) { ?>
+										<?php if ($showMeta['_gurustump_show_view_url'][0]) { ?>
+										<tr>
+											<td>On the web</td>
+											<td><a href="<?php echo $showMeta['_gurustump_show_view_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_view_url'][0]; ?></a></td>
+										</tr>
+										<?php } ?>
+										<?php /* if ($showMeta['_gurustump_show_age_restriction'][0]) { ?>
 										<tr>
 											<td>Age Restriction</td>
 											<td><?php echo $showMeta['_gurustump_show_age_restriction'][0]; ?></td>
@@ -57,7 +57,7 @@
 											<td>Country</td>
 											<td><?php echo $showMeta['_gurustump_show_country'][0]; ?></td>
 										</tr>
-										<?php } ?>
+										<?php } */ ?>
 									</table>
 								</div>
 								<?php } ?>
