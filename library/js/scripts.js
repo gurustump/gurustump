@@ -221,6 +221,14 @@ jQuery(document).ready(function($) {
 		if (e.keyCode == 27 || e.which == 27) {
 			$('.OV').removeClass('active');
 		}
+		var galleryItemOv = $('#gallery_item_ov');
+		if (galleryItemOv.hasClass('active')) {
+			if (e.keyCode == 37 || e.which == 37) {
+				galleryItemOv.find('.actions .PREV').click();
+			} else if (e.keyCode == 39 || e.which == 39) {
+				galleryItemOv.find('.actions .NEXT').click();
+			}
+		}
 	});
 	
 	function simpleAutoCarousel(container, duration) {
