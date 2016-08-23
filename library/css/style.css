@@ -3943,8 +3943,9 @@ you can add resource intensive styles.
   /* line 261, ../scss/breakpoints/_768up.scss */
   body.home .home-logo h1 span {
     position: relative;
+    padding-left: 205px;
   }
-  /* line 263, ../scss/breakpoints/_768up.scss */
+  /* line 264, ../scss/breakpoints/_768up.scss */
   body.home .home-logo h1 span:after {
     content: "";
     display: block;
@@ -3954,13 +3955,15 @@ you can add resource intensive styles.
     background-size: cover;
     position: absolute;
     right: -220px;
+    left: 0;
     top: -68px;
   }
-  /* line 276, ../scss/breakpoints/_768up.scss */
+  /* line 278, ../scss/breakpoints/_768up.scss */
   body.home .home-logo h2 {
     font-size: 1.23em;
+    padding-left: 205px;
   }
-  /* line 282, ../scss/breakpoints/_768up.scss */
+  /* line 285, ../scss/breakpoints/_768up.scss */
   body.home .promo.services > ul > li {
     float: left;
     width: 50%;
@@ -3971,32 +3974,32 @@ you can add resource intensive styles.
     -o-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 287, ../scss/breakpoints/_768up.scss */
+  /* line 290, ../scss/breakpoints/_768up.scss */
   body.home .promo.services > ul > li:first-child {
     border-right: 1px solid rgba(255, 165, 0, 0.3);
     margin-left: -1px;
     padding-left: 0;
     padding-right: 30px;
   }
-  /* line 293, ../scss/breakpoints/_768up.scss */
+  /* line 296, ../scss/breakpoints/_768up.scss */
   body.home .promo.services > ul > li h3 {
     margin-bottom: 45px;
   }
-  /* line 297, ../scss/breakpoints/_768up.scss */
+  /* line 300, ../scss/breakpoints/_768up.scss */
   body.home .promo.services > ul > li ul.modules > li {
     padding-left: 0;
     padding-right: 0;
     border-width: 0;
   }
-  /* line 301, ../scss/breakpoints/_768up.scss */
+  /* line 304, ../scss/breakpoints/_768up.scss */
   body.home .promo.services > ul > li ul.modules > li h4 {
     margin: 0 0 20px;
   }
-  /* line 304, ../scss/breakpoints/_768up.scss */
+  /* line 307, ../scss/breakpoints/_768up.scss */
   body.home .promo.services > ul > li ul.modules > li ul.info {
     margin-left: 30px;
   }
-  /* line 310, ../scss/breakpoints/_768up.scss */
+  /* line 313, ../scss/breakpoints/_768up.scss */
   body.home .promo.services h2 {
     font-size: 2.5em;
     margin-bottom: 50px;
@@ -4005,7 +4008,7 @@ you can add resource intensive styles.
   /******************************************
   INDEX PAGE
   ******************************************/
-  /* line 324, ../scss/breakpoints/_768up.scss */
+  /* line 327, ../scss/breakpoints/_768up.scss */
   body.page-template-page-index #container .sub-header .page-header {
     padding: 50px 70px;
   }
@@ -4021,13 +4024,13 @@ you can add resource intensive styles.
     visibility: hidden;
     clear: both;
   }
-  /* line 337, ../scss/breakpoints/_768up.scss */
+  /* line 340, ../scss/breakpoints/_768up.scss */
   body.video-gallery .body-content > div {
     float: left;
     width: 70%;
     margin-right: 2%;
   }
-  /* line 342, ../scss/breakpoints/_768up.scss */
+  /* line 345, ../scss/breakpoints/_768up.scss */
   body.video-gallery .body-content > select {
     float: left;
     width: 28%;
@@ -4036,18 +4039,18 @@ you can add resource intensive styles.
   /******************************************
   SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
   ******************************************/
-  /* line 354, ../scss/breakpoints/_768up.scss */
+  /* line 357, ../scss/breakpoints/_768up.scss */
   body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 361, ../scss/breakpoints/_768up.scss */
+  /* line 364, ../scss/breakpoints/_768up.scss */
   body.single-people .person-vid-gallery {
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 364, ../scss/breakpoints/_768up.scss */
+  /* line 367, ../scss/breakpoints/_768up.scss */
   body.single-people .person-vid-gallery h2 {
     padding: 0;
   }
@@ -4102,16 +4105,20 @@ you can add resource intensive styles.
   body.home .home-logo h1 {
     font-size: 4em;
   }
-  /* line 44, ../scss/breakpoints/_1024up.scss */
+  /* line 43, ../scss/breakpoints/_1024up.scss */
+  body.home .home-logo h1 span {
+    padding-left: 230px;
+  }
+  /* line 45, ../scss/breakpoints/_1024up.scss */
   body.home .home-logo h1 span:after {
     height: 220px;
     width: 250px;
-    right: -250px;
     top: -60px;
   }
   /* line 52, ../scss/breakpoints/_1024up.scss */
   body.home .home-logo h2 {
-    font-size: 1.68em;
+    font-size: 1.65em;
+    padding-left: 230px;
   }
 
   /******************************************
@@ -4125,16 +4132,16 @@ you can add resource intensive styles.
     visibility: hidden;
     clear: both;
   }
-  /* line 66, ../scss/breakpoints/_1024up.scss */
+  /* line 67, ../scss/breakpoints/_1024up.scss */
   body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
     float: left;
     width: 50%;
   }
-  /* line 70, ../scss/breakpoints/_1024up.scss */
+  /* line 71, ../scss/breakpoints/_1024up.scss */
   body.single-shows .show-info, body.single-shows .cast-crew, body.single-shows .person-info, body.single-people .show-info, body.single-people .cast-crew, body.single-people .person-info {
     margin-right: 0;
   }
-  /* line 73, ../scss/breakpoints/_1024up.scss */
+  /* line 74, ../scss/breakpoints/_1024up.scss */
   body.single-shows article, body.single-people article {
     float: left;
     width: 50%;
@@ -4145,12 +4152,12 @@ you can add resource intensive styles.
     box-sizing: border-box;
     padding-left: 25px;
   }
-  /* line 82, ../scss/breakpoints/_1024up.scss */
+  /* line 83, ../scss/breakpoints/_1024up.scss */
   body.single-shows .thumb-index .thumb-index-inner, body.single-people .thumb-index .thumb-index-inner {
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 87, ../scss/breakpoints/_1024up.scss */
+  /* line 88, ../scss/breakpoints/_1024up.scss */
   body.single-shows .show-gallery, body.single-people .show-gallery {
     clear: both;
   }
@@ -4574,16 +4581,20 @@ This is for the larger monitors and possibly full screen viewers.
   body.home .home-logo h1 {
     font-size: 5em;
   }
-  /* line 85, ../scss/breakpoints/_1240up.scss */
+  /* line 84, ../scss/breakpoints/_1240up.scss */
+  body.home .home-logo h1 span {
+    padding-left: 280px;
+  }
+  /* line 86, ../scss/breakpoints/_1240up.scss */
   body.home .home-logo h1 span:after {
     height: 250px;
     width: 300px;
-    right: -300px;
     top: -64px;
   }
   /* line 93, ../scss/breakpoints/_1240up.scss */
   body.home .home-logo h2 {
     font-size: 2.09em;
+    padding-left: 280px;
   }
 }
 @media only screen and (min-width: 1560px) {
@@ -4639,16 +4650,20 @@ This is for the larger monitors and possibly full screen viewers.
   body.home .home-logo h1 {
     font-size: 6em;
   }
-  /* line 55, ../scss/breakpoints/_1560up.scss */
+  /* line 54, ../scss/breakpoints/_1560up.scss */
+  body.home .home-logo h1 span {
+    padding-left: 300px;
+  }
+  /* line 56, ../scss/breakpoints/_1560up.scss */
   body.home .home-logo h1 span:after {
     height: 277px;
     width: 320px;
-    right: -320px;
     top: -65px;
   }
   /* line 63, ../scss/breakpoints/_1560up.scss */
   body.home .home-logo h2 {
     font-size: 2.48em;
+    padding-left: 300px;
   }
 }
 /*********************

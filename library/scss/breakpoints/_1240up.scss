@@ -82,16 +82,17 @@ body.home {
 		h1 {
 			font-size:5em;
 			span {
+				padding-left:280px;
 				&:after {
 					height:250px;
 					width:300px;
-					right:-300px;
 					top:-64px;
 				}
 			}
 		}
 		h2 {
 			font-size:2.09em;
+			padding-left:280px;
 		}
 	}
 }

@@ -542,8 +542,9 @@ body.home .home-logo h1 {
 /* line 261, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 span {
   position: relative;
+  padding-left: 205px;
 }
-/* line 263, ../scss/breakpoints/_768up.scss */
+/* line 264, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 span:after {
   content: "";
   display: block;
@@ -553,13 +554,15 @@ body.home .home-logo h1 span:after {
   background-size: cover;
   position: absolute;
   right: -220px;
+  left: 0;
   top: -68px;
 }
-/* line 276, ../scss/breakpoints/_768up.scss */
+/* line 278, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h2 {
   font-size: 1.23em;
+  padding-left: 205px;
 }
-/* line 282, ../scss/breakpoints/_768up.scss */
+/* line 285, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li {
   float: left;
   width: 50%;
@@ -570,32 +573,32 @@ body.home .promo.services > ul > li {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 287, ../scss/breakpoints/_768up.scss */
+/* line 290, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li:first-child {
   border-right: 1px solid rgba(255, 165, 0, 0.3);
   margin-left: -1px;
   padding-left: 0;
   padding-right: 30px;
 }
-/* line 293, ../scss/breakpoints/_768up.scss */
+/* line 296, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li h3 {
   margin-bottom: 45px;
 }
-/* line 297, ../scss/breakpoints/_768up.scss */
+/* line 300, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li {
   padding-left: 0;
   padding-right: 0;
   border-width: 0;
 }
-/* line 301, ../scss/breakpoints/_768up.scss */
+/* line 304, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li h4 {
   margin: 0 0 20px;
 }
-/* line 304, ../scss/breakpoints/_768up.scss */
+/* line 307, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li ul.info {
   margin-left: 30px;
 }
-/* line 310, ../scss/breakpoints/_768up.scss */
+/* line 313, ../scss/breakpoints/_768up.scss */
 body.home .promo.services h2 {
   font-size: 2.5em;
   margin-bottom: 50px;
@@ -604,7 +607,7 @@ body.home .promo.services h2 {
 /******************************************
 INDEX PAGE
 ******************************************/
-/* line 324, ../scss/breakpoints/_768up.scss */
+/* line 327, ../scss/breakpoints/_768up.scss */
 body.page-template-page-index #container .sub-header .page-header {
   padding: 50px 70px;
 }
@@ -620,13 +623,13 @@ body.video-gallery .body-content:after {
   visibility: hidden;
   clear: both;
 }
-/* line 337, ../scss/breakpoints/_768up.scss */
+/* line 340, ../scss/breakpoints/_768up.scss */
 body.video-gallery .body-content > div {
   float: left;
   width: 70%;
   margin-right: 2%;
 }
-/* line 342, ../scss/breakpoints/_768up.scss */
+/* line 345, ../scss/breakpoints/_768up.scss */
 body.video-gallery .body-content > select {
   float: left;
   width: 28%;
@@ -635,18 +638,18 @@ body.video-gallery .body-content > select {
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 354, ../scss/breakpoints/_768up.scss */
+/* line 357, ../scss/breakpoints/_768up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 361, ../scss/breakpoints/_768up.scss */
+/* line 364, ../scss/breakpoints/_768up.scss */
 body.single-people .person-vid-gallery {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 364, ../scss/breakpoints/_768up.scss */
+/* line 367, ../scss/breakpoints/_768up.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0;
 }

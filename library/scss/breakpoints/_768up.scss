@@ -260,6 +260,7 @@ body.home {
 			font-size:3em;
 			span {
 				position:relative;
+				padding-left:205px;
 				&:after {
 					content:"";
 					display:block;
@@ -269,12 +270,14 @@ body.home {
 					background-size:cover;
 					position:absolute;
 					right:-220px;
+					left:0;
 					top:-68px;
 				}
 			}
 		}
 		h2 {
 			font-size:1.23em;
+			padding-left:205px;
 		}
 	}
 	.promo {

@@ -41,16 +41,17 @@ body.home {
 		h1 {
 			font-size:4em;
 			span {
+				padding-left:230px;
 				&:after {
 					height:220px;
 					width:250px;
-					right:-250px;
 					top:-60px;
 				}
 			}
 		}
 		h2 {
-			font-size:1.68em;
+			font-size:1.65em;
+			padding-left:230px;
 		}
 	}
 }
