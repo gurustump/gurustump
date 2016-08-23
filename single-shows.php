@@ -9,10 +9,18 @@
 						$nextVideoMeta = get_post_meta($showMeta['_gurustump_show_next_video'][0]); 
 						$nextVideoThumbArray = wp_get_attachment_image_src(get_post_thumbnail_id($showMeta['_gurustump_show_next_video'][0]), 'movie-thumb', true); ?>
 						<div class="video-wrapper">
+							<?php if ($showMeta['_gurustump_show_offsite_url'][0]) { ?>
+							<a class="video-controls external-link" href="<?php echo $showMeta['_gurustump_show_offsite_url'][0]; ?>" target="_blank">
+								<span class="video-thumb">
+									<?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>
+								</span>
+								<span class="btn-external" href="#"></span>
+							</a>
+							<?php } else if ($showMeta['_gurustump_show_video_ID'][0]) { ?>
 							<a class="video-controls TRIGGER_VIDEO" href="#"
 								data-video-ID="<?php echo $showMeta['_gurustump_show_video_ID'][0]; ?>"
 								data-next-ID="<?php echo $nextVideoMeta['_gurustump_show_video_ID'][0]; ?>"
-								data-next-page="<?php echo get_permalink($showMeta['_gurustump_show_next_video'][0]); ?>"
+								data-next-page="<?php echo $showMeta['_gurustump_show_next_video'][0] ? get_permalink($showMeta['_gurustump_show_next_video'][0]) : ''; ?>"
 								data-next-title="<?php echo get_the_title($showMeta['_gurustump_show_next_video'][0]); ?>"
 								data-next-thumb-src="<?php echo $nextVideoThumbArray[0]; ?>"
 								data-credits-timecode="<?php echo $showMeta['_gurustump_show_credits_timecode'][0]; ?>">
@@ -21,11 +29,16 @@
 								</span>
 								<span class="btn-play" href="#"></span>
 							</a>
+							<?php } else { ?>
+							<span class="video-thumb">
+								<?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>
+							</span>
+							<?php } ?>
 						</div>
 						<article id="post-<?php the_ID(); ?>" role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 							<header class="show-header">
 								<h1 class="show-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
-								<?php if ($showMeta['_gurustump_show_duration'][0] || $showMeta['_gurustump_show_age_restriction'][0] || $showMeta['_gurustump_show_country'][0] || $itemMeta['_gurustump_show_imdb_url'][0] || $itemMeta['_gurustump_show_view_url'][0]) { ?>
+								<?php // if (/* $showMeta['_gurustump_show_duration'][0] || */ $showMeta['_gurustump_show_age_restriction'][0] || /* $showMeta['_gurustump_show_country'][0] || */ $itemMeta['_gurustump_show_imdb_url'][0] || $itemMeta['_gurustump_show_view_url'][0]) { ?>
 								<div class="show-info">
 									<table class="data-table">
 										<?php /* if ($showMeta['_gurustump_show_duration'][0]) { ?>
@@ -46,21 +59,25 @@
 											<td><a href="<?php echo $showMeta['_gurustump_show_view_url'][0]; ?>" target="_blank"><?php echo $showMeta['_gurustump_show_view_url'][0]; ?></a></td>
 										</tr>
 										<?php } ?>
-										<?php /* if ($showMeta['_gurustump_show_age_restriction'][0]) { ?>
+										<?php if ($showMeta['_gurustump_show_age_restriction'][0]) { ?>
 										<tr>
 											<td>Age Restriction</td>
 											<td><?php echo $showMeta['_gurustump_show_age_restriction'][0]; ?></td>
 										</tr>
 										<?php } ?>
-										<?php if ($showMeta['_gurustump_show_country'][0]) { ?>
+										<?php /* if ($showMeta['_gurustump_show_country'][0]) { ?>
 										<tr>
 											<td>Country</td>
 											<td><?php echo $showMeta['_gurustump_show_country'][0]; ?></td>
 										</tr>
 										<?php } */ ?>
+										<tr>
+											<td>Release Date</td>
+											<td><time class="updated entry-time" datetime="<?php echo get_the_time('Y-m-d'); ?>" itemprop="datePublished"><?php echo get_the_time(get_option('date_format')); ?></time></td>
+										</tr>
 									</table>
 								</div>
-								<?php } ?>
+								<?php // } ?>
 							</header> <?php // end article header ?>
 							<div class="show-content cf">
 								<?php the_content(); ?>

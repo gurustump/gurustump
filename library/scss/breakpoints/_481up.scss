@@ -186,12 +186,14 @@ body.home {
 }
 
 /******************************************
-SINGLE VIDEO (SHOW) PAGE
+SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-body.single-shows {
-	.video-wrapper {
-		margin-left:-20px;
-		margin-right:-20px;
+body {
+	&.single-shows, &.single-people {
+		.video-wrapper, .headshot {
+			margin-left:-20px;
+			margin-right:-20px;
+		}
 	}
 }
 

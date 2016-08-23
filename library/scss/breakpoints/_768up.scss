@@ -347,11 +347,22 @@ body.video-gallery {
 }
 
 /******************************************
-SINGLE VIDEO (SHOW) PAGE
+SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-body.single-shows {
-	.video-wrapper {
+body {
+	&.single-shows, &.single-people {
+		.video-wrapper, .headshot {
+			margin-left:0;
+			margin-right:0;
+		}
+	}
+}
+body.single-people {
+	.person-vid-gallery {
 		margin-left:0;
 		margin-right:0;
+		h2 {
+			padding:0;
+		}
 	}
 }

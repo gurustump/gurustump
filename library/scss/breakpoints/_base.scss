@@ -455,6 +455,16 @@ POSTS & CONTENT STYLES
 	time {}
 }
 
+.data-table {
+	.subheading {
+		background:rgba($white, .1);
+	}
+	td {
+		padding:7px 15px;
+		vertical-align:top;
+	}
+}
+
 /* entry content */
 .entry-content {
 	padding: 1.5em 1.5em 0;
@@ -1602,7 +1612,7 @@ body.single-shows {
 			width:100%;
 			height:100%;
 			padding:0;
-			@include transition(background-color, .375s);
+			@include transition(background-color .375s);
 			&:hover {
 				background-color:rgba($black,.5);
 				&:before {
@@ -1613,9 +1623,49 @@ body.single-shows {
 				background-color:rgba($black, .7);
 				top:50%;
 				@include transform(translate(-50%,-50%));
+				@include transition(background-color .375s);
 			}
 			&:after {
 				top:50%;
+			}
+		}
+		.btn-external {
+			height:100%;
+			width:100%;
+			position:absolute;
+			top:0;
+			left:0;
+			@include transition(background-color .375s);
+			&:hover {
+				background-color:rgba($black,.8);
+				&:before {
+					background-color:rgba($white, .1);
+				}
+				&:after {
+					opacity:1;
+				}
+			}
+			&:before {
+				background-color:rgba($black, .7);
+				position:absolute;
+				top:50%;
+				left:50%;
+				@include transform(translate(-50%, -50%));
+				@include transition(background-color .375s);
+			}
+			&:after {
+				content:"Open External Link";
+				font-family:$buttonfont;
+				font-size:16px;
+				color:$white;
+				text-transform:uppercase;
+				position:absolute;
+				top:50%;
+				left:50%;
+				@include transform(translate(-50%, -50%));
+				padding-top:75px;
+				opacity:0;
+				@include transition(opacity .375s);
 			}
 		}
 	}
@@ -1651,21 +1701,67 @@ body.single-shows {
 			width:100%;
 		}
 	}
-	.data-table {
-		.subheading {
-			background:rgba($white, .1);
-		}
-		td {
-			padding:7px 15px;
-			vertical-align:top;
-		}
-	}
 	.show-gallery {
 		padding:20px 0;
 	}
 	.thumb-index {
 		.thumb-index-inner {
 			margin:0 -15px;
+		}
+	}
+}
+
+/******************************************
+SINGLE PERSON PAGE
+******************************************/
+body.single-people {
+	.headshot {
+		margin:0 -15px 20px;
+		img {
+			max-width:100%;
+			height:auto;
+		}
+	}
+	article {
+		color:$white;
+		margin-bottom:20px;
+	}
+	.person-info {
+		margin:0 -15px;
+		border-bottom:1px solid rgba($white, .2);
+		border-top:1px solid rgba($white, .2);
+		font-size:.8em;
+	}
+	.person-vid-gallery {
+		clear:left;
+		margin:0 -15px 20px;
+		h2 {
+			padding:0 15px;
+		}
+		.thumb-index-list {
+			& > li {
+				a {
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					text-align:center;
+					@include box-sizing;
+					padding:0 10px;
+					border-bottom:0;
+					background:rgba($black, .8);
+					color:$white;
+					opacity:0;
+					@include transition(opacity .375s);
+					&:hover {
+						opacity:1;
+					}
+					span {
+						@include v-center;
+					}
+				}
+			}
 		}
 	}
 }

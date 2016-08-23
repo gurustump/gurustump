@@ -56,34 +56,36 @@ body.home {
 }
 
 /******************************************
-SINGLE VIDEO (SHOW) PAGE
+SINGLE VIDEO (SHOW) PAGE, PERSON PAGE
 ******************************************/
-body.single-shows {
-	#main {
-		@include clearfix;
-	}
-	.video-wrapper {
-		float:left;
-		width:50%;
-	}
-	.show-info, .cast-crew {
-		margin-right:0;
-	}
-	article {
-		float:left;
-		width:50%;
-		@include box-sizing;
-		padding-left:25px;
-		// padding-right:25px;
-		// background:rgba(255,255,255,.05);
-	}
-	.thumb-index {
-		.thumb-index-inner {
-			margin-left:0;
+body {
+	&.single-shows, &.single-people {
+		#main {
+			@include clearfix;
+		}
+		.video-wrapper, .headshot {
+			float:left;
+			width:50%;
+		}
+		.show-info, .cast-crew, .person-info {
 			margin-right:0;
 		}
-	}
-	.show-gallery {
-		clear:both;
+		article {
+			float:left;
+			width:50%;
+			@include box-sizing;
+			padding-left:25px;
+			// padding-right:25px;
+			// background:rgba(255,255,255,.05);
+		}
+		.thumb-index {
+			.thumb-index-inner {
+				margin-left:0;
+				margin-right:0;
+			}
+		}
+		.show-gallery {
+			clear:both;
+		}
 	}
 }
