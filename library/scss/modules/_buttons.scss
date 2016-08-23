@@ -82,7 +82,7 @@ and it will create a button dependant on those variables.
 	text-align:center;
 	color:$white !important;
 	border:0;
-	outline:none;
+	outline:0;
 	@include v-center;
 	&:before {
 		content:"";
@@ -127,11 +127,25 @@ and it will create a button dependant on those variables.
 	}
 }
 .btn-external {
+	text-transform:uppercase;
+	border-bottom:0;
+	color:$white;
+	outline:0;
+	&:hover {
+		color:$white;
+	}
 	&:before {
 		content:"";
 		width:50px;
 		height:50px;
 		background:url(../images/ic-external.png) no-repeat;
 		display:inline-block;
+		@include transition(background-color .375s);
+		@include border-radius(10px 0 10px 10px);
+	}
+	&:hover {
+		&:before {
+			background-color:rgba($white, .2);
+		}
 	}
 }

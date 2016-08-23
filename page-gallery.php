@@ -65,27 +65,21 @@
 													foreach($show_cats as $show_cat) {
 														$show_cat_class_string .= ' cat-'.$show_cat->slug;
 													}
+													$nextVideoUrl = get_permalink($itemMeta['_gurustump_show_next_video'][0]);
+													$nextVideoMeta = get_post_meta($itemMeta['_gurustump_show_next_video'][0]);
+													$nextVideoID = $nextVideoMeta['_gurustump_show_video_ID'][0];
+													$nextVideoTitle = get_the_title($itemMeta['_gurustump_show_next_video'][0]);
+													$nextVideoThumbArray = wp_get_attachment_image_src(get_post_thumbnail_id($itemMeta['_gurustump_show_next_video'][0]), 'movie-thumb', true);
+													$nextVideoThumb = $nextVideoThumbArray[0];
+													$creditsTimecode = $itemMeta['_gurustump_show_credits_timecode'][0];
 													?>
 													<li class="<?php echo trim($show_cat_class_string); ?>">
-														<!--<pre><?php print_r( $show_cats ); ?></pre>-->
-														<?php if ($itemMeta['_gurustump_show_next_video'][0] == '') {
-															$nextVideoUrl = '';
-															$nextVideoID = '';
-															$nextVideoTitle = '';
-															$nextVideoThumb = '';
-															$creditsTimecode = '';
-														} else {
-															$nextVideoUrl = get_permalink($itemMeta['_gurustump_show_next_video'][0]);
-															$nextVideoMeta = get_post_meta($itemMeta['_gurustump_show_next_video'][0]);
-															$nextVideoID = $nextVideoMeta['_gurustump_show_video_ID'][0];
-															$nextVideoTitle = get_the_title($itemMeta['_gurustump_show_next_video'][0]);
-															$nextVideoThumbArray = wp_get_attachment_image_src(get_post_thumbnail_id($itemMeta['_gurustump_show_next_video'][0]), 'movie-thumb', true);
-															$nextVideoThumb = $nextVideoThumbArray[0];
-															$creditsTimecode = $itemMeta['_gurustump_show_credits_timecode'][0];
-														} ?>
 														<img class="item-thumb" src="<?php echo $itemThumbArray[0]; ?>" />
 														<div class="actions">
 															<span class="item-head"><span><?php the_title(); ?></span></span>
+															<?php if ($itemMeta['_gurustump_show_offsite_url'][0]) { ?>
+															<a class="btn-external" target="_blank" href="<?php echo $itemMeta['_gurustump_show_offsite_url'][0]; ?>">Open External Link</a>
+															<?php } else if ($itemMeta['_gurustump_show_video_ID'][0]) { ?>
 															<a class="btn-play VIDEO_PLAY" href="<?php the_permalink(); ?>" 
 																data-video-ID="<?php echo $itemMeta['_gurustump_show_video_ID'][0]; ?>"
 																data-next-ID="<?php echo $nextVideoID; ?>"
@@ -94,7 +88,8 @@
 																data-next-thumb-src="<?php echo $nextVideoThumb; ?>"
 																data-credits-timecode="<?php echo $creditsTimecode; ?>"
 															>Play Movie</a>
-															<a class="btn-info" href="<?php the_permalink(); ?>">View Details</a>
+															<?php } ?>
+															<a class="btn-info<?php echo ($itemMeta['_gurustump_show_offsite_url'][0] || $itemMeta['_gurustump_show_video_ID'][0]) ? '' : ' full-width'; ?>" href="<?php the_permalink(); ?>">View Details</a>
 														</div>
 													</li>
 												<?php } ?>

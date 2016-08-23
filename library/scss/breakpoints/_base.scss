@@ -124,7 +124,7 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 
-a, a:visited {
+a {
 	color: $link-color;
 	border-bottom:1px solid rgba($link-color, .3); 
 	text-decoration:none;
@@ -750,11 +750,25 @@ POSTS & CONTENT STYLES
 			text-align:center;
 			color:$white;
 		}
-		.btn-play, .btn-info {
+		.btn-play, .btn-info, .btn-external {
 			width:50%;
 			float:left;
 			text-align:center;
 			@include v-center;
+		}
+		.btn-external {
+			padding-top:58px;
+			&:before {
+				position:absolute;
+				top:4px;
+				left:50%;
+				@include transform(translateX(-50%));
+			}
+		}
+		.full-width {
+			width:100%;
+			float:none;
+			display:block;
 		}
 	}
 }
