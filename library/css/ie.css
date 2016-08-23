@@ -397,13 +397,34 @@ HEADER STYLES
   line-height: 55px;
   margin-left: 30px;
 }
+/* line 51, ../scss/breakpoints/_768up.scss */
+#logo a {
+  padding-left: 53px;
+  position: relative;
+}
+/* line 54, ../scss/breakpoints/_768up.scss */
+#logo a:before {
+  content: "";
+  background: url(../images/jack-card-small.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  -webkit-transition: all 0.375s;
+  -moz-transition: all 0.375s;
+  -ms-transition: all 0.375s;
+  -o-transition: all 0.375s;
+  transition: all 0.375s;
+  height: 56px;
+  width: 44px;
+  left: 8px;
+  top: 2px;
+}
 
 /* image gallery styles */
-/* line 55, ../scss/breakpoints/_768up.scss */
+/* line 70, ../scss/breakpoints/_768up.scss */
 .thumb-index .thumb-index-list {
   margin-right: -.66%;
 }
-/* line 57, ../scss/breakpoints/_768up.scss */
+/* line 72, ../scss/breakpoints/_768up.scss */
 .thumb-index .thumb-index-list > li {
   width: 32.66%;
   margin: 0 .66% .66% 0;
@@ -417,7 +438,7 @@ HEADER STYLES
   visibility: hidden;
   clear: both;
 }
-/* line 66, ../scss/breakpoints/_768up.scss */
+/* line 81, ../scss/breakpoints/_768up.scss */
 .video-thumb-index .thumb-index-list > li {
   width: 33.3%;
 }
@@ -425,28 +446,28 @@ HEADER STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 76, ../scss/breakpoints/_768up.scss */
+/* line 91, ../scss/breakpoints/_768up.scss */
 .sidebar {
   margin-top: 2.2em;
 }
 
-/* line 80, ../scss/breakpoints/_768up.scss */
+/* line 95, ../scss/breakpoints/_768up.scss */
 .widgettitle {
   border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
 }
 
-/* line 85, ../scss/breakpoints/_768up.scss */
+/* line 100, ../scss/breakpoints/_768up.scss */
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
-/* line 90, ../scss/breakpoints/_768up.scss */
+/* line 105, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   margin-bottom: 0.75em;
   /* deep nesting */
 }
-/* line 98, ../scss/breakpoints/_768up.scss */
+/* line 113, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -471,7 +492,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 206, ../scss/breakpoints/_768up.scss */
+/* line 221, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
@@ -487,17 +508,17 @@ INDIVIDUAL PAGES
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 229, ../scss/breakpoints/_768up.scss */
+/* line 244, ../scss/breakpoints/_768up.scss */
 body.home .home-logo {
   height: 100%;
   position: relative;
   max-height: none;
 }
-/* line 233, ../scss/breakpoints/_768up.scss */
+/* line 248, ../scss/breakpoints/_768up.scss */
 body.home .home-logo:before {
   display: none;
 }
-/* line 236, ../scss/breakpoints/_768up.scss */
+/* line 251, ../scss/breakpoints/_768up.scss */
 body.home .home-logo .bg-video {
   display: block;
   min-height: 100%;
@@ -512,7 +533,7 @@ body.home .home-logo .bg-video {
   transform: translate(-50%, -50%);
   z-index: 0;
 }
-/* line 246, ../scss/breakpoints/_768up.scss */
+/* line 261, ../scss/breakpoints/_768up.scss */
 body.home .home-logo .title-box {
   height: auto;
   width: 100%;
@@ -525,7 +546,7 @@ body.home .home-logo .title-box {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 253, ../scss/breakpoints/_768up.scss */
+/* line 268, ../scss/breakpoints/_768up.scss */
 body.home .home-logo .title-box .title-box-inner {
   position: static;
   top: 0;
@@ -535,16 +556,16 @@ body.home .home-logo .title-box .title-box-inner {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 259, ../scss/breakpoints/_768up.scss */
+/* line 274, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 {
   font-size: 3em;
 }
-/* line 261, ../scss/breakpoints/_768up.scss */
+/* line 276, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 span {
   position: relative;
   padding-left: 205px;
 }
-/* line 264, ../scss/breakpoints/_768up.scss */
+/* line 279, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h1 span:after {
   content: "";
   display: block;
@@ -557,12 +578,12 @@ body.home .home-logo h1 span:after {
   left: 0;
   top: -68px;
 }
-/* line 278, ../scss/breakpoints/_768up.scss */
+/* line 293, ../scss/breakpoints/_768up.scss */
 body.home .home-logo h2 {
   font-size: 1.23em;
   padding-left: 205px;
 }
-/* line 285, ../scss/breakpoints/_768up.scss */
+/* line 300, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li {
   float: left;
   width: 50%;
@@ -573,32 +594,32 @@ body.home .promo.services > ul > li {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 290, ../scss/breakpoints/_768up.scss */
+/* line 305, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li:first-child {
   border-right: 1px solid rgba(255, 165, 0, 0.3);
   margin-left: -1px;
   padding-left: 0;
   padding-right: 30px;
 }
-/* line 296, ../scss/breakpoints/_768up.scss */
+/* line 311, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li h3 {
   margin-bottom: 45px;
 }
-/* line 300, ../scss/breakpoints/_768up.scss */
+/* line 315, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li {
   padding-left: 0;
   padding-right: 0;
   border-width: 0;
 }
-/* line 304, ../scss/breakpoints/_768up.scss */
+/* line 319, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li h4 {
   margin: 0 0 20px;
 }
-/* line 307, ../scss/breakpoints/_768up.scss */
+/* line 322, ../scss/breakpoints/_768up.scss */
 body.home .promo.services > ul > li ul.modules > li ul.info {
   margin-left: 30px;
 }
-/* line 313, ../scss/breakpoints/_768up.scss */
+/* line 328, ../scss/breakpoints/_768up.scss */
 body.home .promo.services h2 {
   font-size: 2.5em;
   margin-bottom: 50px;
@@ -607,7 +628,7 @@ body.home .promo.services h2 {
 /******************************************
 INDEX PAGE
 ******************************************/
-/* line 327, ../scss/breakpoints/_768up.scss */
+/* line 342, ../scss/breakpoints/_768up.scss */
 body.page-template-page-index #container .sub-header .page-header {
   padding: 50px 70px;
 }
@@ -623,13 +644,13 @@ body.video-gallery .body-content:after {
   visibility: hidden;
   clear: both;
 }
-/* line 340, ../scss/breakpoints/_768up.scss */
+/* line 355, ../scss/breakpoints/_768up.scss */
 body.video-gallery .body-content > div {
   float: left;
   width: 70%;
   margin-right: 2%;
 }
-/* line 345, ../scss/breakpoints/_768up.scss */
+/* line 360, ../scss/breakpoints/_768up.scss */
 body.video-gallery .body-content > select {
   float: left;
   width: 28%;
@@ -638,18 +659,18 @@ body.video-gallery .body-content > select {
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 357, ../scss/breakpoints/_768up.scss */
+/* line 372, ../scss/breakpoints/_768up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 364, ../scss/breakpoints/_768up.scss */
+/* line 379, ../scss/breakpoints/_768up.scss */
 body.single-people .person-vid-gallery {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 367, ../scss/breakpoints/_768up.scss */
+/* line 382, ../scss/breakpoints/_768up.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0;
 }

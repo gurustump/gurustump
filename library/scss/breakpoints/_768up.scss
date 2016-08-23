@@ -48,6 +48,21 @@ HEADER STYLES
 	height:55px;
 	line-height:55px;
 	margin-left:30px;
+	a {
+		padding-left:53px;
+		position:relative;
+		&:before {
+			content:"";
+			background:url(../images/jack-card-small.png) no-repeat;
+			background-size:cover;
+			position:absolute;
+			@include transition(all .375s);
+			height:56px;
+			width:44px;
+			left:8px;
+			top:2px;
+		}
+	}
 }
 
 /* image gallery styles */

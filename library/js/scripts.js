@@ -234,7 +234,7 @@ jQuery(document).ready(function($) {
 	function simpleAutoCarousel(container, duration) {
 		var simpleAutoCarouselInteval = setInterval(function() {
 			var active = container.find('.active');
-			var next = active.next().length > 1 ? active.next() : active.siblings().first();
+			var next = active.next().length > 0 ? active.next() : active.siblings().first();
 			active.removeClass('active');
 			next.addClass('active');
 		}, duration);

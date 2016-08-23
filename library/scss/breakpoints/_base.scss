@@ -213,7 +213,7 @@ HEADER STYLES
 	top:0;
 	width:100%;
 	z-index:8999;
-	@include transition(background-color 275ms);
+	@include transition(background-color 375ms, height 375ms);
 	html.scrolled & {
 		background-color:rgba($black, .8);
 	}
@@ -1361,8 +1361,8 @@ HOME PAGE
 ******************************************/
 body.home {
 	#logo {
-		@include transform(translateY(-100%));
-		@include transition(transform 275ms);
+		@include transform(translateY(-150%));
+		@include transition(transform 375ms);
 		html.secondary-scrolled & {
 			@include transform(translateY(0));
 		}

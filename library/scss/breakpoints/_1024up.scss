@@ -20,6 +20,13 @@ LAYOUT & GRID STYLES
 	font-size:3em;
 	height:65px;
 	line-height:65px;
+	a {
+		&:before {
+			height:70px;
+			width:55px;
+			left:-4px;
+		}
+	}
 }
 #container #content, #logo {
 	@include transition(all 275ms);
