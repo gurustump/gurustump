@@ -6,10 +6,12 @@
 					<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Person">
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<?php $personMeta = get_post_meta(get_the_ID()); ?>
+						<?php if (has_post_thumbnail()) { ?>
 						<div class="headshot">
 							<?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>
 						</div>
-						<article id="post-<?php the_ID(); ?>" role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+						<?php } ?>
+						<article id="post-<?php the_ID(); ?>" role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting"<?php echo has_post_thumbnail() ? '' : ' class="no-headshot"'; ?>>
 							<header class="show-header">
 								<h1 class="show-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 								<?php if ($personMeta['_gurustump_person_duration'][0] || $personMeta['_gurustump_person_age_restriction'][0] || $personMeta['_gurustump_person_country'][0] || $personMeta['_gurustump_person_imdb_url'][0] || $personMeta['_gurustump_person_homepage_url'][0]) { ?>
