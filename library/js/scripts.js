@@ -336,7 +336,7 @@ jQuery(document).ready(function($) {
 		var closeButton = $('.VID_PLAYER_OV .OV_CLOSE');
 		function videoIntervalCheck() {
 			clearInterval(videoUpdateInterval);
-			if (vid_credits_timecode.val() != '') {
+			if (vid_credits_timecode.val() != '' && vid_next_id.val()) {
 				videoUpdateInterval = setInterval(function () {
 					if (parseInt(player.getCurrentTime()) > parseInt(vid_credits_timecode.val())) {
 						if (!nextVideoTriggered) {
@@ -351,7 +351,7 @@ jQuery(document).ready(function($) {
 								document.webkitExitFullscreen();
 							}
 							nextVideoTriggered = true;
-							nextPlayCountdownNumber = parseInt(player.getDuration()) - parseInt(vid_credits_timecode.val()) < 12 ? parseInt(player.getDuration()) - parseInt(vid_credits_timecode.val()) : 12
+							nextPlayCountdownNumber = parseInt(player.getDuration()) - parseInt(player.getCurrentTime()) -1 < 12 ? parseInt(player.getDuration()) - parseInt(player.getCurrentTime()) -1  : 12
 						} else {
 							nextPlayCountdownNumber = nextPlayCountdownNumber - 1;
 						}
@@ -359,14 +359,9 @@ jQuery(document).ready(function($) {
 						if (nextPlayCountdownNumber <= 0) {
 							clearVideoIntervalCheck();
 							if (isSingleShow) {
-								location.href = $('.VID_NEXT_PAGE').attr('href') + '?autoplay';
+								location.href = $('.VID_NEXT_PAGE').attr('href');
 							} else {
-								$('.VIDEO_PLAY').each(function() {
-									if ($(this).attr('data-video-ID') == vid_next_id.val()) {
-										$(this).click();
-										return false;
-									}
-								});
+								playNextVideo();
 							}
 						}
 					}
@@ -382,14 +377,14 @@ jQuery(document).ready(function($) {
 				width:1280,
 				height:720,
 				events: {
-					/*onReady: function() {
-						clearInterval(videoUpdateInterval);
-
-						videoUpdateInterval = setInterval(function () {
-							console.log(player.getCurrentTime());
-							console.log(player.getDuration());
-						}, 1000)
-					},*/
+					onReady: function() {
+						if (isSingleShow) {
+							var queryString = getQueryString();
+							if (queryString['autoplay']) {
+								$('.TRIGGER_VIDEO').click();
+							}
+						}
+					},
 					onStateChange : function(e) {
 						console.log(e.data);
 						if (e.data == 1 && !mobileDeviceType()) {
@@ -402,6 +397,8 @@ jQuery(document).ready(function($) {
 			});
 		}
 		$('.VID_THUMBS_LIST a.VIDEO_PLAY, .TRIGGER_VIDEO').click(function(e) {
+			clearVideoIntervalCheck();
+			nextVideoTriggered = false;
 			var videoID = $(this).attr('data-video-ID');
 			if (videoID) {
 				e.preventDefault();
@@ -409,7 +406,7 @@ jQuery(document).ready(function($) {
 				if (videoID != vid_player_current_id.val()) {
 					vid_player_current_id.val(videoID);
 					vid_next_id.val($(this).attr('data-next-ID'));
-					vid_next_page.attr('href', $(this).attr('data-next-page'));
+					vid_next_page.attr('href', $(this).attr('data-next-page') + '?autoplay');
 					vid_next_title.text($(this).attr('data-next-title'));
 					vid_next_thumb.attr({
 						'src':$(this).attr('data-next-thumb-src'),
@@ -435,12 +432,22 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			clearVideoIntervalCheck();
 		});
+		$('.VID_NEXT_PAGE').click(function(e) {
+			if (!isSingleShow) {
+				e.preventDefault();
+				playNextVideo();
+			}
+		});
+		function playNextVideo() {
+			$('.VIDEO_PLAY').each(function() {
+				if ($(this).attr('data-video-ID') == vid_next_id.val()) {
+					$(this).click();
+					return false;
+				}
+			});
+		}
 	}
 	if (isSingleShow) {
-		var queryString = getQueryString();
-		if (queryString['autoplay']) {
-			$('.TRIGGER_VIDEO').click();
-		}
 		// hiding and showing cast or crew lists
 		var castCrew = $('.CAST_CREW');
 		if (castCrew.find('tr.cast').length >= 10) {
