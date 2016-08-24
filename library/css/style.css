@@ -3466,15 +3466,89 @@ body.single-shows .show-content {
 body.single-shows .cast-crew {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 1714, ../scss/breakpoints/_base.scss */
+/* line 1718, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:before {
+  content: "show";
+}
+/* line 1721, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:after {
+  border-bottom-color: transparent;
+  border-top: 5px solid white;
+  top: 55%;
+}
+/* line 1728, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew.hide-cast .data-table .cast, body.single-shows .cast-crew.hide-cast .data-table .cast td {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+}
+/* line 1740, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:before {
+  content: "show";
+}
+/* line 1743, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:after {
+  border-bottom-color: transparent;
+  border-top: 5px solid white;
+  top: 55%;
+}
+/* line 1750, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew.hide-crew .data-table .crew, body.single-shows .cast-crew.hide-crew .data-table .crew td {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+}
+/* line 1758, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table {
   width: 100%;
 }
-/* line 1718, ../scss/breakpoints/_base.scss */
+/* line 1760, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew .data-table .subheading {
+  cursor: pointer;
+}
+/* line 1762, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew .data-table .subheading td {
+  position: relative;
+}
+/* line 161, ../scss/partials/_mixins.scss */
+body.single-shows .cast-crew .data-table .subheading td:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  float: none;
+  margin: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  border-bottom: 5px solid white;
+}
+/* line 1765, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew .data-table .subheading td:before {
+  content: "hide";
+  text-transform: uppercase;
+  font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  right: 30px;
+}
+/* line 1772, ../scss/breakpoints/_base.scss */
+body.single-shows .cast-crew .data-table .subheading td:after {
+  position: absolute;
+  right: 10px;
+}
+/* line 1780, ../scss/breakpoints/_base.scss */
 body.single-shows .show-gallery {
   padding: 20px 0;
 }
-/* line 1722, ../scss/breakpoints/_base.scss */
+/* line 1784, ../scss/breakpoints/_base.scss */
 body.single-shows .thumb-index .thumb-index-inner {
   margin: 0 -15px;
 }
@@ -3482,37 +3556,37 @@ body.single-shows .thumb-index .thumb-index-inner {
 /******************************************
 SINGLE PERSON PAGE
 ******************************************/
-/* line 1732, ../scss/breakpoints/_base.scss */
+/* line 1794, ../scss/breakpoints/_base.scss */
 body.single-people .headshot {
   margin: 0 -15px 20px;
 }
-/* line 1734, ../scss/breakpoints/_base.scss */
+/* line 1796, ../scss/breakpoints/_base.scss */
 body.single-people .headshot img {
   max-width: 100%;
   height: auto;
 }
-/* line 1739, ../scss/breakpoints/_base.scss */
+/* line 1801, ../scss/breakpoints/_base.scss */
 body.single-people article {
   color: white;
   margin-bottom: 20px;
 }
-/* line 1743, ../scss/breakpoints/_base.scss */
+/* line 1805, ../scss/breakpoints/_base.scss */
 body.single-people .person-info {
   margin: 0 -15px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8em;
 }
-/* line 1749, ../scss/breakpoints/_base.scss */
+/* line 1811, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery {
   clear: left;
   margin: 0 -15px 20px;
 }
-/* line 1752, ../scss/breakpoints/_base.scss */
+/* line 1814, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0 15px;
 }
-/* line 1757, ../scss/breakpoints/_base.scss */
+/* line 1819, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a {
   position: absolute;
   top: 0;
@@ -3536,11 +3610,11 @@ body.single-people .person-vid-gallery .thumb-index-list > li a {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 1771, ../scss/breakpoints/_base.scss */
+/* line 1833, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a:hover {
   opacity: 1;
 }
-/* line 1774, ../scss/breakpoints/_base.scss */
+/* line 1836, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a span {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);

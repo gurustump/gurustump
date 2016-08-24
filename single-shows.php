@@ -83,8 +83,8 @@
 								<?php the_content(); ?>
 							</div>
 							<div class="show-details">
-								<?php if ($showMeta['_gurustump_show_director'][0] || $showMeta['_gurustump_show_producer'][0] || $showMeta['_gurustump_show_writer'][0] || $showMeta['_gurustump_show_cast'][0]) { ?>
-								<div class="cast-crew">
+								<?php if ($showMeta['_gurustump_show_director'][0] || $showMeta['_gurustump_show_producer'][0] || $showMeta['_gurustump_show_writer'][0] || $showMeta['_gurustump_show_dp'][0] || $showMeta['_gurustump_show_editor'][0] || $showMeta['_gurustump_show_cast'][0]) { ?>
+								<div class="cast-crew CAST_CREW">
 									<table class="data-table">
 										<?php if ($showMeta['_gurustump_show_director'][0]) { 
 										$directorArray = explode(',',$showMeta['_gurustump_show_director'][0]);
@@ -122,9 +122,33 @@
 											?></td>
 										</tr>
 										<?php } ?>
+										<?php if ($showMeta['_gurustump_show_dp'][0]) {
+										$dpArray = explode(',',$showMeta['_gurustump_show_dp'][0]);
+										?>
+										<tr>
+											<td>Director of Photography</td>
+											<td><?php
+												foreach($dpArray as $key => $item) { ?>
+													<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($dpArray) ? '' : ', '; ?>
+												<?php }
+											?></td>
+										</tr>
+										<?php } ?>
+										<?php if ($showMeta['_gurustump_show_editor'][0]) {
+										$editorArray = explode(',',$showMeta['_gurustump_show_editor'][0]);
+										?>
+										<tr>
+											<td>Editor</td>
+											<td><?php
+												foreach($editorArray as $key => $item) { ?>
+													<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($editorArray) ? '' : ', '; ?>
+												<?php }
+											?></td>
+										</tr>
+										<?php } ?>
 										<?php $castMeta = get_post_meta(get_the_ID(), '_gurustump_show_cast', true);
 										if (count($castMeta[0]) > 0) { ?>
-										<tr class="subheading">
+										<tr class="subheading sub-cast TOGGLE_CAST">
 											<td colspan="2">Cast</td>
 										</tr>
 											<?php foreach($castMeta as $key => $castmember) { 
@@ -142,7 +166,7 @@
 										<?php } ?>
 										<?php $crewMeta = get_post_meta(get_the_ID(), '_gurustump_show_other_crew', true);
 										if (count($crewMeta[0]) > 0) { ?>
-										<tr class="subheading">
+										<tr class="subheading sub-crew TOGGLE_CREW">
 											<td colspan="2">Other Crew</td>
 										</tr>
 											<?php foreach($crewMeta as $key => $crewmember) { 

@@ -1711,8 +1711,70 @@ body.single-shows {
 	}
 	.cast-crew {
 		border-top:1px solid rgba($white, .2);
+		&.hide-cast {
+			.data-table {
+				.sub-cast {
+					td {
+						&:before {
+							content:"show";
+						}
+						&:after {
+							border-bottom-color:transparent;
+							border-top:5px solid $white;
+							top:55%;
+						}
+					}
+				}
+				.cast, .cast td {
+					display:block;
+					overflow:hidden;
+					height:0;
+					padding:0;
+				}
+			}
+		}
+		&.hide-crew {
+			.data-table {
+				.sub-crew {
+					td {
+						&:before {
+							content:"show";
+						}
+						&:after {
+							border-bottom-color:transparent;
+							border-top:5px solid $white;
+							top:55%;
+						}
+					}
+				}
+				.crew, .crew td {
+					display:block;
+					overflow:hidden;
+					height:0;
+					padding:0;
+				}
+			}
+		}
 		.data-table {
 			width:100%;
+			.subheading {
+				cursor:pointer;
+				td {
+					position:relative;
+					@include tri(top, 7px, 5px, $white, 0, block, none, vcenter);
+					&:before {
+						content:"hide";
+						text-transform:uppercase;
+						font-family:$headingfont;
+						position:absolute;
+						right:30px;
+					}
+					&:after {
+						position:absolute;
+						right:10px;
+					}
+				}
+			}
 		}
 	}
 	.show-gallery {

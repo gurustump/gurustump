@@ -441,6 +441,27 @@ jQuery(document).ready(function($) {
 		if (queryString['autoplay']) {
 			$('.TRIGGER_VIDEO').click();
 		}
+		// hiding and showing cast or crew lists
+		var castCrew = $('.CAST_CREW');
+		if (castCrew.find('tr.cast').length >= 10) {
+			toggleCast();
+		}
+		console.log(castCrew.find('tr.crew').length);
+		if (castCrew.find('tr.crew').length >= 10) {
+			toggleCrew();
+		}
+		castCrew.find('.TOGGLE_CAST').click(function() {
+			 toggleCast();
+		});
+		castCrew.find('.TOGGLE_CREW').click(function() {
+			 toggleCrew();
+		});
+		function toggleCast() {
+			castCrew.toggleClass('hide-cast');
+		}
+		function toggleCrew() {
+			castCrew.toggleClass('hide-crew');
+		}
 	}
 
 }); /* end of as page load scripts */

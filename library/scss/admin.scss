@@ -10,26 +10,3 @@ is empty, but you can just start dropping your styles here to
 start customizing. All admin functions are located in lib/admin/
 
 ******************************************************************/
-
-
-.menu-icon-shows {
-	.dashicons-before {
-		&:before {
-			content:"\f235";
-		}
-	}
-}
-.menu-icon-module {
-	.dashicons-before {
-		&:before {
-			content:"\f509";
-		}
-	}
-}
-.menu-icon-people {
-	.dashicons-before {
-		&:before {
-			content:"\f483";
-		}
-	}
-}
