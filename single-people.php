@@ -89,6 +89,8 @@
 											if ($showMeta['_gurustump_show_director'][0] == get_the_ID() || 
 												$showMeta['_gurustump_show_producer'][0] == get_the_ID() || 
 												$showMeta['_gurustump_show_writer'][0] == get_the_ID() ||
+												$showMeta['_gurustump_show_dp'][0] == get_the_ID() ||
+												$showMeta['_gurustump_show_editor'][0] == get_the_ID() ||
 												$inCast ||
 												$inCrew) { ?>
 												<li>
