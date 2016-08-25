@@ -1275,6 +1275,9 @@ FOOTER STYLES
 	background:url(../images/jack-dark.jpg) no-repeat 80% 0 / cover;
 	border-top:2px solid $black;
 	@include box-sizing;
+	#inner-footer {
+		@include v-center;
+	}
 }
 
 /*
