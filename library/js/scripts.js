@@ -217,7 +217,7 @@ jQuery(document).ready(function($) {
 		$(this).closest('.OV').removeClass('active');
 	});
 	
-	$(document).keyup(function(e) {
+	win.keyup(function(e) {
 		if (e.keyCode == 27 || e.which == 27) {
 			$('.OV').removeClass('active');
 		}
@@ -422,7 +422,7 @@ jQuery(document).ready(function($) {
 			player.pauseVideo();
 			clearVideoIntervalCheck();
 		});
-		$(document).keyup(function(e) {
+		win.keyup(function(e) {
 			if (e.keyCode == 27 || e.which == 27) {
 				player.pauseVideo();
 				clearVideoIntervalCheck();
