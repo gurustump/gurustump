@@ -72,19 +72,22 @@
 											$castMeta = get_post_meta($show->ID, '_gurustump_show_cast', true);
 											$inCast = false;
 											foreach($castMeta as $item) {
-												if ($item[name] == get_the_ID()) {
+												// in case there is more than one person playing a character, create an array of the actors and check if this person's ID is in it
+												if (in_array(get_the_ID(), explode(',', str_replace(' ', '', $item[name])))) {
 													$inCast = true;
 													break;
 												}
 											}
 											$crewMeta = get_post_meta($show->ID, '_gurustump_show_other_crew', true);
 											$inCrew = false;
-											foreach($crewMeta as $item) {
-												if ($item[name] == get_the_ID()) {
+											foreach($crewMeta as $key => $item) {
+												// same as for cast above, create an array for each crew position and check if this person is in it
+												if (in_array(get_the_ID(), explode(',', str_replace(' ', '', $item[name])))) {
 													$inCrew = true;
 													break;
 												}
-											}
+											} ?>
+											<?php 
 											// filter the movies so only the ones where this person was in the cast or crew get written into the page
 											if ($showMeta['_gurustump_show_director'][0] == get_the_ID() || 
 												$showMeta['_gurustump_show_producer'][0] == get_the_ID() || 
