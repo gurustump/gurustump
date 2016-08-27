@@ -10,26 +10,29 @@
 				<header class="page-header">
 					<h1 class="page-title"><?php the_title(); ?></h1>
 				</header>
+				<?php $headerGalleryMeta = get_post_meta(get_the_ID(), '_gurustump_page_index_gallery', true);
+				if ($headerGalleryMeta) { ?>
 				<ul class="rotating-gallery SUBHEAD_CAROUSEL">
-					<?php $headerGalleryMeta = get_post_meta(get_the_ID(), '_gurustump_page_index_gallery', true);
-					$headerGalleryIdsString = substr($headerGalleryMeta, strpos($headerGalleryMeta, 'ids="') + 5);
-					$headerGalleryIdsString = substr($headerGalleryIdsString, 0, -1*(strlen($headerGalleryIdsString) - strpos($headerGalleryIdsString, '"')));
-					$headerGalleryIdsArray = explode(',',$headerGalleryIdsString);
-					foreach ($headerGalleryIdsArray as $key => $image) {
-						$imageSrc = wp_get_attachment_image_src($image, 'extra-large');
+					<?php $headerGalleryCounter = 0;
+					foreach ($headerGalleryMeta as $key => $image) {
+						$imageSrc = wp_get_attachment_image_src($key, 'extra-large');
 						?>
-						<li<?php echo $key == 0 ? ' class="active"' : ''; ?> style="background-image:url(<?php echo $imageSrc[0]; ?>)">
+						<li<?php echo $headerGalleryCounter == 0 ? ' class="active"' : ''; ?> style="background-image:url(<?php echo $imageSrc[0]; ?>)">
 							<?php /* <img src="<?php echo $imageSrc[0]; ?>" /> */ ?>
 						</li>
+						<?php $headerGalleryCounter++; ?>
 					<?php }; ?>
 				</ul>
+				<?php } ?>
+				<?php $submenuMeta = get_post_meta(get_the_ID(), '_gurustump_page_submenu', true);
+				if ($submenuMeta) { ?>
 				<nav class="index-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu(array(
 							 'container' => false,                           // remove nav container
 							 'container_class' => 'menu',                 // class of container (should you choose to use it)
-							 'menu' => __( 'Video Index Menu', 'bonestheme' ),  // nav name
+							 'menu' =>  $submenuMeta,  // nav name
 							 'menu_class' => 'index-menu',               // adding custom nav class
-							 'theme_location' => 'video-index',                 // where it's located in the theme
+							 //'theme_location' => 'video-index',                 // where it's located in the theme
 							 'before' => '',                                 // before the menu
 							   'after' => '',                                  // after the menu
 							   'link_before' => '',                            // before each link
@@ -38,6 +41,7 @@
 							 'fallback_cb' => ''                             // fallback function (if there is one)
 					)); ?>
 				</nav>
+				<?php } ?>
 			</div>
 			<div id="content">
 
@@ -88,9 +92,18 @@
 						<?php get_sidebar(); ?>
 
 				</div>
-
+			</div> <?php // end content ?>
+			<?php $fileMeta = get_post_meta(get_the_ID(), '_gurustump_page_file', true);
+			if ($fileMeta) { ?>
+			<div class="ov vid-player-container OV VID_PLAYER_OV">
+				<div class="vid-player-wrapper ov-inner-wrapper VID_PLAYER_WRAPPER">
+					<video preload="auto" controls>
+						<source src="<?php echo $fileMeta; ?>" type="video/mp4">
+					</video>
+				</div>
+				<a class="ov-close OV_CLOSE" href="#">Close</a>
 			</div>
+			<?php } ?>
 			<?php endwhile; endif; ?>
-
 
 <?php get_footer(); ?>

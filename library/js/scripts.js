@@ -142,6 +142,7 @@ jQuery(document).ready(function($) {
 	// Check what page we're on
 	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
 	if (typeof isIndex === "undefined") var isIndex = $('body').hasClass('page-template-page-index');
+	if (typeof isVideoIndex === "undefined") var isVideoIndex = $('body').hasClass('page-video-production');
 	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('video-gallery') || $('body').hasClass('single-shows');
 	if (typeof isVideoGallery === "undefined") var isVideoGallery = $('body').hasClass('video-gallery');
 	if (typeof isSingleShow === "undefined") var isSingleShow = $('body').hasClass('single-shows');
@@ -240,10 +241,6 @@ jQuery(document).ready(function($) {
 		}, duration);
 	}
 	
-	if (isIndex) {
-		simpleAutoCarousel($('.SUBHEAD_CAROUSEL'), 15000);
-	}
-	
 	// GALLERY OVERLAY
 	$('#gallery_item_ov').on('click', '.PREV, .NEXT', function(e) {
 		e.preventDefault();
@@ -299,6 +296,42 @@ jQuery(document).ready(function($) {
 				'alt':$(this).find('img').attr('alt')
 			});
 			galOv.addClass('ready');
+		}
+	}
+	
+	// SPECIFIC PAGES
+	if (isIndex) {
+		simpleAutoCarousel($('.SUBHEAD_CAROUSEL'), 15000);
+		var playerContainer = $('.VID_PLAYER_OV');
+		var playerWrap = playerContainer.find('.VID_PLAYER_WRAPPER');
+		var video = playerWrap.find('video');
+		var player = video.get(0);
+		var playButton = $('.VIDEO_PLAY');
+		playButton.click(function(e) {
+			e.preventDefault();
+			playerContainer.addClass('active');
+			player.play();
+		});
+		if (isVideoIndex) {
+			$('.REEL_PLAY').click(function(e) {
+				e.preventDefault();
+				playButton.click();
+			});
+		}
+		video.on('ended', function() {
+			playerContainer.removeClass('active');
+		});
+		playerContainer.find('.OV_CLOSE').click(function() {
+			player.pause();
+		});
+		win.keyup(function(e) {
+			if (e.keyCode == 27 || e.which == 27) {
+				player.pause();
+			}
+		});
+		var queryString = getQueryString();
+		if (queryString['videoplay']) {
+			$('.VIDEO_PLAY').click();
 		}
 	}
 	

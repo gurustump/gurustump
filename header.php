@@ -51,7 +51,15 @@
 		add_filter( 'body_class', function( $classes ) {
 			return array_merge($classes, array('video-gallery'));
 		});
-	} ?>
+	}
+	function add_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+	}
+	add_filter( 'body_class', 'add_slug_body_class' ); ?>
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 		<div id="container">

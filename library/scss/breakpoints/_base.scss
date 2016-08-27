@@ -841,6 +841,10 @@ POSTS & CONTENT STYLES
 				top:0;
 				z-index:1;
 			}
+			& > video {
+				max-width:100%;
+				height:auto;
+			}
 			.vid-playing-next {
 				display:none;
 			}
@@ -1516,6 +1520,9 @@ body.home {
 			.actions {
 				clear:left;
 				text-align:center;
+				.btn {
+					margin:0 10px 10px;
+				}
 			}
 		}
 	}
