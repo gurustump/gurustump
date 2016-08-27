@@ -10,3 +10,14 @@ is empty, but you can just start dropping your styles here to
 start customizing. All admin functions are located in lib/admin/
 
 ******************************************************************/
+
+#posts-filter {
+	.wp-list-table {
+		th, td {
+			width:auto;
+			&.check-column {
+				width:2.2em;
+			}
+		}
+	}
+}
