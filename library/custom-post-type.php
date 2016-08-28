@@ -243,6 +243,50 @@ function person_custom_type() {
 // adding the function to the Wordpress init
 add_action( 'init', 'person_custom_type');	
 
+
+// Person custom post type
+function equipment_custom_type() { 
+	// creating (registering) the custom type 
+	register_post_type( 'equipment', // (http://codex.wordpress.org/Function_Reference/register_post_type) 
+		// let's now add all the options for this post type
+		array( 'labels' => array(
+			'name' => __( 'Equipment', 'bonestheme' ), 
+			'singular_name' => __( 'Equipment Package', 'bonestheme' ), 
+			'all_items' => __( 'All Equipment Packages', 'bonestheme' ),
+			'add_new' => __( 'Add New', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Equipment Package', 'bonestheme' ),
+			'edit' => __( 'Edit', 'bonestheme' ),
+			'edit_item' => __( 'Edit Equipment Package', 'bonestheme' ),
+			'new_item' => __( 'New Equipment Package', 'bonestheme' ),
+			'view_item' => __( 'View Equipment Package', 'bonestheme' ),
+			'search_items' => __( 'Search Equipment Package', 'bonestheme' ),
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
+			'parent_item_colon' => ''
+			),
+			'description' => __( 'Available sets of equipment to be rented', 'bonestheme' ),
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 8,
+			'menu_icon' => 'dashicons-hammer',
+			'rewrite'	=> array( 'slug' => 'equipment', 'with_front' => false ),
+			//'has_archive' => 'show',
+			'has_archive' => false,
+			'hierarchical' => false,
+				'capability_type' => 'post',
+			// the next one is important, it tells what's enabled in the post editor 
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
+		) // end of options 
+	); // end of register post type 
+	
+}
+
+// adding the function to the Wordpress init
+add_action( 'init', 'equipment_custom_type');	
+
 /*
 // let's create the function for the custom type
 function custom_post_example() { 

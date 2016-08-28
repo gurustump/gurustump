@@ -28,6 +28,11 @@ LAYOUT & GRID STYLES
 #container {
 	#content {
 		margin-bottom:300px;
+		/* stupid spacer for iphones */
+		&:after {
+			height:300px;
+			bottom:-300px;
+		}
 	}
 }
 .wrap {

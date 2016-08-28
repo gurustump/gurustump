@@ -17,6 +17,10 @@ LAYOUT & GRID STYLES
 	}
 	#content {
 		margin-bottom:400px;
+		/* stupid spacer for iphones */
+		&:after {
+			display:none;
+		}
 	}
 }
 .wrap, .header .wrap {

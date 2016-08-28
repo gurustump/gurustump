@@ -111,6 +111,15 @@ LAYOUT & GRID STYLES
 		position:relative;
 		z-index:1;
 		background:$black url(../images/bg-body.png);
+		/* stupid spacer for iphones */
+		&:after {
+			content:"";
+			position:absolute;
+			width:1px;
+			height:200px;
+			left:0;
+			bottom:-200px;
+		}
 	}
 }
 .header .wrap {

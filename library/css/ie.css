@@ -192,14 +192,20 @@ LAYOUT & GRID STYLES
 /* line 29, ../scss/breakpoints/_481up.scss */
 #container #content {
   margin-bottom: 300px;
+  /* stupid spacer for iphones */
+}
+/* line 32, ../scss/breakpoints/_481up.scss */
+#container #content:after {
+  height: 300px;
+  bottom: -300px;
 }
 
-/* line 33, ../scss/breakpoints/_481up.scss */
+/* line 38, ../scss/breakpoints/_481up.scss */
 .wrap {
   margin: 0 20px;
 }
 
-/* line 36, ../scss/breakpoints/_481up.scss */
+/* line 41, ../scss/breakpoints/_481up.scss */
 #logo {
   margin-left: 20px;
 }
@@ -208,23 +214,23 @@ LAYOUT & GRID STYLES
 NAVIGATION STYLES
 *********************/
 /* .menu is clearfixed inside mixins.scss */
-/* line 47, ../scss/breakpoints/_481up.scss */
+/* line 52, ../scss/breakpoints/_481up.scss */
 .menu {
   /* end .menu ul */
 }
-/* line 48, ../scss/breakpoints/_481up.scss */
+/* line 53, ../scss/breakpoints/_481up.scss */
 .menu ul {
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 49, ../scss/breakpoints/_481up.scss */
+/* line 54, ../scss/breakpoints/_481up.scss */
 .menu ul li {
   /*
   plan your menus and drop-downs wisely.
   */
 }
-/* line 50, ../scss/breakpoints/_481up.scss */
+/* line 55, ../scss/breakpoints/_481up.scss */
 .menu ul li a {
   /*
   you can use hover styles here even though this size
@@ -237,23 +243,23 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 /* entry content */
-/* line 95, ../scss/breakpoints/_481up.scss */
+/* line 100, ../scss/breakpoints/_481up.scss */
 .entry-content {
   /* at this larger size, we can start to align images */
 }
-/* line 99, ../scss/breakpoints/_481up.scss */
+/* line 104, ../scss/breakpoints/_481up.scss */
 .entry-content .alignleft, .entry-content img.alignleft {
   margin-right: 1.5em;
   display: inline;
   float: left;
 }
-/* line 104, ../scss/breakpoints/_481up.scss */
+/* line 109, ../scss/breakpoints/_481up.scss */
 .entry-content .alignright, .entry-content img.alignright {
   margin-left: 1.5em;
   display: inline;
   float: right;
 }
-/* line 109, ../scss/breakpoints/_481up.scss */
+/* line 114, ../scss/breakpoints/_481up.scss */
 .entry-content .aligncenter, .entry-content img.aligncenter {
   margin-right: auto;
   margin-left: auto;
@@ -271,7 +277,7 @@ POSTS & CONTENT STYLES
   visibility: hidden;
   clear: both;
 }
-/* line 121, ../scss/breakpoints/_481up.scss */
+/* line 126, ../scss/breakpoints/_481up.scss */
 .video-thumb-index .thumb-index-list > li {
   float: left;
   width: 50%;
@@ -280,7 +286,7 @@ POSTS & CONTENT STYLES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 132, ../scss/breakpoints/_481up.scss */
+/* line 137, ../scss/breakpoints/_481up.scss */
 .footer {
   height: 300px;
   background-position: 70% 0;
@@ -293,7 +299,7 @@ INDIVIDUAL PAGES
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 150, ../scss/breakpoints/_481up.scss */
+/* line 155, ../scss/breakpoints/_481up.scss */
 body.home {
   /*.services {
   	h3 {
@@ -312,27 +318,27 @@ body.home {
   	}
   }*/
 }
-/* line 151, ../scss/breakpoints/_481up.scss */
+/* line 156, ../scss/breakpoints/_481up.scss */
 body.home .home-logo {
   background-position: 70% 0;
   min-height: 300px;
 }
-/* line 154, ../scss/breakpoints/_481up.scss */
+/* line 159, ../scss/breakpoints/_481up.scss */
 body.home .home-logo:after {
   content: "";
   display: block;
   width: 100%;
   margin-top: 30%;
 }
-/* line 160, ../scss/breakpoints/_481up.scss */
+/* line 165, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h1, body.home .home-logo h2 {
   color: white;
 }
-/* line 163, ../scss/breakpoints/_481up.scss */
+/* line 168, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h1 {
   font-size: 3.5em;
 }
-/* line 166, ../scss/breakpoints/_481up.scss */
+/* line 171, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h2 {
   font-size: 1.44em;
 }
@@ -340,7 +346,7 @@ body.home .home-logo h2 {
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 193, ../scss/breakpoints/_481up.scss */
+/* line 198, ../scss/breakpoints/_481up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: -20px;
   margin-right: -20px;

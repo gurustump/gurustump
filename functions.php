@@ -244,6 +244,9 @@ function bones_fonts() {
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
+// add excerpts to pages
+add_post_type_support( 'page', 'excerpt' );
+
 // shortcodes
 // root path shortcode
 function root_path_shortcode() {
