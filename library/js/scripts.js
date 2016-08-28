@@ -339,7 +339,6 @@ jQuery(document).ready(function($) {
 		var catSelect = $('.CAT_SELECT');
 		var thumbsList = $('.VID_THUMBS_LIST');
 		function makeCatSelection() {
-			console.log(catSelect.val());
 			if (catSelect.val() == '') {
 				thumbsList.children('li').addClass('selected');
 			} else {
@@ -350,6 +349,17 @@ jQuery(document).ready(function($) {
 		catSelect.change(function() {
 			makeCatSelection();
 		});
+		var queryString = getQueryString();
+		if (queryString['filter']) {
+			var queryStringFilter = queryString['filter'];
+			if (queryStringFilter == 'all') {
+				catSelect.val('');
+				catSelect.change();
+			} else if (catSelect.find('option[value="cat-'+queryStringFilter+'"]').length > 0) {
+				catSelect.val('cat-'+queryStringFilter);
+				catSelect.change();
+			}
+		}
 	}
 	
 	if (isVideo) {
@@ -419,7 +429,6 @@ jQuery(document).ready(function($) {
 						}
 					},
 					onStateChange : function(e) {
-						console.log(e.data);
 						if (e.data == 1 && !mobileDeviceType()) {
 							videoIntervalCheck() ;
 						} else {
@@ -486,7 +495,6 @@ jQuery(document).ready(function($) {
 		if (castCrew.find('tr.cast').length >= 10) {
 			toggleCast();
 		}
-		console.log(castCrew.find('tr.crew').length);
 		if (castCrew.find('tr.crew').length >= 10) {
 			toggleCrew();
 		}

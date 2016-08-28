@@ -3610,7 +3610,7 @@ body.single-people article.no-headshot {
 }
 /* line 1829, ../scss/breakpoints/_base.scss */
 body.single-people .person-info {
-  margin: 0 -15px;
+  margin: 0 -15px 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8em;
