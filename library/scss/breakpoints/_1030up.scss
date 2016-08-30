@@ -111,6 +111,62 @@ NAVIGATION STYLES
 	display:none;
 }
 
+/* gallery styles */
+.video-thumb-index {
+	.thumb-index-list {
+		& > li {
+			&:hover {
+				.actions {
+					opacity:1;
+				}
+			}
+		}
+	}
+	.actions {
+		font-family:$headingfont;
+		background:rgba($black, .8);
+		opacity:0;
+		padding:8px 0;
+		@include box-sizing;
+		@include transition(opacity .375s);
+		@include clearfix;
+		.item-head {
+			display:block;
+			text-align:center;
+			color:$white;
+		}
+		.btn-info {
+			height:auto;
+			&:before, &:after {
+				display:block;
+			}
+		}
+		.item-head, .btn-play, .btn-external {
+			display:block;
+		}
+		.btn-play, .btn-info, .btn-external {
+			width:50%;
+			float:left;
+			text-align:center;
+			@include v-center;
+		}
+		.btn-external {
+			padding-top:58px;
+			&:before {
+				position:absolute;
+				top:4px;
+				left:50%;
+				@include transform(translateX(-50%));
+			}
+		}
+		.full-width {
+			width:100%;
+			float:none;
+			display:block;
+		}
+	}
+}
+
 /* Overlay styles */
 .ov {
 	&.vid-player-container {
