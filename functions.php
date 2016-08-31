@@ -258,6 +258,15 @@ add_shortcode('root_path', 'root_path_shortcode');
 // filtering gallery shortcode
 add_shortcode('gallery', 'gurustump_gallery_shortcode');
 
+// Allow editing of content on Posts page (blog, or index.php)
+add_action( 'edit_form_after_title', 'posts_page_edit_form' );
+function posts_page_edit_form( $post ) {
+	$posts_page = get_option( 'page_for_posts' );
+	if ( $posts_page === $post->ID ) {
+		add_post_type_support( 'page', 'editor' );
+	}
+}
+
 /**
  * The Gallery shortcode.
  *

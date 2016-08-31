@@ -624,6 +624,18 @@ POSTS & CONTENT STYLES
 
 } /* end .wp-caption */
 
+/* Blog Style */
+.blog-index-list {
+	& > li {
+		margin-bottom:30px;
+		.wp-post-image {
+			max-width:100%;
+			height:auto;
+			display:block;
+		}
+	}
+}
+
 /* image gallery styles */
 .gallery {
 
@@ -882,56 +894,56 @@ PAGE NAVI STYLES
 .wp-prev-next {
 	margin: 1.5em 0;
 }
-	.pagination{
-    text-align: center;
-
+.pagination {
+    text-align:center;
     ul {
-      display: inline-block;
-      background-color: $white;
-      white-space: nowrap;
-      padding: 0;
-      clear: both;
-      border-radius: 3px;
+		display:inline-block;
+		white-space:nowrap;
+		padding:0;
+		clear:both;
+		border-radius:3px;
     }
 
     li {
-      padding: 0;
-      margin: 0;
-      float: left;
-      display: inline;
-      overflow: hidden;
-      border-right: 1px solid $gray;
+		padding: 0;
+		margin: 0;
+		float: left;
+		display: inline;
+		overflow: hidden;
     }
-
+	li:first-child {
+		a, span {
+			margin-left:0;
+		}
+	}
     a, span {
-      margin: 0;
-      text-decoration: none;
-      padding: 0;
-      line-height: 1em;
-      font-size: 1em;
-      font-weight: normal;
-      padding: 0.75em;
-      min-width: 1em;
-      display: block;
-      color: $blue;
-
-      &:hover, &:focus {
-      	background-color: $blue;
-      	color: $white;
-      }
+		margin:0;
+		text-decoration:none;
+		padding:0;
+		line-height:1em;
+		font-size:1em;
+		font-weight:normal;
+		padding:0.75em;
+		min-width:1em;
+		display:block;
+		color:$link-color;
+		border:1px solid rgba($white, .1);
+		margin-left:-1px;
+		@include transition(color .375s, background-color .375s);
+	}
+	a {
+		&:hover {
+			background-color:$link-color;
+			color:$white;
+		}
     }
 
-    .current{
-    	cursor: default;
-    	color: $text-color;
+	.current {
+		cursor:default;
+		color:$text-color;
+	}
 
-    	&:hover, &:focus {
-    		background-color: $white;
-    		color: $text-color;
-    	}
-    }
-
-  } /* end .bones_page_navi */
+} /* end .bones_page_navi */
 
 	/* fallback previous & next links */
 	.wp-prev-next {

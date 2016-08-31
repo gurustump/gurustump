@@ -20,6 +20,27 @@ LAYOUT & GRID STYLES
 	margin: 0 auto;
 }
 
+/* Blog Style */
+.blog-index-list {
+	@include clearfix;
+	& > li {
+		float:left;
+		clear:none;
+		padding:0 20px 30px 0;
+		margin-bottom:0;
+		@include box-sizing;
+		width:50%;
+		height:231px; // height of image + padding
+		overflow:hidden;
+		.wp-post-image {
+			width:50%;
+			max-width:400px;
+			float:left;
+			margin:0 20px 20px 0;
+		}
+	}
+}
+
 /* image gallery styles */
 .thumb-index {
 	.thumb-index-list {

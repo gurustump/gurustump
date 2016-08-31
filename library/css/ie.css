@@ -268,6 +268,19 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
+/* Blog Style */
+/* line 126, ../scss/breakpoints/_481up.scss */
+.blog-index-list > li {
+  clear: left;
+}
+/* line 128, ../scss/breakpoints/_481up.scss */
+.blog-index-list > li .wp-post-image {
+  width: 50%;
+  max-width: 400px;
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
 /* image gallery styles */
 /* line 149, ../scss/partials/_mixins.scss */
 .video-thumb-index .thumb-index-list:after {
@@ -277,7 +290,7 @@ POSTS & CONTENT STYLES
   visibility: hidden;
   clear: both;
 }
-/* line 126, ../scss/breakpoints/_481up.scss */
+/* line 141, ../scss/breakpoints/_481up.scss */
 .video-thumb-index .thumb-index-list > li {
   float: left;
   width: 50%;
@@ -286,7 +299,7 @@ POSTS & CONTENT STYLES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 137, ../scss/breakpoints/_481up.scss */
+/* line 152, ../scss/breakpoints/_481up.scss */
 .footer {
   height: 300px;
   background-position: 70% 0;
@@ -299,7 +312,7 @@ INDIVIDUAL PAGES
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 155, ../scss/breakpoints/_481up.scss */
+/* line 170, ../scss/breakpoints/_481up.scss */
 body.home {
   /*.services {
   	h3 {
@@ -318,27 +331,27 @@ body.home {
   	}
   }*/
 }
-/* line 156, ../scss/breakpoints/_481up.scss */
+/* line 171, ../scss/breakpoints/_481up.scss */
 body.home .home-logo {
   background-position: 70% 0;
   min-height: 300px;
 }
-/* line 159, ../scss/breakpoints/_481up.scss */
+/* line 174, ../scss/breakpoints/_481up.scss */
 body.home .home-logo:after {
   content: "";
   display: block;
   width: 100%;
   margin-top: 30%;
 }
-/* line 165, ../scss/breakpoints/_481up.scss */
+/* line 180, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h1, body.home .home-logo h2 {
   color: white;
 }
-/* line 168, ../scss/breakpoints/_481up.scss */
+/* line 183, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h1 {
   font-size: 3.5em;
 }
-/* line 171, ../scss/breakpoints/_481up.scss */
+/* line 186, ../scss/breakpoints/_481up.scss */
 body.home .home-logo h2 {
   font-size: 1.44em;
 }
@@ -346,7 +359,7 @@ body.home .home-logo h2 {
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 198, ../scss/breakpoints/_481up.scss */
+/* line 213, ../scss/breakpoints/_481up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: -20px;
   margin-right: -20px;

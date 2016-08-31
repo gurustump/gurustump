@@ -119,6 +119,21 @@ POSTS & CONTENT STYLES
 	}
 
 } /* end .entry-content */
+
+
+/* Blog Style */
+.blog-index-list {
+	& > li {
+		clear:left;
+		.wp-post-image {
+			width:50%;
+			max-width:400px;
+			float:left;
+			margin:0 20px 20px 0;
+		}
+	}
+}
+
 /* image gallery styles */
 .video-thumb-index {
 	.thumb-index-list {

@@ -2,50 +2,50 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="wrap cf">
+				<div id="inner-content" class="cf">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+							<div class="wrap">
+								<?php add_action('gurustump_posts_page_before_loop', function() {
+									$posts_page = get_option( 'page_for_posts' );
+									if ( is_null( $posts_page ) ) {
+										return;
+									}
+									$title   = get_post( $posts_page )->post_title;
+									$content = get_post( $posts_page )->post_content;
+									$title_output = $content_output = '';
+									if ( $title ) { ?>
+										<h1><?php echo $title; ?></h1>
+									<?php }
+									if ( $content ) {
+										$content_output = wpautop( $content ); ?>
+										<div class="blog-description"><?php echo $content_output; ?></div>
+									<?php }
+									
+								});
+								do_action('gurustump_posts_page_before_loop'); ?>
+								<ul class="blog-index-list">
+									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+									<li id="post-<?php the_ID(); ?>">
+										<h2 class="h2 entry-title">
+											<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+												<?php if (has_post_thumbnail()) { ?>
+													<?php the_post_thumbnail('movie-thumb'); ?>
+												<?php } ?>
+												<?php the_title(); ?>
+											</a>
+										</h2>
+										<div class="excerpt">
+											<?php the_excerpt(); ?>
+										</div>
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+									</li>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+									<?php endwhile; ?>
+								</ul>
 
-								<header class="article-header">
-
-									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline entry-meta vcard">
-                                                                        <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                       								/* the time the post was published */
-                       								'<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                       								/* the author of the post */
-                       								'<span class="by">'.__( 'by', 'bonestheme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-                    							); ?>
-									</p>
-
-								</header>
-
-								<section class="entry-content cf">
-									<?php the_content(); ?>
-								</section>
-
-								<footer class="article-footer cf">
-									<p class="footer-comment-count">
-										<?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
-									</p>
-
-
-                 	<?php printf( '<p class="footer-category">' . __('filed under', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?>
-
-                  <?php the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-
-								</footer>
-
-							</article>
-
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
+								<?php bones_page_navi(); ?>
+							</div>
 
 							<?php else : ?>
 
@@ -66,7 +66,7 @@
 
 						</main>
 
-					<?php get_sidebar(); ?>
+					<?php // get_sidebar(); ?>
 
 				</div>
 
