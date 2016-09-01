@@ -28,6 +28,7 @@ over your project's layout.
 @mixin grid-col {
   float: left;
   padding-right: 0.75em;
+  @include box-sizing;
 
 }
 

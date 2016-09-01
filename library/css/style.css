@@ -750,7 +750,7 @@ own grids. It's better in the long run and allows you full control
 over your project's layout.
 
 ******************************************************************/
-/* line 35, ../scss/partials/_grid.scss */
+/* line 36, ../scss/partials/_grid.scss */
 .last-col {
   float: right;
   padding-right: 0 !important;
@@ -763,276 +763,466 @@ There are four types, but you can add or customize
 them however you see fit.
 */
 @media (max-width: 767px) {
-  /* line 49, ../scss/partials/_grid.scss */
+  /* line 50, ../scss/partials/_grid.scss */
   .m-all {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     padding-right: 0;
   }
 
-  /* line 55, ../scss/partials/_grid.scss */
+  /* line 56, ../scss/partials/_grid.scss */
   .m-1of2 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 50%;
   }
 
-  /* line 60, ../scss/partials/_grid.scss */
+  /* line 61, ../scss/partials/_grid.scss */
   .m-1of3 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 33.33%;
   }
 
-  /* line 65, ../scss/partials/_grid.scss */
+  /* line 66, ../scss/partials/_grid.scss */
   .m-2of3 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 66.66%;
   }
 
-  /* line 70, ../scss/partials/_grid.scss */
+  /* line 71, ../scss/partials/_grid.scss */
   .m-1of4 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 25%;
   }
 
-  /* line 75, ../scss/partials/_grid.scss */
+  /* line 76, ../scss/partials/_grid.scss */
   .m-3of4 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 75%;
   }
 }
 /* Portrait tablet to landscape */
 @media (min-width: 768px) and (max-width: 1029px) {
-  /* line 86, ../scss/partials/_grid.scss */
+  /* line 87, ../scss/partials/_grid.scss */
   .t-all {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     padding-right: 0;
   }
 
-  /* line 92, ../scss/partials/_grid.scss */
+  /* line 93, ../scss/partials/_grid.scss */
   .t-1of2 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 50%;
   }
 
-  /* line 97, ../scss/partials/_grid.scss */
+  /* line 98, ../scss/partials/_grid.scss */
   .t-1of3 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 33.33%;
   }
 
-  /* line 102, ../scss/partials/_grid.scss */
+  /* line 103, ../scss/partials/_grid.scss */
   .t-2of3 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 66.66%;
   }
 
-  /* line 107, ../scss/partials/_grid.scss */
+  /* line 108, ../scss/partials/_grid.scss */
   .t-1of4 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 25%;
   }
 
-  /* line 112, ../scss/partials/_grid.scss */
+  /* line 113, ../scss/partials/_grid.scss */
   .t-3of4 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 75%;
   }
 
-  /* line 117, ../scss/partials/_grid.scss */
+  /* line 118, ../scss/partials/_grid.scss */
   .t-1of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 20%;
   }
 
-  /* line 122, ../scss/partials/_grid.scss */
+  /* line 123, ../scss/partials/_grid.scss */
   .t-2of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 40%;
   }
 
-  /* line 127, ../scss/partials/_grid.scss */
+  /* line 128, ../scss/partials/_grid.scss */
   .t-3of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 60%;
   }
 
-  /* line 132, ../scss/partials/_grid.scss */
+  /* line 133, ../scss/partials/_grid.scss */
   .t-4of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 80%;
   }
 }
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
-  /* line 142, ../scss/partials/_grid.scss */
+  /* line 143, ../scss/partials/_grid.scss */
   .d-all {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
     padding-right: 0;
   }
 
-  /* line 148, ../scss/partials/_grid.scss */
+  /* line 149, ../scss/partials/_grid.scss */
   .d-1of2 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 50%;
   }
 
-  /* line 153, ../scss/partials/_grid.scss */
+  /* line 154, ../scss/partials/_grid.scss */
   .d-1of3 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 33.33%;
   }
 
-  /* line 158, ../scss/partials/_grid.scss */
+  /* line 159, ../scss/partials/_grid.scss */
   .d-2of3 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 66.66%;
   }
 
-  /* line 163, ../scss/partials/_grid.scss */
+  /* line 164, ../scss/partials/_grid.scss */
   .d-1of4 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 25%;
   }
 
-  /* line 168, ../scss/partials/_grid.scss */
+  /* line 169, ../scss/partials/_grid.scss */
   .d-3of4 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 75%;
   }
 
-  /* line 173, ../scss/partials/_grid.scss */
+  /* line 174, ../scss/partials/_grid.scss */
   .d-1of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 20%;
   }
 
-  /* line 178, ../scss/partials/_grid.scss */
+  /* line 179, ../scss/partials/_grid.scss */
   .d-2of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 40%;
   }
 
-  /* line 183, ../scss/partials/_grid.scss */
+  /* line 184, ../scss/partials/_grid.scss */
   .d-3of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 60%;
   }
 
-  /* line 188, ../scss/partials/_grid.scss */
+  /* line 189, ../scss/partials/_grid.scss */
   .d-4of5 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 80%;
   }
 
-  /* line 193, ../scss/partials/_grid.scss */
+  /* line 194, ../scss/partials/_grid.scss */
   .d-1of6 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 16.6666666667%;
   }
 
-  /* line 198, ../scss/partials/_grid.scss */
+  /* line 199, ../scss/partials/_grid.scss */
   .d-1of7 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 14.2857142857%;
   }
 
-  /* line 203, ../scss/partials/_grid.scss */
+  /* line 204, ../scss/partials/_grid.scss */
   .d-2of7 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 28.5714286%;
   }
 
-  /* line 208, ../scss/partials/_grid.scss */
+  /* line 209, ../scss/partials/_grid.scss */
   .d-3of7 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 42.8571429%;
   }
 
-  /* line 213, ../scss/partials/_grid.scss */
+  /* line 214, ../scss/partials/_grid.scss */
   .d-4of7 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 57.1428572%;
   }
 
-  /* line 218, ../scss/partials/_grid.scss */
+  /* line 219, ../scss/partials/_grid.scss */
   .d-5of7 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 71.4285715%;
   }
 
-  /* line 223, ../scss/partials/_grid.scss */
+  /* line 224, ../scss/partials/_grid.scss */
   .d-6of7 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 85.7142857%;
   }
 
-  /* line 228, ../scss/partials/_grid.scss */
+  /* line 229, ../scss/partials/_grid.scss */
   .d-1of8 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 12.5%;
   }
 
-  /* line 233, ../scss/partials/_grid.scss */
+  /* line 234, ../scss/partials/_grid.scss */
   .d-1of9 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 11.1111111111%;
   }
 
-  /* line 238, ../scss/partials/_grid.scss */
+  /* line 239, ../scss/partials/_grid.scss */
   .d-1of10 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 10%;
   }
 
-  /* line 243, ../scss/partials/_grid.scss */
+  /* line 244, ../scss/partials/_grid.scss */
   .d-1of11 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 9.09090909091%;
   }
 
-  /* line 248, ../scss/partials/_grid.scss */
+  /* line 249, ../scss/partials/_grid.scss */
   .d-1of12 {
     float: left;
     padding-right: 0.75em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     width: 8.33%;
   }
 }
@@ -1128,6 +1318,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -o-border-radius: 30px;
   border-radius: 30px;
   border: 4px solid orange;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  box-sizing: content-box;
   background-color: #444444;
   cursor: pointer;
   outline: none;
@@ -1137,14 +1332,14 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -o-transition: background-color 0.375s ease-in-out;
   transition: background-color 0.375s ease-in-out;
 }
-/* line 47, ../scss/modules/_buttons.scss */
+/* line 48, ../scss/modules/_buttons.scss */
 .btn:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-gallery:hover, .btn:focus, .btn-blue:focus, .comment-reply-link:focus, #submit:focus, .btn-gallery:focus, .btn:visited:hover, .btn-blue:visited:hover, .comment-reply-link:visited:hover, #submit:visited:hover, .btn-gallery:visited:hover, .btn:visited:focus, .btn-blue:visited:focus, .comment-reply-link:visited:focus, #submit:visited:focus, .btn-gallery:visited:focus {
   color: white;
   text-decoration: none;
   outline: none;
   background-color: #303030;
 }
-/* line 55, ../scss/modules/_buttons.scss */
+/* line 56, ../scss/modules/_buttons.scss */
 .btn:active, .btn-blue:active, .comment-reply-link:active, #submit:active, .btn-gallery:active, .btn:visited:active, .btn-blue:visited:active, .comment-reply-link:visited:active, #submit:visited:active, .btn-gallery:visited:active {
   top: 1px;
 }
@@ -1154,12 +1349,12 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-/* line 69, ../scss/modules/_buttons.scss */
+/* line 70, ../scss/modules/_buttons.scss */
 .btn-blue, .comment-reply-link, #submit, .btn-blue:visited, .comment-reply-link:visited, #submit:visited {
   border-color: #2980b9;
 }
 
-/* line 73, ../scss/modules/_buttons.scss */
+/* line 74, ../scss/modules/_buttons.scss */
 .btn-gallery {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1168,7 +1363,7 @@ and it will create a button dependant on those variables.
   border-radius: 0;
 }
 
-/* line 78, ../scss/modules/_buttons.scss */
+/* line 79, ../scss/modules/_buttons.scss */
 .btn-play, .btn-info {
   text-transform: uppercase;
   position: relative;
@@ -1185,7 +1380,7 @@ and it will create a button dependant on those variables.
   position: relative;
   top: 50%;
 }
-/* line 87, ../scss/modules/_buttons.scss */
+/* line 88, ../scss/modules/_buttons.scss */
 .btn-play:before, .btn-info:before {
   content: "";
   width: 50px;
@@ -1210,16 +1405,16 @@ and it will create a button dependant on those variables.
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 99, ../scss/modules/_buttons.scss */
+/* line 100, ../scss/modules/_buttons.scss */
 .btn-play:after, .btn-info:after {
   top: 28px;
 }
-/* line 102, ../scss/modules/_buttons.scss */
+/* line 103, ../scss/modules/_buttons.scss */
 .btn-play:before, .btn-info:before, .btn-play:after, .btn-info:after {
   position: absolute;
   left: 50%;
 }
-/* line 107, ../scss/modules/_buttons.scss */
+/* line 108, ../scss/modules/_buttons.scss */
 .btn-play:hover:before, .btn-info:hover:before {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -1236,7 +1431,7 @@ and it will create a button dependant on those variables.
   border-bottom: 13px solid transparent;
   border-left: 22px solid white;
 }
-/* line 115, ../scss/modules/_buttons.scss */
+/* line 116, ../scss/modules/_buttons.scss */
 .btn-play:after {
   -webkit-transform: translate(-40%, -50%);
   -moz-transform: translate(-40%, -50%);
@@ -1245,7 +1440,7 @@ and it will create a button dependant on those variables.
   transform: translate(-40%, -50%);
 }
 
-/* line 121, ../scss/modules/_buttons.scss */
+/* line 122, ../scss/modules/_buttons.scss */
 .btn-info:after {
   content: "";
   background: url(../images/ic-info.png) no-repeat;
@@ -1258,18 +1453,18 @@ and it will create a button dependant on those variables.
   transform: translate(-7px, -50%);
 }
 
-/* line 129, ../scss/modules/_buttons.scss */
+/* line 130, ../scss/modules/_buttons.scss */
 .btn-external {
   text-transform: uppercase;
   border-bottom: 0;
   color: white;
   outline: 0;
 }
-/* line 134, ../scss/modules/_buttons.scss */
+/* line 135, ../scss/modules/_buttons.scss */
 .btn-external:hover {
   color: white;
 }
-/* line 137, ../scss/modules/_buttons.scss */
+/* line 138, ../scss/modules/_buttons.scss */
 .btn-external:before {
   content: "";
   width: 50px;
@@ -1287,7 +1482,7 @@ and it will create a button dependant on those variables.
   -o-border-radius: 10px 0 10px 10px;
   border-radius: 10px 0 10px 10px;
 }
-/* line 147, ../scss/modules/_buttons.scss */
+/* line 148, ../scss/modules/_buttons.scss */
 .btn-external:hover:before {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -1350,8 +1545,13 @@ textarea,
   -ms-transition: background-color 0.24s ease-in-out;
   -o-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 59, ../scss/modules/_forms.scss */
+/* line 60, ../scss/modules/_forms.scss */
 input[type="text"]:focus, input[type="text"]:active,
 input[type="password"]:focus,
 input[type="password"]:active,
@@ -1388,7 +1588,7 @@ textarea:active,
   background-color: #f4f4f4;
   outline: none;
 }
-/* line 66, ../scss/modules/_forms.scss */
+/* line 67, ../scss/modules/_forms.scss */
 input[type="text"].error, input[type="text"].is-invalid,
 input[type="password"].error,
 input[type="password"].is-invalid,
@@ -1430,7 +1630,7 @@ textarea.is-invalid,
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDREQkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDREQ0YwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ3ODRGRkE2RjA0QTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERBRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+U8iT5wAAAedJREFUeNqk1U9I02Ecx/HtV3aIFAc1hcRDUoGXRAq0oNLA2CrsEFmHbikZu0iQYIFGYAiegkCpLipBxPpDEBMUzB0EhSG2LhG7hMR2GviPgUTvB57Bw8P3+U23B16HPX8+e/b8nt93wezZSMCnhXETF3AcB5BDCnH8Dq98ExcGHcFn8Ah3cdDni+fxnPDv9oAnTB7CKu6VCFXtChZy56LxUjt+jfuB8toSOth9wd7xWAWhqrUjYR/FRTwWJm+iIPT/w7bQf5ljiZnBg45dtKFX6H+LU8gIY8OEV6vgTkStwXWE8BPTGDHGPqNPz2mCfSOOYkA99TvCt1bhGPL68zMcwmncMuape10jrI+q4BbHi/FLn31S9z2x5tRhTc+1W506ipM+T3oRD4X+8+qtc4SqFvL0z/Fr14S+Szjis8bz9Lvvaq8cwS/wwGfdlqfPSWqTiFlX77o13u9Ym1PBs8JAytpRoy44X9Ft9E/gvbA+rYKn8NcaaMVc8UHgBw4b9/iqUQZ6hOAJFbyDcUflmsEX4a6+wTtHGfhAIUqa1U29Zc2BytouThD8x6xuN5CtMPi2CrXLZkZf/HyZoRFCP7n+QVR4PV7uI/AjGghN7OU/r1ilnqILtfpNC+o6vIFljBKYlhb/F2AAgaBsWR5wRiIAAAAASUVORK5CYII=);
   outline-color: #fbe3e4;
 }
-/* line 78, ../scss/modules/_forms.scss */
+/* line 79, ../scss/modules/_forms.scss */
 input[type="text"].success, input[type="text"].is-valid,
 input[type="password"].success,
 input[type="password"].is-valid,
@@ -1472,7 +1672,7 @@ textarea.is-valid,
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NDM0NDRERkYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NDM0NDRFMEYwNEIxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0MzQ0NERERjA0QjExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0MzQ0NERFRjA0QjExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+7olkTQAAAfhJREFUeNqklU9oE0EUhzdroWjw0tBeWlDxkEaIp55TsCU9VKIgCrHBelA8CQ1Kr1WPbZrQ3gqtQqvGqxpQc2jBk6BIIaAGD4qNCKURpDSKiPi98gLDsJt//uBjsztvfnk7895sIPAw6/joGMThFJyAXn2+A+9gA57/TaY/eU0OeBgfhGm4DiGnsb7DAszxBz/NAdcKjMJLuNWCqagHbsscN5+L+hmH4QkMOe1L5jzFfNA2PgT34ajTuY7AGuZB0/hmh5m+gS0r8xv1zRvg+gGCHZiOwnF4DP3iB3sQkYxPd2C6CWfhB9Xwlus5+K1j4jXuaq3a+gM1H9OPcAa+7q9lPidZJqHbiIm7Wg22rsEI7FrPSzAMX/T+ADyAKSsu7Fr1KplehLvwCs5DvfBf65p+MypqRbO1FXK9utH4/QKuaqYTsG3E3INJv00Q46px3+XxanJ/Ute2/vqP4FKDza2KcdljIKdnhS0xXYULTaqmLMZFn8FFSFtvt6x70ExFCS5oUXspq2ssa7oEl1swFa+CGFdgtkHgPDyDKy02zyxNU6lXRUZb1EuHYayNNs+Yh5B0WQo+/8fpJnNTZFuzz2OpjoQ2QruSOQlMy35fEGmEGMxY9e1brxobw7TkWA1h6xfckUPb+JhGoE/Hpfvew7qUld/H9J8AAwDpw3WYrxcZ3QAAAABJRU5ErkJggg==);
   outline-color: #e6efc2;
 }
-/* line 90, ../scss/modules/_forms.scss */
+/* line 91, ../scss/modules/_forms.scss */
 input[type="text"][disabled], input[type="text"].is-disabled,
 input[type="password"][disabled],
 input[type="password"].is-disabled,
@@ -1510,7 +1710,7 @@ textarea.is-disabled,
   border-color: #cfcfcf;
   opacity: 0.6;
 }
-/* line 96, ../scss/modules/_forms.scss */
+/* line 97, ../scss/modules/_forms.scss */
 input[type="text"][disabled]:focus, input[type="text"][disabled]:active, input[type="text"].is-disabled:focus, input[type="text"].is-disabled:active,
 input[type="password"][disabled]:focus,
 input[type="password"][disabled]:active,
@@ -1579,19 +1779,19 @@ textarea.is-disabled:active,
   background-color: #d5edf8;
 }
 
-/* line 106, ../scss/modules/_forms.scss */
+/* line 107, ../scss/modules/_forms.scss */
 input[type="password"] {
   letter-spacing: 0.3em;
 }
 
-/* line 111, ../scss/modules/_forms.scss */
+/* line 112, ../scss/modules/_forms.scss */
 textarea {
   max-width: 100%;
   min-height: 120px;
   line-height: 1.5em;
 }
 
-/* line 118, ../scss/modules/_forms.scss */
+/* line 119, ../scss/modules/_forms.scss */
 select {
   -webkit-appearance: none;
   /* 1 */
@@ -3995,7 +4195,7 @@ you can add resource intensive styles.
   *********************/
   /* line 91, ../scss/breakpoints/_768up.scss */
   .sidebar {
-    margin-top: 2.2em;
+    margin-top: 20px;
   }
 
   /* line 95, ../scss/breakpoints/_768up.scss */
@@ -4007,7 +4207,7 @@ you can add resource intensive styles.
   /* line 100, ../scss/breakpoints/_768up.scss */
   .widget {
     padding: 0 10px;
-    margin: 2.2em 0;
+    margin: 0 0 2.2em;
   }
   /* line 105, ../scss/breakpoints/_768up.scss */
   .widget ul li {

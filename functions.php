@@ -485,4 +485,4 @@ function gurustump_gallery_shortcode( $attr ) {
 
 	return $output;
 }
-/* DON'T DELETE THIS CLOSING TAG */ ?>
+?>

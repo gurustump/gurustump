@@ -467,7 +467,7 @@ SIDEBARS & ASIDES
 *********************/
 /* line 91, ../scss/breakpoints/_768up.scss */
 .sidebar {
-  margin-top: 2.2em;
+  margin-top: 20px;
 }
 
 /* line 95, ../scss/breakpoints/_768up.scss */
@@ -479,7 +479,7 @@ SIDEBARS & ASIDES
 /* line 100, ../scss/breakpoints/_768up.scss */
 .widget {
   padding: 0 10px;
-  margin: 2.2em 0;
+  margin: 0 0 2.2em;
 }
 /* line 105, ../scss/breakpoints/_768up.scss */
 .widget ul li {

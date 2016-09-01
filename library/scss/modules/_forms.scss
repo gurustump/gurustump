@@ -54,6 +54,7 @@ textarea,
   font-family: $bodyfont;
   background-color: $gray;
   @include transition(background-color 0.24s ease-in-out);
+  @include box-sizing;
 
   // a focused input (or hovered on)
   &:focus,
