@@ -247,6 +247,19 @@ jQuery(document).ready(function($) {
 		}, duration);
 	}
 	
+	$('.PAGE_SCROLL > a').click(function(e) {
+		
+		var url = $(this).attr('href');
+		id = url.substring(url.lastIndexOf('#') + 1);
+		if ($('#'+id).length > 0) {
+			e.preventDefault();
+			animateScrollToID(url.substring(url.lastIndexOf('#') + 1));
+		}
+	});
+	function animateScrollToID(id) {
+		$('html, body').animate({scrollTop: $('#'+id).offset().top});
+	}
+	
 	// GALLERY OVERLAY
 	$('#gallery_item_ov').on('click', '.PREV, .NEXT', function(e) {
 		e.preventDefault();

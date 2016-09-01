@@ -1648,7 +1648,7 @@ body.page-template-page-index {
 			}
 		}
 		div#content {
-			z-index:3;
+			z-index:1;
 			padding-top:0;
 			#main {
 				position:relative;
@@ -1657,6 +1657,8 @@ body.page-template-page-index {
 	}
 	.embedded-custom-post {
 		color:$white;
+		padding-top:100px;
+		margin-top:-100px;
 		h2 {
 			color:$orange;
 			font-size:2.2em;
