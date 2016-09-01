@@ -911,6 +911,35 @@ POSTS & CONTENT STYLES
 	}
 }
 
+/* simple accordion */
+.accordion-item {
+	.accordion-toggle {
+		cursor:pointer;
+		position:relative;
+		@include tri(top, 5px, 5px, $white, 0, inline-block, right, vcenter);
+		&:after {
+			position:absolute;
+			right:10px;
+		}
+	}
+	.accordion-content {
+		overflow:hidden;
+		max-height:1500px;
+		@include transition(max-height .5s);
+	}
+	&.accordion-closed {
+		.accordion-toggle {
+			&:after {
+				border-bottom-color:transparent;
+				border-top:5px solid $white;
+			}
+		}
+		.accordion-content {
+			max-height:0 !important;
+		}
+	}
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -1581,6 +1610,7 @@ body.page-template-page-index {
 					background-repeat:no-repeat;
 					background-size:cover;
 					background-position:50% 50%;
+					background-color:$black;
 					&.active {
 						opacity:1;
 					}
@@ -1601,14 +1631,18 @@ body.page-template-page-index {
 				border:0;
 				font-size:1.7em;
 				a {
-					border:0;
 					position:relative;
-					padding:3px 0 3px 15px;
+					padding:3px 0 3px 25px;
 					display:block;
+					@include transition(color .375s, background-color .375s);
 					@include tri-before(right, 7px, 7px, $orange, 0, inline-block, left, vcenter);
+					&:hover {
+						color:$link-color;
+						background-color:rgba($black, .7);
+					}
 					&:before {
 						position:absolute;
-						left:0;
+						left:10px;
 					}
 				}
 			}
@@ -1618,6 +1652,47 @@ body.page-template-page-index {
 			padding-top:0;
 			#main {
 				position:relative;
+			}
+		}
+	}
+	.embedded-custom-post {
+		color:$white;
+		h2 {
+			color:$orange;
+			font-size:2.2em;
+			margin-bottom:10px;
+		}
+		.description {
+			margin-bottom:30px;
+		}
+		& > ul {
+			& > li {
+				margin-bottom:10px;
+				.post-thumb-large {
+					display:none;
+				}
+				.wp-post-image {
+					max-width:100%;
+					height:auto;
+					display:block;
+					margin:0 auto 10px;
+				}
+				.item-content-desc {
+					margin-bottom:20px;
+				}
+				.thumb-index {
+					margin-bottom:20px;
+				}
+				h3 {
+					border-top:1px solid rgba($white, .2);
+					border-bottom:1px solid rgba($white, .2);
+					margin-bottom:3px;
+					padding-right:30px;
+				}
+				ul.info {
+					line-height:1.8em;
+					font-size:.9em;
+				}
 			}
 		}
 	}

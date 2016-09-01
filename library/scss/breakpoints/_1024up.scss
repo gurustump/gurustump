@@ -64,6 +64,33 @@ body.home {
 }
 
 /******************************************
+INDEX PAGE
+******************************************/
+body.page-template-page-index {
+	.embedded-custom-post {
+		& > ul {
+			& > li {
+				.post-thumb-small, .post-thumb-large, .thumb-index {
+					float:left;
+					width:50%;
+					max-width:532px;
+					margin:0 0 5px;
+					padding-right:20px;
+					@include box-sizing;
+				}
+				.wp-post-image {
+					margin-bottom:0;
+				}
+				.item-content-desc {
+					float:right;
+					width:50%;
+				}
+			}
+		}
+	}
+}
+
+/******************************************
 SINGLE VIDEO (SHOW) PAGE, PERSON PAGE
 ******************************************/
 body {

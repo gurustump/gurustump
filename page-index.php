@@ -45,26 +45,91 @@
 			</div>
 			<div id="content">
 				<div id="inner-content" class="wrap cf">
-						<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
-							<div id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> >
-								<section class="entry-content cf" itemprop="articleBody">
-									<?php
-										// the content (pretty self explanatory huh)
-										the_content();
-										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-											'after'       => '</div>',
-											'link_before' => '<span>',
-											'link_after'  => '</span>',
-										) );
-									?>
+					<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
+						<div id="post-<?php the_ID(); ?>">
+							<section class="entry-content cf" itemprop="articleBody">
+								<?php
+									// the content (pretty self explanatory huh)
+									the_content();
+									wp_link_pages( array(
+										'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
+										'after'       => '</div>',
+										'link_before' => '<span>',
+										'link_after'  => '</span>',
+									) );
+								?>
+							</section>
+							<?php $customPostTypeMeta = get_post_meta(get_the_ID(), '_gurustump_page_post_type', true); 
+							if ($customPostTypeMeta) { 
+								?>
+								<section id="<?php echo $customPostTypeMeta; ?>" class="embedded-custom-post">
+									<?php $customPostTypeHeading = get_post_meta(get_the_ID(), '_gurustump_page_post_type_heading', true);
+									$customPostTypeDescription = get_post_meta(get_the_ID(), '_gurustump_page_post_type_description', true);
+									if ($customPostTypeHeading) { ?>
+									<h2><?php echo $customPostTypeHeading; ?></h2>
+									<?php }
+									if ($customPostTypeDescription) { ?>
+									<div class="description"><?php echo $customPostTypeDescription; ?></div>
+									<?php } ?>
+									<ul>
+										<?php /* <pre><?php print_r($customPostTypeMeta); ?></pre> */ ?>
+										<?php $customPostItems = get_posts(array(
+											'posts_per_page'=>-1,
+											'post_type'=> $customPostTypeMeta /*,
+											'orderby'=>'title',
+											'order'=>'ASC' */
+										));
+										foreach($customPostItems as $key => $item) { ?>
+											<li class="accordion-item accordion-closed ACCORDION_ITEM">
+												<?php /* <pre><?php print_r($item); ?></pre> */ ?>
+												<h3 class="accordion-toggle  TOGGLE_ACCORDION"><?php echo $item->post_title; ?></h3>
+												<div class="item-content accordion-content ACCORDION_CONTENT">
+													<?php if (has_post_thumbnail($item->ID)) { ?>
+														<div class="post-thumb-small">
+														<?php echo get_the_post_thumbnail($item->ID, 'movie-thumb'); ?>
+														</div>
+														<div class="post-thumb-large">
+														<?php echo get_the_post_thumbnail($item->ID, 'medium'); ?>
+														</div>
+													<?php } ?>
+													<?php if ($item->post_content) { ?>
+													<div class="item-content-desc">
+													<?php echo $item->post_content; ?>
+													</div>
+													<?php } ?>
+													<?php $equipmentGalleryMeta = get_post_meta($item->ID, '_gurustump_equipment_gallery', true);
+													if ($equipmentGalleryMeta) { ?>
+													<div class="thumb-index">
+														<div class="thumb-index-inner">
+															<ul class="thumb-index-list GALLERY">
+															<?php foreach($equipmentGalleryMeta as $key => $image) {
+																$thumbImage = wp_get_attachment_image_src($key, 'thumbnail');
+																$bigImage = wp_get_attachment_image_src($key, 'extra-large');
+																?>
+																<li class="gallery-item GALLERY_ITEM">
+																	<img src="<?php echo $thumbImage[0]; ?>" />
+																	<input class="IMG_SRC" type="hidden" value="<?php echo $bigImage[0]; ?>" />
+																	<span class="item-content">
+																		<span class="view-item">View Image</span>
+																	</span>
+																</li>
+															<?php } ?>
+															</ul>
+														</div>
+													</div>
+													<?php } ?>
+												</div>
+											</li>
+										<?php } ?>
+									</ul>
 								</section>
-								<footer class="article-footer">
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-								</footer>
-							</div>
-						</main>
-						<?php get_sidebar(); ?>
+							<?php } ?>
+							<footer class="article-footer">
+								<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+							</footer>
+						</div>
+					</main>
+					<?php get_sidebar(); ?>
 				</div>
 			</div> <?php // end content ?>
 			<?php $fileMeta = get_post_meta(get_the_ID(), '_gurustump_page_file', true);

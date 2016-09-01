@@ -118,3 +118,25 @@ body.home {
 		}
 	}
 }
+
+/******************************************
+INDEX PAGE
+******************************************/
+body.page-template-page-index {
+	.embedded-custom-post {
+		& > ul {
+			& > li {
+				.post-thumb-small {
+					display:none;
+				}
+				.post-thumb-large {
+					display:block;
+					max-width:50%;
+				}
+				.thumb-index {
+					max-width:50%;
+				}
+			}
+		}
+	}
+}

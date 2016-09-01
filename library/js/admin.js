@@ -8,7 +8,7 @@
 
 jQuery(document).ready(function($) {
 	toggleMetaboxes($);
-	$('#page_template').change(function() {
+	$('#page_template, #_gurustump_page_post_type').change(function() {
 		toggleMetaboxes($);
 	});
 });
@@ -19,5 +19,10 @@ function toggleMetaboxes($) {
 		$('.cmb2-id--gurustump-page-index-gallery, .cmb2-id--gurustump-page-submenu').show();
 	} else {
 		$('.cmb2-id--gurustump-page-index-gallery, .cmb2-id--gurustump-page-submenu').hide();
+	}
+	if ($('#_gurustump_page_post_type').val() == '') {
+		$('.cmb2-id--gurustump-page-post-type-heading, .cmb2-id--gurustump-page-post-type-description').hide();
+	} else {
+		$('.cmb2-id--gurustump-page-post-type-heading, .cmb2-id--gurustump-page-post-type-description').show();
 	}
 }

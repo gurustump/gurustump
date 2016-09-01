@@ -304,6 +304,12 @@ jQuery(document).ready(function($) {
 			galOv.addClass('ready');
 		}
 	}
+	function simpleAccordion() {
+		$('.TOGGLE_ACCORDION').click(function() {
+			$(this).closest('.ACCORDION_ITEM').toggleClass('accordion-closed');
+		});
+	}
+	simpleAccordion();
 	
 	// SPECIFIC PAGES
 	if (isIndex) {

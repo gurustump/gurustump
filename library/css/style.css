@@ -1789,9 +1789,11 @@ textarea {
   max-width: 100%;
   min-height: 120px;
   line-height: 1.5em;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-/* line 119, ../scss/modules/_forms.scss */
+/* line 121, ../scss/modules/_forms.scss */
 select {
   -webkit-appearance: none;
   /* 1 */
@@ -1800,6 +1802,67 @@ select {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAYAAADXhRcnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOEZCMjYxMEYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOEZCMjYxMUYwNUUxMUUyOTI4REZGQTEzMzA2MDcyNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ4RkIyNjBFRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ4RkIyNjBGRjA1RTExRTI5MjhERkZBMTMzMDYwNzI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Vxkp9gAAAI9JREFUeNpidHFxucHAwKAOxE+AmJmBMPgLxDJAfJMFSKwD4kqoAClgA+P///8ZXF1dPaCGcBKh6QcQB+3evXs7WDMIAA2QB1I7gFgDj0aQFz2BGh+AOEwwUaDAQyBlCMR7cGjcC5KHaQQBuM3IAOiKTiBVhiTUDdRUhq4Oq2aoAelAahIQ5wM1zsCmBiDAADhYMJXVZ9u9AAAAAElFTkSuQmCC);
   background-repeat: no-repeat;
   background-position: 96% center;
+}
+
+/* Contact Form 7 */
+/* line 132, ../scss/modules/_forms.scss */
+div.wpcf7-response-output {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  border: 0;
+}
+
+/* line 141, ../scss/modules/_forms.scss */
+div.wpcf7-mail-sent-ok {
+  color: #398f14;
+}
+
+/* line 144, ../scss/modules/_forms.scss */
+div.wpcf7-mail-sent-ng {
+  color: red;
+}
+
+/* line 147, ../scss/modules/_forms.scss */
+div.wpcf7-spam-blocked {
+  color: orange;
+}
+
+/* line 150, ../scss/modules/_forms.scss */
+div.wpcf7-validation-errors {
+  color: red;
+}
+
+/* line 153, ../scss/modules/_forms.scss */
+.wpcf7-form-control-wrap {
+  position: relative;
+  display: inline-block;
+}
+/* line 156, ../scss/modules/_forms.scss */
+.wpcf7-form-control-wrap.your-message {
+  display: block;
+}
+/* line 159, ../scss/modules/_forms.scss */
+.wpcf7-form-control-wrap span.wpcf7-not-valid-tip {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+/* line 167, ../scss/modules/_forms.scss */
+.wpcf7-recaptcha-container .wpcf7-form-control-wrap span.wpcf7-not-valid-tip {
+  top: -14px;
+  left: 4px;
+  right: 0;
+}
+
+/* line 174, ../scss/modules/_forms.scss */
+span.wpcf7-not-valid-tip {
+  color: red;
+  font-size: .8em;
 }
 
 /*********************
@@ -2794,20 +2857,70 @@ POSTS & CONTENT STYLES
   opacity: 1;
 }
 
+/* simple accordion */
+/* line 916, ../scss/breakpoints/_base.scss */
+.accordion-item .accordion-toggle {
+  cursor: pointer;
+  position: relative;
+}
+/* line 161, ../scss/partials/_mixins.scss */
+.accordion-item .accordion-toggle:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: inline-block;
+  float: right;
+  margin: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  border-bottom: 5px solid white;
+}
+/* line 920, ../scss/breakpoints/_base.scss */
+.accordion-item .accordion-toggle:after {
+  position: absolute;
+  right: 10px;
+}
+/* line 925, ../scss/breakpoints/_base.scss */
+.accordion-item .accordion-content {
+  overflow: hidden;
+  max-height: 1500px;
+  -webkit-transition: max-height 0.5s;
+  -moz-transition: max-height 0.5s;
+  -ms-transition: max-height 0.5s;
+  -o-transition: max-height 0.5s;
+  transition: max-height 0.5s;
+}
+/* line 932, ../scss/breakpoints/_base.scss */
+.accordion-item.accordion-closed .accordion-toggle:after {
+  border-bottom-color: transparent;
+  border-top: 5px solid white;
+}
+/* line 937, ../scss/breakpoints/_base.scss */
+.accordion-item.accordion-closed .accordion-content {
+  max-height: 0 !important;
+}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 918, ../scss/breakpoints/_base.scss */
+/* line 947, ../scss/breakpoints/_base.scss */
 .pagination,
 .wp-prev-next {
   margin: 1.5em 0;
 }
 
-/* line 922, ../scss/breakpoints/_base.scss */
+/* line 951, ../scss/breakpoints/_base.scss */
 .pagination {
   text-align: center;
 }
-/* line 924, ../scss/breakpoints/_base.scss */
+/* line 953, ../scss/breakpoints/_base.scss */
 .pagination ul {
   display: inline-block;
   white-space: nowrap;
@@ -2815,7 +2928,7 @@ PAGE NAVI STYLES
   clear: both;
   border-radius: 3px;
 }
-/* line 932, ../scss/breakpoints/_base.scss */
+/* line 961, ../scss/breakpoints/_base.scss */
 .pagination li {
   padding: 0;
   margin: 0;
@@ -2823,11 +2936,11 @@ PAGE NAVI STYLES
   display: inline;
   overflow: hidden;
 }
-/* line 940, ../scss/breakpoints/_base.scss */
+/* line 969, ../scss/breakpoints/_base.scss */
 .pagination li:first-child a, .pagination li:first-child span {
   margin-left: 0;
 }
-/* line 944, ../scss/breakpoints/_base.scss */
+/* line 973, ../scss/breakpoints/_base.scss */
 .pagination a, .pagination span {
   margin: 0;
   text-decoration: none;
@@ -2847,12 +2960,12 @@ PAGE NAVI STYLES
   -o-transition: color 0.375s, background-color 0.375s;
   transition: color 0.375s, background-color 0.375s;
 }
-/* line 960, ../scss/breakpoints/_base.scss */
+/* line 989, ../scss/breakpoints/_base.scss */
 .pagination a:hover {
   background-color: orange;
   color: white;
 }
-/* line 966, ../scss/breakpoints/_base.scss */
+/* line 995, ../scss/breakpoints/_base.scss */
 .pagination .current {
   cursor: default;
   color: #555555;
@@ -2860,11 +2973,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 978, ../scss/breakpoints/_base.scss */
+/* line 1007, ../scss/breakpoints/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 982, ../scss/breakpoints/_base.scss */
+/* line 1011, ../scss/breakpoints/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -2874,7 +2987,7 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 993, ../scss/breakpoints/_base.scss */
+/* line 1022, ../scss/breakpoints/_base.scss */
 #comments-title {
   padding: 0.75em;
   margin: 0;
@@ -2882,13 +2995,13 @@ COMMENT STYLES
   /* number of comments span */
 }
 
-/* line 1013, ../scss/breakpoints/_base.scss */
+/* line 1042, ../scss/breakpoints/_base.scss */
 .commentlist {
   margin: 0;
   list-style-type: none;
 }
 
-/* line 1018, ../scss/breakpoints/_base.scss */
+/* line 1047, ../scss/breakpoints/_base.scss */
 .comment {
   position: relative;
   clear: both;
@@ -2900,78 +3013,78 @@ COMMENT STYLES
   /* end children */
   /* general comment classes */
 }
-/* line 1025, ../scss/breakpoints/_base.scss */
+/* line 1054, ../scss/breakpoints/_base.scss */
 .comment .comment-author {
   padding: 7px;
   border: 0;
 }
-/* line 1031, ../scss/breakpoints/_base.scss */
+/* line 1060, ../scss/breakpoints/_base.scss */
 .comment .vcard {
   margin-left: 50px;
 }
-/* line 1034, ../scss/breakpoints/_base.scss */
+/* line 1063, ../scss/breakpoints/_base.scss */
 .comment .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 1042, ../scss/breakpoints/_base.scss */
+/* line 1071, ../scss/breakpoints/_base.scss */
 .comment .vcard time {
   display: block;
   font-size: 0.9em;
   font-style: italic;
 }
-/* line 1047, ../scss/breakpoints/_base.scss */
+/* line 1076, ../scss/breakpoints/_base.scss */
 .comment .vcard time a {
   color: #999999;
   text-decoration: none;
 }
-/* line 1051, ../scss/breakpoints/_base.scss */
+/* line 1080, ../scss/breakpoints/_base.scss */
 .comment .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 1061, ../scss/breakpoints/_base.scss */
+/* line 1090, ../scss/breakpoints/_base.scss */
 .comment .vcard .avatar {
   position: absolute;
   left: 16px;
   border-radius: 50%;
 }
-/* line 1069, ../scss/breakpoints/_base.scss */
+/* line 1098, ../scss/breakpoints/_base.scss */
 .comment:last-child {
   margin-bottom: 0;
 }
-/* line 1073, ../scss/breakpoints/_base.scss */
+/* line 1102, ../scss/breakpoints/_base.scss */
 .comment .children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 1091, ../scss/breakpoints/_base.scss */
+/* line 1120, ../scss/breakpoints/_base.scss */
 .comment[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 1095, ../scss/breakpoints/_base.scss */
+/* line 1124, ../scss/breakpoints/_base.scss */
 .comment.depth-1 {
   margin-left: 0;
   margin-top: 0;
 }
-/* line 1100, ../scss/breakpoints/_base.scss */
+/* line 1129, ../scss/breakpoints/_base.scss */
 .comment:not(.depth-1) {
   margin-top: 0;
   margin-left: 7px;
   padding: 7px;
 }
-/* line 1113, ../scss/breakpoints/_base.scss */
+/* line 1142, ../scss/breakpoints/_base.scss */
 .comment.odd {
   background-color: white;
 }
-/* line 1116, ../scss/breakpoints/_base.scss */
+/* line 1145, ../scss/breakpoints/_base.scss */
 .comment.even {
   background: #f8f9fa;
 }
 
 /* comment meta */
 /* comment content */
-/* line 1150, ../scss/breakpoints/_base.scss */
+/* line 1179, ../scss/breakpoints/_base.scss */
 .comment_content p {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
@@ -2980,7 +3093,7 @@ COMMENT STYLES
 
 /* end .commentlist .comment_content */
 /* comment reply link */
-/* line 1159, ../scss/breakpoints/_base.scss */
+/* line 1188, ../scss/breakpoints/_base.scss */
 .comment-reply-link {
   font-size: 0.9em;
   float: right;
@@ -2988,7 +3101,7 @@ COMMENT STYLES
 
 /* end .commentlist .comment-reply-link */
 /* edit comment link */
-/* line 1171, ../scss/breakpoints/_base.scss */
+/* line 1200, ../scss/breakpoints/_base.scss */
 .comment-edit-link {
   font-style: italic;
   margin: 0 7px;
@@ -2999,34 +3112,34 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 1184, ../scss/breakpoints/_base.scss */
+/* line 1213, ../scss/breakpoints/_base.scss */
 .comment-respond {
   padding: 1.5em;
   border-top: 1px solid #f8f9fa;
 }
 
-/* line 1190, ../scss/breakpoints/_base.scss */
+/* line 1219, ../scss/breakpoints/_base.scss */
 #reply-title {
   margin: 0;
 }
 
-/* line 1194, ../scss/breakpoints/_base.scss */
+/* line 1223, ../scss/breakpoints/_base.scss */
 .logged-in-as {
   color: #999999;
   font-style: italic;
   margin: 0;
 }
-/* line 1199, ../scss/breakpoints/_base.scss */
+/* line 1228, ../scss/breakpoints/_base.scss */
 .logged-in-as a {
   color: #555555;
 }
 
-/* line 1204, ../scss/breakpoints/_base.scss */
+/* line 1233, ../scss/breakpoints/_base.scss */
 .comment-form-comment {
   margin: 1.5em 0 0.75em;
 }
 
-/* line 1208, ../scss/breakpoints/_base.scss */
+/* line 1237, ../scss/breakpoints/_base.scss */
 .form-allowed-tags {
   padding: 1.5em;
   background-color: #f8f9fa;
@@ -3034,14 +3147,14 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 1215, ../scss/breakpoints/_base.scss */
+/* line 1244, ../scss/breakpoints/_base.scss */
 #submit {
   float: right;
   font-size: 1em;
 }
 
 /* comment form title */
-/* line 1222, ../scss/breakpoints/_base.scss */
+/* line 1251, ../scss/breakpoints/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -3049,13 +3162,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 1235, ../scss/breakpoints/_base.scss */
+/* line 1264, ../scss/breakpoints/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 1240, ../scss/breakpoints/_base.scss */
+/* line 1269, ../scss/breakpoints/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -3063,12 +3176,12 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 1256, ../scss/breakpoints/_base.scss */
+/* line 1285, ../scss/breakpoints/_base.scss */
 .widget ul li {
   /* deep nesting */
 }
 
-/* line 1273, ../scss/breakpoints/_base.scss */
+/* line 1302, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: white;
   padding: 1.5em;
@@ -3081,7 +3194,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 1286, ../scss/breakpoints/_base.scss */
+/* line 1315, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: black;
@@ -3101,7 +3214,7 @@ FOOTER STYLES
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 1300, ../scss/breakpoints/_base.scss */
+/* line 1329, ../scss/breakpoints/_base.scss */
 .footer #inner-footer {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -3125,12 +3238,12 @@ view.
 /******************************************
 ADMIN BAR CUSTOMIZATION
 ******************************************/
-/* line 1333, ../scss/breakpoints/_base.scss */
+/* line 1362, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar {
   border-bottom: 1px solid #444;
   z-index: 9999 !important;
 }
-/* line 1336, ../scss/breakpoints/_base.scss */
+/* line 1365, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar > .wpadminbar-activator {
   display: block;
   position: absolute;
@@ -3156,7 +3269,7 @@ html body div#wpadminbar > .wpadminbar-activator {
   border-left-color: #333;
   cursor: pointer;
 }
-/* line 1352, ../scss/breakpoints/_base.scss */
+/* line 1381, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar > .wpadminbar-activator:after {
   content: "";
   border-style: solid;
@@ -3167,11 +3280,11 @@ html body div#wpadminbar > .wpadminbar-activator:after {
   left: 50%;
   top: 5px;
 }
-/* line 1364, ../scss/breakpoints/_base.scss */
+/* line 1393, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar.wpadminbar-shown > .wpadminbar-activator {
   display: none;
 }
-/* line 1368, ../scss/breakpoints/_base.scss */
+/* line 1397, ../scss/breakpoints/_base.scss */
 html body div#wpadminbar.hidden {
   border-bottom: 2px solid transparent;
   -webkit-transform: translateY(-97%);
@@ -3185,7 +3298,7 @@ html body div#wpadminbar.hidden {
   -o-transition: transform, 2s;
   transition: transform, 2s;
 }
-/* line 1375, ../scss/breakpoints/_base.scss */
+/* line 1404, ../scss/breakpoints/_base.scss */
 html body.hide-admin-bar div#wpadminbar {
   display: none;
 }
@@ -3193,7 +3306,7 @@ html body.hide-admin-bar div#wpadminbar {
 /******************************************
 INDIVIDUAL PAGES
 ******************************************/
-/* line 1387, ../scss/breakpoints/_base.scss */
+/* line 1416, ../scss/breakpoints/_base.scss */
 body.home .header, body.page-template-page-index .header {
   background-color: transparent;
   background-image: -webkit-gradient(linear,  ,   from(black), to(transparent));
@@ -3202,7 +3315,7 @@ body.home .header, body.page-template-page-index .header {
   background-image: -o-linear-gradient(  black, transparent);
   background-image: linear-gradient(to   black, transparent);
 }
-/* line 1389, ../scss/breakpoints/_base.scss */
+/* line 1418, ../scss/breakpoints/_base.scss */
 html.scrolled body.home .header, html.scrolled body.page-template-page-index .header {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -3210,7 +3323,7 @@ html.scrolled body.home .header, html.scrolled body.page-template-page-index .he
 /******************************************
 HOME PAGE
 ******************************************/
-/* line 1398, ../scss/breakpoints/_base.scss */
+/* line 1427, ../scss/breakpoints/_base.scss */
 body.home #logo {
   -webkit-transform: translateY(-150%);
   -moz-transform: translateY(-150%);
@@ -3223,7 +3336,7 @@ body.home #logo {
   -o-transition: transform 375ms;
   transition: transform 375ms;
 }
-/* line 1401, ../scss/breakpoints/_base.scss */
+/* line 1430, ../scss/breakpoints/_base.scss */
 html.secondary-scrolled body.home #logo {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -3231,7 +3344,7 @@ html.secondary-scrolled body.home #logo {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 1405, ../scss/breakpoints/_base.scss */
+/* line 1434, ../scss/breakpoints/_base.scss */
 body.home .home-logo {
   background: url(../images/jack.jpg) no-repeat 80% 0/cover;
   background: url(../images/bg-mesh.png);
@@ -3241,7 +3354,7 @@ body.home .home-logo {
   min-height: 200px;
   max-height: 600px;
 }
-/* line 1413, ../scss/breakpoints/_base.scss */
+/* line 1442, ../scss/breakpoints/_base.scss */
 body.home .home-logo:before {
   content: "";
   display: block;
@@ -3253,18 +3366,18 @@ body.home .home-logo:before {
   top: 0;
   z-index: 1;
 }
-/* line 1424, ../scss/breakpoints/_base.scss */
+/* line 1453, ../scss/breakpoints/_base.scss */
 body.home .home-logo:after {
   content: "";
   display: block;
   width: 100%;
   margin-top: 30%;
 }
-/* line 1430, ../scss/breakpoints/_base.scss */
+/* line 1459, ../scss/breakpoints/_base.scss */
 body.home .home-logo .bg-video {
   display: none;
 }
-/* line 1433, ../scss/breakpoints/_base.scss */
+/* line 1462, ../scss/breakpoints/_base.scss */
 body.home .home-logo .title-box {
   text-align: center;
   height: 100%;
@@ -3273,7 +3386,7 @@ body.home .home-logo .title-box {
   position: absolute;
   z-index: 2;
 }
-/* line 1440, ../scss/breakpoints/_base.scss */
+/* line 1469, ../scss/breakpoints/_base.scss */
 body.home .home-logo .title-box .title-box-inner {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -3283,11 +3396,11 @@ body.home .home-logo .title-box .title-box-inner {
   position: relative;
   top: 50%;
 }
-/* line 1444, ../scss/breakpoints/_base.scss */
+/* line 1473, ../scss/breakpoints/_base.scss */
 body.home .home-logo h1, body.home .home-logo h2 {
   color: white;
 }
-/* line 1447, ../scss/breakpoints/_base.scss */
+/* line 1476, ../scss/breakpoints/_base.scss */
 body.home .home-logo h1 {
   font-size: 2.7em;
   line-height: 1;
@@ -3295,11 +3408,11 @@ body.home .home-logo h1 {
   padding-bottom: .05em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-/* line 1454, ../scss/breakpoints/_base.scss */
+/* line 1483, ../scss/breakpoints/_base.scss */
 body.home .home-logo h2 {
   font-size: 1.12em;
 }
-/* line 1459, ../scss/breakpoints/_base.scss */
+/* line 1488, ../scss/breakpoints/_base.scss */
 body.home #container div#content {
   padding-top: 0;
   -webkit-transition: padding-top 275ms;
@@ -3308,7 +3421,7 @@ body.home #container div#content {
   -o-transition: padding-top 275ms;
   transition: padding-top 275ms;
 }
-/* line 1465, ../scss/breakpoints/_base.scss */
+/* line 1494, ../scss/breakpoints/_base.scss */
 body.home .promo {
   padding: 50px 0 30px;
 }
@@ -3320,36 +3433,36 @@ body.home .promo:after {
   visibility: hidden;
   clear: both;
 }
-/* line 1469, ../scss/breakpoints/_base.scss */
+/* line 1498, ../scss/breakpoints/_base.scss */
 body.home .promo.lead h2 {
   font-size: 1.8em;
   text-align: center;
   margin-bottom: 1em;
   color: orange;
 }
-/* line 1475, ../scss/breakpoints/_base.scss */
+/* line 1504, ../scss/breakpoints/_base.scss */
 body.home .promo.lead .description {
   padding: 30px 0 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin: 0 auto;
   max-width: 800px;
 }
-/* line 1482, ../scss/breakpoints/_base.scss */
+/* line 1511, ../scss/breakpoints/_base.scss */
 body.home .promo.services {
   color: white;
 }
-/* line 1484, ../scss/breakpoints/_base.scss */
+/* line 1513, ../scss/breakpoints/_base.scss */
 body.home .promo.services > ul > li {
   margin-bottom: 80px;
 }
-/* line 1487, ../scss/breakpoints/_base.scss */
+/* line 1516, ../scss/breakpoints/_base.scss */
 body.home .promo.services h3 {
   text-align: center;
   padding-bottom: 210px;
   margin-bottom: 0;
   position: relative;
 }
-/* line 1492, ../scss/breakpoints/_base.scss */
+/* line 1521, ../scss/breakpoints/_base.scss */
 body.home .promo.services h3:before, body.home .promo.services h3:after {
   content: "";
   width: 200px;
@@ -3368,16 +3481,16 @@ body.home .promo.services h3:before, body.home .promo.services h3:after {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-/* line 1502, ../scss/breakpoints/_base.scss */
+/* line 1531, ../scss/breakpoints/_base.scss */
 body.home .promo.services h3:before {
   background: url(../images/bg-mesh-orange.png);
 }
-/* line 1507, ../scss/breakpoints/_base.scss */
+/* line 1536, ../scss/breakpoints/_base.scss */
 body.home .promo.services .video h3:after {
   background: url(../images/ic-camera-lg.png) no-repeat 10px bottom;
   background-size: contain;
 }
-/* line 1513, ../scss/breakpoints/_base.scss */
+/* line 1542, ../scss/breakpoints/_base.scss */
 body.home .promo.services .web h3:after {
   background: url(../images/ic-webdev-lg.png) no-repeat 50% 50%;
   background-size: 80%;
@@ -3390,33 +3503,33 @@ body.home .promo.services ul.modules:after {
   visibility: hidden;
   clear: both;
 }
-/* line 1520, ../scss/breakpoints/_base.scss */
+/* line 1549, ../scss/breakpoints/_base.scss */
 body.home .promo.services ul.modules > li {
   border: solid rgba(255, 165, 0, 0.3);
   border-width: 0 1px;
   padding: 25px;
   overflow: hidden;
 }
-/* line 1525, ../scss/breakpoints/_base.scss */
+/* line 1554, ../scss/breakpoints/_base.scss */
 body.home .promo.services ul.modules > li h4 {
   margin: -10px -15px 20px;
   padding: 10px 15px;
   background: #444444;
 }
-/* line 1531, ../scss/breakpoints/_base.scss */
+/* line 1560, ../scss/breakpoints/_base.scss */
 body.home .promo.services ul.modules ul.info {
   margin-left: 15px;
 }
-/* line 1533, ../scss/breakpoints/_base.scss */
+/* line 1562, ../scss/breakpoints/_base.scss */
 body.home .promo.services ul.modules ul.info > li {
   margin-bottom: 15px;
 }
-/* line 1538, ../scss/breakpoints/_base.scss */
+/* line 1567, ../scss/breakpoints/_base.scss */
 body.home .promo.services .actions {
   clear: left;
   text-align: center;
 }
-/* line 1541, ../scss/breakpoints/_base.scss */
+/* line 1570, ../scss/breakpoints/_base.scss */
 body.home .promo.services .actions .btn {
   margin: 0 10px 10px;
 }
@@ -3424,14 +3537,14 @@ body.home .promo.services .actions .btn {
 /******************************************
 INDEX PAGE
 ******************************************/
-/* line 1554, ../scss/breakpoints/_base.scss */
+/* line 1583, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header {
   position: relative;
   z-index: 2;
   width: 100%;
   height: 100%;
 }
-/* line 1559, ../scss/breakpoints/_base.scss */
+/* line 1588, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .page-header {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -3453,7 +3566,7 @@ body.page-template-page-index #container .sub-header .page-header {
   z-index: 3;
   text-align: center;
 }
-/* line 1573, ../scss/breakpoints/_base.scss */
+/* line 1602, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .rotating-gallery > li {
   position: absolute;
   left: 0;
@@ -3469,16 +3582,17 @@ body.page-template-page-index #container .sub-header .rotating-gallery > li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  background-color: black;
 }
-/* line 1584, ../scss/breakpoints/_base.scss */
+/* line 1614, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .rotating-gallery > li.active {
   opacity: 1;
 }
-/* line 1587, ../scss/breakpoints/_base.scss */
+/* line 1617, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .rotating-gallery > li img {
   width: 100%;
 }
-/* line 1592, ../scss/breakpoints/_base.scss */
+/* line 1622, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .index-menu {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -3491,12 +3605,16 @@ body.page-template-page-index #container .sub-header .index-menu {
   border: 0;
   font-size: 1.7em;
 }
-/* line 1603, ../scss/breakpoints/_base.scss */
+/* line 1633, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .index-menu a {
-  border: 0;
   position: relative;
-  padding: 3px 0 3px 15px;
+  padding: 3px 0 3px 25px;
   display: block;
+  -webkit-transition: color 0.375s, background-color 0.375s;
+  -moz-transition: color 0.375s, background-color 0.375s;
+  -ms-transition: color 0.375s, background-color 0.375s;
+  -o-transition: color 0.375s, background-color 0.375s;
+  transition: color 0.375s, background-color 0.375s;
 }
 /* line 190, ../scss/partials/_mixins.scss */
 body.page-template-page-index #container .sub-header .index-menu a:before {
@@ -3517,44 +3635,98 @@ body.page-template-page-index #container .sub-header .index-menu a:before {
   top: 50%;
   border-left: 7px solid orange;
 }
-/* line 1609, ../scss/breakpoints/_base.scss */
+/* line 1639, ../scss/breakpoints/_base.scss */
+body.page-template-page-index #container .sub-header .index-menu a:hover {
+  color: orange;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* line 1643, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container .sub-header .index-menu a:before {
   position: absolute;
-  left: 0;
+  left: 10px;
 }
-/* line 1616, ../scss/breakpoints/_base.scss */
+/* line 1650, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container div#content {
   z-index: 3;
   padding-top: 0;
 }
-/* line 1619, ../scss/breakpoints/_base.scss */
+/* line 1653, ../scss/breakpoints/_base.scss */
 body.page-template-page-index #container div#content #main {
   position: relative;
+}
+/* line 1658, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post {
+  color: white;
+}
+/* line 1660, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post h2 {
+  color: orange;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+/* line 1665, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post .description {
+  margin-bottom: 30px;
+}
+/* line 1669, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li {
+  margin-bottom: 10px;
+}
+/* line 1671, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-large {
+  display: none;
+}
+/* line 1674, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .wp-post-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+/* line 1680, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .item-content-desc {
+  margin-bottom: 20px;
+}
+/* line 1683, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .thumb-index {
+  margin-bottom: 20px;
+}
+/* line 1686, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li h3 {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 3px;
+  padding-right: 30px;
+}
+/* line 1692, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li ul.info {
+  line-height: 1.8em;
+  font-size: .9em;
 }
 
 /******************************************
 VIDEO GALLERY PAGE
 ******************************************/
-/* line 1630, ../scss/breakpoints/_base.scss */
+/* line 1705, ../scss/breakpoints/_base.scss */
 body.video-gallery .simple-page-heading {
   background: rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 15px 0;
 }
-/* line 1635, ../scss/breakpoints/_base.scss */
+/* line 1710, ../scss/breakpoints/_base.scss */
 body.video-gallery .body-content {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 1639, ../scss/breakpoints/_base.scss */
+/* line 1714, ../scss/breakpoints/_base.scss */
 body.video-gallery .video-thumb-index {
   margin-bottom: 30px;
 }
-/* line 1642, ../scss/breakpoints/_base.scss */
+/* line 1717, ../scss/breakpoints/_base.scss */
 body.video-gallery .video-thumb-index .thumb-index-list > li {
   display: none;
 }
-/* line 1644, ../scss/breakpoints/_base.scss */
+/* line 1719, ../scss/breakpoints/_base.scss */
 body.video-gallery .video-thumb-index .thumb-index-list > li.selected {
   display: block;
 }
@@ -3562,17 +3734,17 @@ body.video-gallery .video-thumb-index .thumb-index-list > li.selected {
 /******************************************
 SINGLE VIDEO (SHOW) PAGE
 ******************************************/
-/* line 1656, ../scss/breakpoints/_base.scss */
+/* line 1731, ../scss/breakpoints/_base.scss */
 body.single-shows .video-wrapper {
   margin: 0 -15px 15px;
 }
-/* line 1659, ../scss/breakpoints/_base.scss */
+/* line 1734, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls {
   position: relative;
   display: block;
   border: none;
 }
-/* line 1663, ../scss/breakpoints/_base.scss */
+/* line 1738, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play {
   position: absolute;
   width: 100%;
@@ -3584,15 +3756,15 @@ body.single-shows .video-controls .btn-play {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1669, ../scss/breakpoints/_base.scss */
+/* line 1744, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 1671, ../scss/breakpoints/_base.scss */
+/* line 1746, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 1675, ../scss/breakpoints/_base.scss */
+/* line 1750, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:before {
   background-color: rgba(0, 0, 0, 0.7);
   top: 50%;
@@ -3607,11 +3779,11 @@ body.single-shows .video-controls .btn-play:before {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1681, ../scss/breakpoints/_base.scss */
+/* line 1756, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:after {
   top: 50%;
 }
-/* line 1685, ../scss/breakpoints/_base.scss */
+/* line 1760, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external {
   height: 100%;
   width: 100%;
@@ -3624,19 +3796,19 @@ body.single-shows .video-controls .btn-external {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1692, ../scss/breakpoints/_base.scss */
+/* line 1767, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* line 1694, ../scss/breakpoints/_base.scss */
+/* line 1769, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 1697, ../scss/breakpoints/_base.scss */
+/* line 1772, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover:after {
   opacity: 1;
 }
-/* line 1701, ../scss/breakpoints/_base.scss */
+/* line 1776, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:before {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -3653,7 +3825,7 @@ body.single-shows .video-controls .btn-external:before {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1709, ../scss/breakpoints/_base.scss */
+/* line 1784, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:after {
   content: "Open External Link";
   font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3676,86 +3848,86 @@ body.single-shows .video-controls .btn-external:after {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 1725, ../scss/breakpoints/_base.scss */
+/* line 1800, ../scss/breakpoints/_base.scss */
 body.single-shows .video-thumb {
   border-bottom: 0;
   outline: none;
 }
-/* line 1728, ../scss/breakpoints/_base.scss */
+/* line 1803, ../scss/breakpoints/_base.scss */
 body.single-shows .video-thumb img {
   width: 100%;
   height: auto;
   display: block;
 }
-/* line 1734, ../scss/breakpoints/_base.scss */
+/* line 1809, ../scss/breakpoints/_base.scss */
 body.single-shows article {
   color: white;
 }
-/* line 1737, ../scss/breakpoints/_base.scss */
+/* line 1812, ../scss/breakpoints/_base.scss */
 body.single-shows .show-title {
   margin-bottom: 10px;
 }
-/* line 1740, ../scss/breakpoints/_base.scss */
+/* line 1815, ../scss/breakpoints/_base.scss */
 body.single-shows .show-info {
   font-size: .8em;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 1745, ../scss/breakpoints/_base.scss */
+/* line 1820, ../scss/breakpoints/_base.scss */
 body.single-shows .show-info, body.single-shows .cast-crew {
   margin: 0 -15px;
 }
-/* line 1748, ../scss/breakpoints/_base.scss */
+/* line 1823, ../scss/breakpoints/_base.scss */
 body.single-shows .show-content {
   margin-top: 10px;
 }
-/* line 1751, ../scss/breakpoints/_base.scss */
+/* line 1826, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 1757, ../scss/breakpoints/_base.scss */
+/* line 1832, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:before {
   content: "show";
 }
-/* line 1760, ../scss/breakpoints/_base.scss */
+/* line 1835, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:after {
   border-bottom-color: transparent;
   border-top: 5px solid white;
   top: 55%;
 }
-/* line 1767, ../scss/breakpoints/_base.scss */
+/* line 1842, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .cast, body.single-shows .cast-crew.hide-cast .data-table .cast td {
   display: block;
   overflow: hidden;
   height: 0;
   padding: 0;
 }
-/* line 1779, ../scss/breakpoints/_base.scss */
+/* line 1854, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:before {
   content: "show";
 }
-/* line 1782, ../scss/breakpoints/_base.scss */
+/* line 1857, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:after {
   border-bottom-color: transparent;
   border-top: 5px solid white;
   top: 55%;
 }
-/* line 1789, ../scss/breakpoints/_base.scss */
+/* line 1864, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .crew, body.single-shows .cast-crew.hide-crew .data-table .crew td {
   display: block;
   overflow: hidden;
   height: 0;
   padding: 0;
 }
-/* line 1797, ../scss/breakpoints/_base.scss */
+/* line 1872, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table {
   width: 100%;
 }
-/* line 1799, ../scss/breakpoints/_base.scss */
+/* line 1874, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading {
   cursor: pointer;
 }
-/* line 1801, ../scss/breakpoints/_base.scss */
+/* line 1876, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td {
   position: relative;
 }
@@ -3778,7 +3950,7 @@ body.single-shows .cast-crew .data-table .subheading td:after {
   top: 50%;
   border-bottom: 5px solid white;
 }
-/* line 1804, ../scss/breakpoints/_base.scss */
+/* line 1879, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td:before {
   content: "hide";
   text-transform: uppercase;
@@ -3786,16 +3958,16 @@ body.single-shows .cast-crew .data-table .subheading td:before {
   position: absolute;
   right: 30px;
 }
-/* line 1811, ../scss/breakpoints/_base.scss */
+/* line 1886, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td:after {
   position: absolute;
   right: 10px;
 }
-/* line 1819, ../scss/breakpoints/_base.scss */
+/* line 1894, ../scss/breakpoints/_base.scss */
 body.single-shows .show-gallery {
   padding: 20px 0;
 }
-/* line 1823, ../scss/breakpoints/_base.scss */
+/* line 1898, ../scss/breakpoints/_base.scss */
 body.single-shows .thumb-index .thumb-index-inner {
   margin: 0 -15px;
 }
@@ -3803,42 +3975,42 @@ body.single-shows .thumb-index .thumb-index-inner {
 /******************************************
 SINGLE PERSON PAGE
 ******************************************/
-/* line 1833, ../scss/breakpoints/_base.scss */
+/* line 1908, ../scss/breakpoints/_base.scss */
 body.single-people .headshot {
   margin: 0 -15px 20px;
 }
-/* line 1835, ../scss/breakpoints/_base.scss */
+/* line 1910, ../scss/breakpoints/_base.scss */
 body.single-people .headshot img {
   max-width: 100%;
   height: auto;
 }
-/* line 1840, ../scss/breakpoints/_base.scss */
+/* line 1915, ../scss/breakpoints/_base.scss */
 body.single-people article {
   color: white;
   margin-bottom: 20px;
 }
-/* line 1843, ../scss/breakpoints/_base.scss */
+/* line 1918, ../scss/breakpoints/_base.scss */
 body.single-people article.no-headshot {
   margin-top: 30px;
   padding-left: 0;
 }
-/* line 1848, ../scss/breakpoints/_base.scss */
+/* line 1923, ../scss/breakpoints/_base.scss */
 body.single-people .person-info {
   margin: 0 -15px 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8em;
 }
-/* line 1854, ../scss/breakpoints/_base.scss */
+/* line 1929, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery {
   clear: left;
   margin: 0 -15px 20px;
 }
-/* line 1857, ../scss/breakpoints/_base.scss */
+/* line 1932, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0 15px;
 }
-/* line 1862, ../scss/breakpoints/_base.scss */
+/* line 1937, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a {
   position: absolute;
   top: 0;
@@ -3862,11 +4034,11 @@ body.single-people .person-vid-gallery .thumb-index-list > li a {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 1876, ../scss/breakpoints/_base.scss */
+/* line 1951, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a:hover {
   opacity: 1;
 }
-/* line 1879, ../scss/breakpoints/_base.scss */
+/* line 1954, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a span {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -4495,6 +4667,32 @@ you can add resource intensive styles.
   }
 
   /******************************************
+  INDEX PAGE
+  ******************************************/
+  /* line 73, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-small, body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-large, body.page-template-page-index .embedded-custom-post > ul > li .thumb-index {
+    float: left;
+    width: 50%;
+    max-width: 532px;
+    margin: 0 0 5px;
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 81, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .wp-post-image {
+    margin-bottom: 0;
+  }
+  /* line 84, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .item-content-desc {
+    float: right;
+    width: 50%;
+  }
+
+  /******************************************
   SINGLE VIDEO (SHOW) PAGE, PERSON PAGE
   ******************************************/
   /* line 149, ../scss/partials/_mixins.scss */
@@ -4505,16 +4703,16 @@ you can add resource intensive styles.
     visibility: hidden;
     clear: both;
   }
-  /* line 74, ../scss/breakpoints/_1024up.scss */
+  /* line 101, ../scss/breakpoints/_1024up.scss */
   body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
     float: left;
     width: 50%;
   }
-  /* line 78, ../scss/breakpoints/_1024up.scss */
+  /* line 105, ../scss/breakpoints/_1024up.scss */
   body.single-shows .show-info, body.single-shows .cast-crew, body.single-shows .person-info, body.single-people .show-info, body.single-people .cast-crew, body.single-people .person-info {
     margin-right: 0;
   }
-  /* line 81, ../scss/breakpoints/_1024up.scss */
+  /* line 108, ../scss/breakpoints/_1024up.scss */
   body.single-shows article, body.single-people article {
     float: left;
     width: 50%;
@@ -4525,12 +4723,12 @@ you can add resource intensive styles.
     box-sizing: border-box;
     padding-left: 25px;
   }
-  /* line 90, ../scss/breakpoints/_1024up.scss */
+  /* line 117, ../scss/breakpoints/_1024up.scss */
   body.single-shows .thumb-index .thumb-index-inner, body.single-people .thumb-index .thumb-index-inner {
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 95, ../scss/breakpoints/_1024up.scss */
+  /* line 122, ../scss/breakpoints/_1024up.scss */
   body.single-shows .show-gallery, body.single-people .show-gallery {
     clear: both;
   }
@@ -5070,6 +5268,23 @@ This is for the larger monitors and possibly full screen viewers.
   body.home .home-logo h2 {
     font-size: 2.09em;
     padding-left: 280px;
+  }
+
+  /******************************************
+  INDEX PAGE
+  ******************************************/
+  /* line 129, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-small {
+    display: none;
+  }
+  /* line 132, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-large {
+    display: block;
+    max-width: 50%;
+  }
+  /* line 136, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .thumb-index {
+    max-width: 50%;
   }
 }
 @media only screen and (min-width: 1560px) {
