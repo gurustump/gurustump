@@ -122,6 +122,9 @@ LAYOUT & GRID STYLES
 		}
 	}
 }
+#main {
+	margin-top:20px;
+}
 .header .wrap {
 	margin:0;
 }
@@ -826,6 +829,21 @@ POSTS & CONTENT STYLES
 			left:50%;
 			top:50%;
 			@include transform(translate(-50%, -50%));
+			&:after {
+				content:"buffering";
+				background:$black url(../images/loading.gif) no-repeat 50% 12px;
+				@include border-radius(3px);
+				color:$white;
+				font-family:$headingfont;
+				text-transform:uppercase;
+				left:50%;
+				top: 50%;
+				position: absolute;
+				@include transform(translate(-50%, -50%));
+				padding:52px 10px 8px;
+				opacity:0;
+				@include transition(opacity .375s);
+			}
 			& > iframe {
 				max-height:100%;
 				max-width:100%;
@@ -840,6 +858,13 @@ POSTS & CONTENT STYLES
 			}
 			.vid-playing-next {
 				display:none;
+			}
+		}
+		&.waiting {
+			.vid-player-wrapper {
+				&:after {
+					opacity:1;
+				}
 			}
 		}
 	}
@@ -1431,7 +1456,7 @@ body.home {
 		}
 	}
 	#container {
-		#content {
+		div#content {
 			padding-top:0;
 			@include transition(padding-top 275ms);
 			
@@ -1588,8 +1613,9 @@ body.page-template-page-index {
 				}
 			}
 		}
-		#content {
+		div#content {
 			z-index:3;
+			padding-top:0;
 			#main {
 				position:relative;
 			}

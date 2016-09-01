@@ -307,19 +307,28 @@ jQuery(document).ready(function($) {
 		var video = playerWrap.find('video');
 		var player = video.get(0);
 		var playButton = $('.VIDEO_PLAY');
+		var videoCanPlayThrough = false;
+		video.on('canplaythrough', function() {
+			console.log('can play through');
+			playerContainer.removeClass('waiting');
+			videoCanPlayThrough = true;
+		});
 		playButton.click(function(e) {
 			e.preventDefault();
-			playerContainer.addClass('active');
-			player.play();
+			playWhenReady();
 		});
 		if (isVideoIndex) {
 			$('.REEL_PLAY').click(function(e) {
 				e.preventDefault();
-				playButton.click();
+				playWhenReady();
 			});
 		}
 		video.on('ended', function() {
-			playerContainer.removeClass('active');
+			playerContainer.removeClass('active').addClass('waiting');
+		});
+		video.on('waiting', function() {
+			playerContainer.addClass('waiting');
+			console.log('waiting');
 		});
 		playerContainer.find('.OV_CLOSE').click(function() {
 			player.pause();
@@ -331,7 +340,20 @@ jQuery(document).ready(function($) {
 		});
 		var queryString = getQueryString();
 		if (queryString['videoplay']) {
-			$('.VIDEO_PLAY').click();
+			playWhenReady();
+		}
+		function playWhenReady() {
+			if (videoCanPlayThrough) {
+				playVideo();
+			} else {
+				video.on('canplaythrough', function() {
+					playVideo();
+				});
+			}
+		}
+		function playVideo() {
+			playerContainer.addClass('active');
+			player.play();
 		}
 	}
 	
