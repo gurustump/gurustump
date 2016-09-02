@@ -357,9 +357,18 @@ body.home .home-logo h2 {
 }
 
 /******************************************
+INDEX PAGE
+******************************************/
+/* line 215, ../scss/breakpoints/_481up.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .item-link {
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 213, ../scss/breakpoints/_481up.scss */
+/* line 229, ../scss/breakpoints/_481up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: -20px;
   margin-right: -20px;
@@ -1102,6 +1111,63 @@ body.page-template-page-index #container .sub-header .index-menu > li a:before {
 body.page-template-page-index #container .sub-header .index-menu > li a:hover {
   color: orange;
   background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 318, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.375s;
+  -moz-transition: opacity 0.375s;
+  -ms-transition: opacity 0.375s;
+  -o-transition: opacity 0.375s;
+  transition: opacity 0.375s;
+}
+/* line 331, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover:after, body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover .btn-external {
+  opacity: 1;
+}
+/* line 335, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover .btn-external:before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* line 342, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .btn-external {
+  font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding-top: 58px;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: opacity 0.375s;
+  -moz-transition: opacity 0.375s;
+  -ms-transition: opacity 0.375s;
+  -o-transition: opacity 0.375s;
+  transition: opacity 0.375s;
+}
+/* line 353, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .btn-external:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 /*

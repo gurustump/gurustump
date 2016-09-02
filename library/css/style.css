@@ -3679,38 +3679,81 @@ body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-large 
   display: none;
 }
 /* line 1676, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+/* line 1679, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a {
+  position: relative;
+  display: block;
+  border-bottom: 0;
+}
+/* line 1685, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .btn-external {
+  font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding-top: 58px;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: opacity 0.375s;
+  -moz-transition: opacity 0.375s;
+  -ms-transition: opacity 0.375s;
+  -o-transition: opacity 0.375s;
+  transition: opacity 0.375s;
+}
+/* line 1696, ../scss/breakpoints/_base.scss */
+body.page-template-page-index .embedded-custom-post > ul > li .btn-external:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+/* line 1703, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li .wp-post-image {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 10px;
+  margin: 0 auto;
 }
-/* line 1682, ../scss/breakpoints/_base.scss */
+/* line 1709, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li .item-content-desc {
   margin-bottom: 20px;
 }
-/* line 1685, ../scss/breakpoints/_base.scss */
+/* line 1712, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li .item-link {
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 5px;
 }
-/* line 1689, ../scss/breakpoints/_base.scss */
+/* line 1716, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li .item-link a {
   border: 0;
 }
-/* line 1693, ../scss/breakpoints/_base.scss */
+/* line 1720, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li .thumb-index {
   margin-bottom: 20px;
 }
-/* line 1696, ../scss/breakpoints/_base.scss */
+/* line 1723, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 3px;
   padding-right: 30px;
 }
-/* line 1702, ../scss/breakpoints/_base.scss */
+/* line 1729, ../scss/breakpoints/_base.scss */
 body.page-template-page-index .embedded-custom-post > ul > li ul.info {
   line-height: 1.8em;
   font-size: .9em;
@@ -3719,26 +3762,26 @@ body.page-template-page-index .embedded-custom-post > ul > li ul.info {
 /******************************************
 VIDEO GALLERY PAGE
 ******************************************/
-/* line 1715, ../scss/breakpoints/_base.scss */
+/* line 1742, ../scss/breakpoints/_base.scss */
 body.video-gallery .simple-page-heading {
   background: rgba(0, 0, 0, 0.5);
   margin: 0;
   padding: 15px 0;
 }
-/* line 1720, ../scss/breakpoints/_base.scss */
+/* line 1747, ../scss/breakpoints/_base.scss */
 body.video-gallery .body-content {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 1724, ../scss/breakpoints/_base.scss */
+/* line 1751, ../scss/breakpoints/_base.scss */
 body.video-gallery .video-thumb-index {
   margin-bottom: 30px;
 }
-/* line 1727, ../scss/breakpoints/_base.scss */
+/* line 1754, ../scss/breakpoints/_base.scss */
 body.video-gallery .video-thumb-index .thumb-index-list > li {
   display: none;
 }
-/* line 1729, ../scss/breakpoints/_base.scss */
+/* line 1756, ../scss/breakpoints/_base.scss */
 body.video-gallery .video-thumb-index .thumb-index-list > li.selected {
   display: block;
 }
@@ -3746,17 +3789,17 @@ body.video-gallery .video-thumb-index .thumb-index-list > li.selected {
 /******************************************
 SINGLE VIDEO (SHOW) PAGE
 ******************************************/
-/* line 1741, ../scss/breakpoints/_base.scss */
+/* line 1768, ../scss/breakpoints/_base.scss */
 body.single-shows .video-wrapper {
   margin: 0 -15px 15px;
 }
-/* line 1744, ../scss/breakpoints/_base.scss */
+/* line 1771, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls {
   position: relative;
   display: block;
   border: none;
 }
-/* line 1748, ../scss/breakpoints/_base.scss */
+/* line 1775, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play {
   position: absolute;
   width: 100%;
@@ -3768,15 +3811,15 @@ body.single-shows .video-controls .btn-play {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1754, ../scss/breakpoints/_base.scss */
+/* line 1781, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 1756, ../scss/breakpoints/_base.scss */
+/* line 1783, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 1760, ../scss/breakpoints/_base.scss */
+/* line 1787, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:before {
   background-color: rgba(0, 0, 0, 0.7);
   top: 50%;
@@ -3791,11 +3834,11 @@ body.single-shows .video-controls .btn-play:before {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1766, ../scss/breakpoints/_base.scss */
+/* line 1793, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:after {
   top: 50%;
 }
-/* line 1770, ../scss/breakpoints/_base.scss */
+/* line 1797, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external {
   height: 100%;
   width: 100%;
@@ -3808,19 +3851,19 @@ body.single-shows .video-controls .btn-external {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1777, ../scss/breakpoints/_base.scss */
+/* line 1804, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* line 1779, ../scss/breakpoints/_base.scss */
+/* line 1806, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 1782, ../scss/breakpoints/_base.scss */
+/* line 1809, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover:after {
   opacity: 1;
 }
-/* line 1786, ../scss/breakpoints/_base.scss */
+/* line 1813, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:before {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -3837,7 +3880,7 @@ body.single-shows .video-controls .btn-external:before {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1794, ../scss/breakpoints/_base.scss */
+/* line 1821, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:after {
   content: "Open External Link";
   font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3860,86 +3903,86 @@ body.single-shows .video-controls .btn-external:after {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 1810, ../scss/breakpoints/_base.scss */
+/* line 1837, ../scss/breakpoints/_base.scss */
 body.single-shows .video-thumb {
   border-bottom: 0;
   outline: none;
 }
-/* line 1813, ../scss/breakpoints/_base.scss */
+/* line 1840, ../scss/breakpoints/_base.scss */
 body.single-shows .video-thumb img {
   width: 100%;
   height: auto;
   display: block;
 }
-/* line 1819, ../scss/breakpoints/_base.scss */
+/* line 1846, ../scss/breakpoints/_base.scss */
 body.single-shows article {
   color: white;
 }
-/* line 1822, ../scss/breakpoints/_base.scss */
+/* line 1849, ../scss/breakpoints/_base.scss */
 body.single-shows .show-title {
   margin-bottom: 10px;
 }
-/* line 1825, ../scss/breakpoints/_base.scss */
+/* line 1852, ../scss/breakpoints/_base.scss */
 body.single-shows .show-info {
   font-size: .8em;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 1830, ../scss/breakpoints/_base.scss */
+/* line 1857, ../scss/breakpoints/_base.scss */
 body.single-shows .show-info, body.single-shows .cast-crew {
   margin: 0 -15px;
 }
-/* line 1833, ../scss/breakpoints/_base.scss */
+/* line 1860, ../scss/breakpoints/_base.scss */
 body.single-shows .show-content {
   margin-top: 10px;
 }
-/* line 1836, ../scss/breakpoints/_base.scss */
+/* line 1863, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 1842, ../scss/breakpoints/_base.scss */
+/* line 1869, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:before {
   content: "show";
 }
-/* line 1845, ../scss/breakpoints/_base.scss */
+/* line 1872, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:after {
   border-bottom-color: transparent;
   border-top: 5px solid white;
   top: 55%;
 }
-/* line 1852, ../scss/breakpoints/_base.scss */
+/* line 1879, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .cast, body.single-shows .cast-crew.hide-cast .data-table .cast td {
   display: block;
   overflow: hidden;
   height: 0;
   padding: 0;
 }
-/* line 1864, ../scss/breakpoints/_base.scss */
+/* line 1891, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:before {
   content: "show";
 }
-/* line 1867, ../scss/breakpoints/_base.scss */
+/* line 1894, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:after {
   border-bottom-color: transparent;
   border-top: 5px solid white;
   top: 55%;
 }
-/* line 1874, ../scss/breakpoints/_base.scss */
+/* line 1901, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .crew, body.single-shows .cast-crew.hide-crew .data-table .crew td {
   display: block;
   overflow: hidden;
   height: 0;
   padding: 0;
 }
-/* line 1882, ../scss/breakpoints/_base.scss */
+/* line 1909, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table {
   width: 100%;
 }
-/* line 1884, ../scss/breakpoints/_base.scss */
+/* line 1911, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading {
   cursor: pointer;
 }
-/* line 1886, ../scss/breakpoints/_base.scss */
+/* line 1913, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td {
   position: relative;
 }
@@ -3962,7 +4005,7 @@ body.single-shows .cast-crew .data-table .subheading td:after {
   top: 50%;
   border-bottom: 5px solid white;
 }
-/* line 1889, ../scss/breakpoints/_base.scss */
+/* line 1916, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td:before {
   content: "hide";
   text-transform: uppercase;
@@ -3970,16 +4013,16 @@ body.single-shows .cast-crew .data-table .subheading td:before {
   position: absolute;
   right: 30px;
 }
-/* line 1896, ../scss/breakpoints/_base.scss */
+/* line 1923, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td:after {
   position: absolute;
   right: 10px;
 }
-/* line 1904, ../scss/breakpoints/_base.scss */
+/* line 1931, ../scss/breakpoints/_base.scss */
 body.single-shows .show-gallery {
   padding: 20px 0;
 }
-/* line 1908, ../scss/breakpoints/_base.scss */
+/* line 1935, ../scss/breakpoints/_base.scss */
 body.single-shows .thumb-index .thumb-index-inner {
   margin: 0 -15px;
 }
@@ -3987,42 +4030,42 @@ body.single-shows .thumb-index .thumb-index-inner {
 /******************************************
 SINGLE PERSON PAGE
 ******************************************/
-/* line 1918, ../scss/breakpoints/_base.scss */
+/* line 1945, ../scss/breakpoints/_base.scss */
 body.single-people .headshot {
   margin: 0 -15px 20px;
 }
-/* line 1920, ../scss/breakpoints/_base.scss */
+/* line 1947, ../scss/breakpoints/_base.scss */
 body.single-people .headshot img {
   max-width: 100%;
   height: auto;
 }
-/* line 1925, ../scss/breakpoints/_base.scss */
+/* line 1952, ../scss/breakpoints/_base.scss */
 body.single-people article {
   color: white;
   margin-bottom: 20px;
 }
-/* line 1928, ../scss/breakpoints/_base.scss */
+/* line 1955, ../scss/breakpoints/_base.scss */
 body.single-people article.no-headshot {
   margin-top: 30px;
   padding-left: 0;
 }
-/* line 1933, ../scss/breakpoints/_base.scss */
+/* line 1960, ../scss/breakpoints/_base.scss */
 body.single-people .person-info {
   margin: 0 -15px 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8em;
 }
-/* line 1939, ../scss/breakpoints/_base.scss */
+/* line 1966, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery {
   clear: left;
   margin: 0 -15px 20px;
 }
-/* line 1942, ../scss/breakpoints/_base.scss */
+/* line 1969, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0 15px;
 }
-/* line 1947, ../scss/breakpoints/_base.scss */
+/* line 1974, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a {
   position: absolute;
   top: 0;
@@ -4046,11 +4089,11 @@ body.single-people .person-vid-gallery .thumb-index-list > li a {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 1961, ../scss/breakpoints/_base.scss */
+/* line 1988, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a:hover {
   opacity: 1;
 }
-/* line 1964, ../scss/breakpoints/_base.scss */
+/* line 1991, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a span {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -4262,9 +4305,18 @@ tweeners.
   }
 
   /******************************************
+  INDEX PAGE
+  ******************************************/
+  /* line 215, ../scss/breakpoints/_481up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .item-link {
+    padding-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /******************************************
   SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
   ******************************************/
-  /* line 213, ../scss/breakpoints/_481up.scss */
+  /* line 229, ../scss/breakpoints/_481up.scss */
   body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
     margin-left: -20px;
     margin-right: -20px;
@@ -4705,7 +4757,7 @@ you can add resource intensive styles.
   }
   /* line 88, ../scss/breakpoints/_1024up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .item-link {
-    padding-top: 5px;
+    border-top: 0;
   }
 
   /******************************************
@@ -5164,6 +5216,63 @@ you can add resource intensive styles.
   body.page-template-page-index #container .sub-header .index-menu > li a:hover {
     color: orange;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  /* line 318, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.375s;
+    -moz-transition: opacity 0.375s;
+    -ms-transition: opacity 0.375s;
+    -o-transition: opacity 0.375s;
+    transition: opacity 0.375s;
+  }
+  /* line 331, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover:after, body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover .btn-external {
+    opacity: 1;
+  }
+  /* line 335, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover .btn-external:before {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  /* line 342, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .btn-external {
+    font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top: 58px;
+    opacity: 0;
+    z-index: 2;
+    -webkit-transition: opacity 0.375s;
+    -moz-transition: opacity 0.375s;
+    -ms-transition: opacity 0.375s;
+    -o-transition: opacity 0.375s;
+    transition: opacity 0.375s;
+  }
+  /* line 353, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-index .embedded-custom-post > ul > li .btn-external:before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
 /*********************

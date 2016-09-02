@@ -1673,11 +1673,38 @@ body.page-template-page-index {
 				.post-thumb-large {
 					display:none;
 				}
+				.post-thumb-container {
+					position:relative;
+					margin-bottom:10px;
+					a {
+						position:relative;
+						display:block;
+						border-bottom:0;
+					}
+				}
+				.btn-external {
+					font-family:$headingfont;
+					display:block;
+					position:absolute;
+					top:50%;
+					left:50%;
+					@include transform(translate(-50%,-50%));
+					padding-top:58px;
+					opacity:0;
+					z-index:2;
+					@include transition(opacity .375s);
+					&:before {
+						position:absolute;
+						top:0;
+						left:50%;
+						@include transform(translateX(-50%));
+					}
+				}
 				.wp-post-image {
 					max-width:100%;
 					height:auto;
 					display:block;
-					margin:0 auto 10px;
+					margin:0 auto;
 				}
 				.item-content-desc {
 					margin-bottom:20px;

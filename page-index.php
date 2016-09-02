@@ -86,15 +86,15 @@
 													<?php $link_meta_name = '_gurustump_'.$customPostTypeMeta.'_url';
 													$customPostLinkMeta = get_post_meta($item->ID, $link_meta_name, true); ?>
 													<?php if (has_post_thumbnail($item->ID)) { ?>
-														<div class="post-thumb-small">
-														<?php echo $customPostLinkMeta ? '<a href="'.$customPostLinkMeta.'" target="_blank">' : ''; ?>
-														<?php echo get_the_post_thumbnail($item->ID, 'movie-thumb'); ?>
-														<?php echo $customPostLinkMeta ? '</a>' : ''; ?>
+														<div class="post-thumb-container post-thumb-small">
+															<?php echo $customPostLinkMeta ? '<a href="'.$customPostLinkMeta.'" target="_blank"><span class="btn-external">Open External Link</span>' : ''; ?>
+															<?php echo get_the_post_thumbnail($item->ID, 'movie-thumb'); ?>
+															<?php echo $customPostLinkMeta ? '</a>' : ''; ?>
 														</div>
-														<div class="post-thumb-large">
-														<?php echo $customPostLinkMeta ? '<a href="'.$customPostLinkMeta.'" target="_blank">' : ''; ?>
-														<?php echo get_the_post_thumbnail($item->ID, 'medium'); ?>
-														<?php echo $customPostLinkMeta ? '</a>' : ''; ?>
+														<div class="post-thumb-container post-thumb-large">
+															<?php echo $customPostLinkMeta ? '<a href="'.$customPostLinkMeta.'" target="_blank"><span class="btn-external">Open External Link</span>' : ''; ?>
+															<?php echo get_the_post_thumbnail($item->ID, 'medium'); ?>
+															<?php echo $customPostLinkMeta ? '</a>' : ''; ?>
 														</div>
 													<?php } ?>
 													<?php if ($item->post_content) { ?>

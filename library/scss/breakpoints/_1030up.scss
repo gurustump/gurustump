@@ -310,4 +310,54 @@ body.page-template-page-index {
 			}
 		}
 	}
+	.embedded-custom-post {
+		& > ul {
+			& > li {
+				.post-thumb-container {
+					a {
+						&:after {
+							content:"";
+							width:100%;
+							height:100%;
+							left:0;
+							top:0;
+							background:rgba($black, .8);
+							z-index:1;
+							position:absolute;
+							opacity:0;
+							@include transition(opacity .375s);
+						}
+						&:hover {
+							&:after, .btn-external {
+								opacity:1;
+							}
+							.btn-external {
+								&:before {
+									background-color:rgba($white, .2);
+								}
+							}
+						}
+					}
+				}
+				.btn-external {
+					font-family:$headingfont;
+					display:block;
+					position:absolute;
+					top:50%;
+					left:50%;
+					@include transform(translate(-50%,-50%));
+					padding-top:58px;
+					opacity:0;
+					z-index:2;
+					@include transition(opacity .375s);
+					&:before {
+						position:absolute;
+						top:0;
+						left:50%;
+						@include transform(translateX(-50%));
+					}
+				}
+			}
+		}
+	}
 }

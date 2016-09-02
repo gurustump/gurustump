@@ -206,6 +206,22 @@ body.home {
 }
 
 /******************************************
+INDEX PAGE
+******************************************/
+body.page-template-page-index {
+	.embedded-custom-post {
+		& > ul {
+			& > li {
+				.item-link {
+					padding-top:5px;
+					border-top:1px solid rgba($white, .2);
+				}
+			}
+		}
+	}
+}
+
+/******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
 body {
