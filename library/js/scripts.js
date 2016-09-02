@@ -122,6 +122,13 @@ function getQueryString() {
     return vars;
 }
 
+// The YouTube Iframe API function has to be in the global scope, so it's out here outside of jQuery document.reaady
+// Using jQuery deferred objects to be able to run jQuery when the function runs
+// http://stackoverflow.com/questions/17753525/onyoutubeiframeapiready-inside-jquerydocument-ready
+var YouTubeDeferred = jQuery.Deferred();
+window.onYouTubeIframeAPIReady = function(){
+	YouTubeDeferred.resolve(window.YT);
+}
 
 /*
  * Put all your regular jQuery in here.
@@ -462,13 +469,15 @@ jQuery(document).ready(function($) {
 			clearInterval(videoUpdateInterval);
 			playerWrap.removeClass('next-video-triggered');
 		}
-		window.onYouTubeIframeAPIReady = function(){
+		YouTubeDeferred.done(function(YT) {
 			player = new YT.Player('video_player', {
 				width:1280,
 				height:720,
 				events: {
 					onReady: function() {
 						if (isSingleShow) {
+							console.log('video ready');
+							console.log(player);
 							var queryString = getQueryString();
 							if (queryString['autoplay']) {
 								$('.TRIGGER_VIDEO').click();
@@ -484,7 +493,7 @@ jQuery(document).ready(function($) {
 					}
 				}
 			});
-		}
+		});
 		$('.VID_THUMBS_LIST a.VIDEO_PLAY, .TRIGGER_VIDEO').click(function(e) {
 			clearVideoIntervalCheck();
 			nextVideoTriggered = false;
