@@ -2106,7 +2106,7 @@ h6, .h6 {
 /* line 213, ../scss/breakpoints/_base.scss */
 ul.info {
   list-style: disc;
-  margin-left: 20px;
+  margin: 0 0 1em 20px;
 }
 
 /*********************
