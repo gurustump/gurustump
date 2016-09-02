@@ -5052,10 +5052,24 @@ you can add resource intensive styles.
     right: 0;
   }
 
+  /* simple accordion */
+  /* line 238, ../scss/breakpoints/_1030up.scss */
+  .accordion-item .accordion-toggle {
+    -webkit-transition: background-color 0.375s;
+    -moz-transition: background-color 0.375s;
+    -ms-transition: background-color 0.375s;
+    -o-transition: background-color 0.375s;
+    transition: background-color 0.375s;
+  }
+  /* line 240, ../scss/breakpoints/_1030up.scss */
+  .accordion-item .accordion-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
   /******************************************
   INDIVIDUAL PAGES
   ******************************************/
-  /* line 243, ../scss/breakpoints/_1030up.scss */
+  /* line 253, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .main-nav > li:hover > a, body.page-template-page-index .main-nav ul, body.page-template-page-index .main-nav a:hover, body.home .main-nav > li:hover > a, body.home .main-nav ul, body.home .main-nav a:hover {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -5063,11 +5077,11 @@ you can add resource intensive styles.
   /******************************************
   HOME PAGE
   ******************************************/
-  /* line 254, ../scss/breakpoints/_1030up.scss */
+  /* line 264, ../scss/breakpoints/_1030up.scss */
   body.home .promo.services > ul > li {
     padding-left: 50px;
   }
-  /* line 256, ../scss/breakpoints/_1030up.scss */
+  /* line 266, ../scss/breakpoints/_1030up.scss */
   body.home .promo.services > ul > li:first-child {
     padding-left: 0;
     padding-right: 50px;
@@ -5076,7 +5090,7 @@ you can add resource intensive styles.
   /******************************************
   INDEX PAGE
   ******************************************/
-  /* line 270, ../scss/breakpoints/_1030up.scss */
+  /* line 280, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .page-header {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -5085,20 +5099,20 @@ you can add resource intensive styles.
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  /* line 273, ../scss/breakpoints/_1030up.scss */
+  /* line 283, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .page-header .page-title {
     font-size: 3em;
   }
-  /* line 277, ../scss/breakpoints/_1030up.scss */
+  /* line 287, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu {
     text-align: center;
     font-size: 2.5em;
   }
-  /* line 280, ../scss/breakpoints/_1030up.scss */
+  /* line 290, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li {
     display: inline-block;
   }
-  /* line 282, ../scss/breakpoints/_1030up.scss */
+  /* line 292, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li a {
     -webkit-transition: background-color 0.375s;
     -moz-transition: background-color 0.375s;
@@ -5121,7 +5135,7 @@ you can add resource intensive styles.
     border-right: 20px solid transparent;
     border-top: 15px solid orange;
   }
-  /* line 288, ../scss/breakpoints/_1030up.scss */
+  /* line 298, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li a:before {
     position: relative;
     left: 50%;
@@ -5132,7 +5146,7 @@ you can add resource intensive styles.
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
   }
-  /* line 294, ../scss/breakpoints/_1030up.scss */
+  /* line 304, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li a:hover {
     color: orange;
     background-color: rgba(0, 0, 0, 0.5);

@@ -233,6 +233,16 @@ NAVIGATION STYLES
 	}
 }
 
+/* simple accordion */
+.accordion-item {
+	.accordion-toggle {
+		@include transition(background-color .375s);
+		&:hover {
+			background-color:rgba($white, .1);
+		}
+	}
+}
+
 	
 /******************************************
 INDIVIDUAL PAGES
