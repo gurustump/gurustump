@@ -1682,6 +1682,14 @@ body.page-template-page-index {
 				.item-content-desc {
 					margin-bottom:20px;
 				}
+				.item-link {
+					padding-bottom:5px;
+					border-bottom:1px solid rgba($white, .2);
+					margin-bottom:5px;
+					a {
+						border:0;
+					}
+				}
 				.thumb-index {
 					margin-bottom:20px;
 				}

@@ -81,28 +81,39 @@
 										));
 										foreach($customPostItems as $key => $item) { ?>
 											<li class="accordion-item accordion-closed ACCORDION_ITEM">
-												<?php /* <pre><?php print_r($item); ?></pre> */ ?>
 												<h3 class="accordion-toggle  TOGGLE_ACCORDION"><?php echo $item->post_title; ?></h3>
 												<div class="item-content accordion-content ACCORDION_CONTENT">
+													<?php $link_meta_name = '_gurustump_'.$customPostTypeMeta.'_url';
+													$customPostLinkMeta = get_post_meta($item->ID, $link_meta_name, true); ?>
 													<?php if (has_post_thumbnail($item->ID)) { ?>
 														<div class="post-thumb-small">
+														<?php echo $customPostLinkMeta ? '<a href="'.$customPostLinkMeta.'" target="_blank">' : ''; ?>
 														<?php echo get_the_post_thumbnail($item->ID, 'movie-thumb'); ?>
+														<?php echo $customPostLinkMeta ? '</a>' : ''; ?>
 														</div>
 														<div class="post-thumb-large">
+														<?php echo $customPostLinkMeta ? '<a href="'.$customPostLinkMeta.'" target="_blank">' : ''; ?>
 														<?php echo get_the_post_thumbnail($item->ID, 'medium'); ?>
+														<?php echo $customPostLinkMeta ? '</a>' : ''; ?>
 														</div>
 													<?php } ?>
 													<?php if ($item->post_content) { ?>
 													<div class="item-content-desc">
+													<?php if ($customPostLinkMeta) { ?>
+													<div class="item-link">
+														<a href="<?php echo $customPostLinkMeta; ?>" target="_blank"><?php echo $customPostLinkMeta; ?></a>
+													</div>
+													<?php } ?>
 													<?php echo $item->post_content; ?>
 													</div>
 													<?php } ?>
-													<?php $equipmentGalleryMeta = get_post_meta($item->ID, '_gurustump_equipment_gallery', true);
-													if ($equipmentGalleryMeta) { ?>
+													<?php $gallery_meta_name = '_gurustump_'.$customPostTypeMeta.'_gallery';
+													$customPostGalleryMeta = get_post_meta($item->ID, $gallery_meta_name, true);
+													if ($customPostGalleryMeta) { ?>
 													<div class="thumb-index">
 														<div class="thumb-index-inner">
 															<ul class="thumb-index-list GALLERY">
-															<?php foreach($equipmentGalleryMeta as $key => $image) {
+															<?php foreach($customPostGalleryMeta as $key => $image) {
 																$thumbImage = wp_get_attachment_image_src($key, 'thumbnail');
 																$bigImage = wp_get_attachment_image_src($key, 'extra-large');
 																?>

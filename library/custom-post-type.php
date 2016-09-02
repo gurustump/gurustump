@@ -259,7 +259,7 @@ function equipment_custom_type() {
 			'edit_item' => __( 'Edit Equipment Package', 'bonestheme' ),
 			'new_item' => __( 'New Equipment Package', 'bonestheme' ),
 			'view_item' => __( 'View Equipment Package', 'bonestheme' ),
-			'search_items' => __( 'Search Equipment Package', 'bonestheme' ),
+			'search_items' => __( 'Search Equipment Packages', 'bonestheme' ),
 			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
 			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
 			'parent_item_colon' => ''
@@ -286,6 +286,50 @@ function equipment_custom_type() {
 
 // adding the function to the Wordpress init
 add_action( 'init', 'equipment_custom_type');	
+
+
+// Person custom post type
+function website_custom_type() { 
+	// creating (registering) the custom type 
+	register_post_type( 'websites', // (http://codex.wordpress.org/Function_Reference/register_post_type) 
+		// let's now add all the options for this post type
+		array( 'labels' => array(
+			'name' => __( 'Websites', 'bonestheme' ), 
+			'singular_name' => __( 'Website', 'bonestheme' ), 
+			'all_items' => __( 'All Websites', 'bonestheme' ),
+			'add_new' => __( 'Add New', 'bonestheme' ),
+			'add_new_item' => __( 'Add New Website', 'bonestheme' ),
+			'edit' => __( 'Edit', 'bonestheme' ),
+			'edit_item' => __( 'Edit Website', 'bonestheme' ),
+			'new_item' => __( 'New Website', 'bonestheme' ),
+			'view_item' => __( 'View Website', 'bonestheme' ),
+			'search_items' => __( 'Search Websites', 'bonestheme' ),
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ),
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ),
+			'parent_item_colon' => ''
+			),
+			'description' => __( "Websites I've created", 'bonestheme' ),
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 8,
+			'menu_icon' => 'dashicons-admin-site',
+			'rewrite'	=> array( 'slug' => 'websites', 'with_front' => false ),
+			//'has_archive' => 'show',
+			'has_archive' => false,
+			'hierarchical' => false,
+				'capability_type' => 'post',
+			// the next one is important, it tells what's enabled in the post editor 
+			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
+		) // end of options 
+	); // end of register post type 
+	
+}
+
+// adding the function to the Wordpress init
+add_action( 'init', 'website_custom_type');	
 
 /*
 // let's create the function for the custom type
