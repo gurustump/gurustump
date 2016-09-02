@@ -212,9 +212,10 @@ body.page-template-page-index {
 	.embedded-custom-post {
 		& > ul {
 			& > li {
-				.item-link {
+				.item-content-desc {
 					padding-top:5px;
 					border-top:1px solid rgba($white, .2);
+					margin-top:10px;
 				}
 			}
 		}

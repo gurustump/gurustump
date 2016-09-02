@@ -360,15 +360,16 @@ body.home .home-logo h2 {
 INDEX PAGE
 ******************************************/
 /* line 215, ../scss/breakpoints/_481up.scss */
-body.page-template-page-index .embedded-custom-post > ul > li .item-link {
+body.page-template-page-index .embedded-custom-post > ul > li .item-content-desc {
   padding-top: 5px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 10px;
 }
 
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 229, ../scss/breakpoints/_481up.scss */
+/* line 230, ../scss/breakpoints/_481up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: -20px;
   margin-right: -20px;
