@@ -1709,6 +1709,13 @@ body.page-template-page-index {
 				.item-content-desc {
 					padding-top:5px;
 					margin-bottom:20px;
+					section {
+						margin-bottom:20px;
+						h4 {
+							margin-bottom:4px;
+							border-bottom:1px solid rgba($white, .2);
+						}
+					}
 				}
 				.item-link {
 					padding-bottom:5px;
