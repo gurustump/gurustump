@@ -243,8 +243,6 @@ jQuery(document).ready(function($) {
 		var simpleAutoCarouselInteval = setInterval(function() {
 			var active = container.find('.active');
 			var next = active.next().length > 0 ? active.next() : active.siblings().first();
-			console.log(next);
-			console.log(next.length);
 			if (next.length < 1) {
 				clearInterval(simpleAutoCarouselInteval);
 			} else {
@@ -325,8 +323,14 @@ jQuery(document).ready(function($) {
 		}
 	}
 	function simpleAccordion() {
+		console.log('what the hell');
 		$('.TOGGLE_ACCORDION').click(function() {
-			$(this).closest('.ACCORDION_ITEM').toggleClass('accordion-closed');
+			var thisAccordionItem = $(this).closest('.ACCORDION_ITEM');
+			var thisAccordionContainer = thisAccordionItem.closest('.SIMPLE_ACCORDION');
+			thisAccordionItem.toggleClass('accordion-closed');
+			if (thisAccordionContainer.length > 0) {
+				thisAccordionItem.siblings('.ACCORDION_ITEM').addClass('accordion-closed');
+			}
 		});
 	}
 	simpleAccordion();
@@ -341,7 +345,6 @@ jQuery(document).ready(function($) {
 		var playButton = $('.VIDEO_PLAY');
 		var videoCanPlayThrough = false;
 		video.on('canplaythrough', function() {
-			console.log('can play through');
 			playerContainer.removeClass('waiting');
 			videoCanPlayThrough = true;
 		});
@@ -360,7 +363,6 @@ jQuery(document).ready(function($) {
 		});
 		video.on('waiting', function() {
 			playerContainer.addClass('waiting');
-			console.log('waiting');
 		});
 		playerContainer.find('.OV_CLOSE').click(function() {
 			player.pause();

@@ -71,7 +71,7 @@
 									if ($customPostTypeDescription) { ?>
 									<div class="description"><?php echo $customPostTypeDescription; ?></div>
 									<?php } ?>
-									<ul>
+									<ul class="SIMPLE_ACCORDION">
 										<?php /* <pre><?php print_r($customPostTypeMeta); ?></pre> */ ?>
 										<?php $customPostItems = get_posts(array(
 											'posts_per_page'=>-1,
@@ -80,7 +80,7 @@
 											'order'=>'ASC' */
 										));
 										foreach($customPostItems as $key => $item) { ?>
-											<li class="accordion-item accordion-closed ACCORDION_ITEM">
+											<li class="accordion-item <?php echo $key == 0 ? '' : 'accordion-closed '; ?>ACCORDION_ITEM">
 												<h3 class="accordion-toggle  TOGGLE_ACCORDION"><?php echo $item->post_title; ?></h3>
 												<div class="item-content accordion-content ACCORDION_CONTENT">
 													<?php $link_meta_name = '_gurustump_'.$customPostTypeMeta.'_url';
