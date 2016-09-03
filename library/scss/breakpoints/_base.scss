@@ -1655,6 +1655,16 @@ body.page-template-page-index {
 			}
 		}
 	}
+	#main {
+		margin-top:30px;
+	}
+	.entry-content {
+		padding:20px 0 0;
+		margin:50px auto;
+		max-width:800px;
+		border-bottom:1px solid rgba($orange, .5);
+		border-top:1px solid rgba($orange, .5);
+	}
 	.embedded-custom-post {
 		color:$white;
 		padding-top:100px;

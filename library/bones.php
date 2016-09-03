@@ -130,11 +130,6 @@ function bones_scripts_and_styles() {
 		// imgpreload https://github.com/farinspace/jquery.imgpreload
 		wp_register_script( 'imgpreload', get_stylesheet_directory_uri() . '/library/js/libs/jquery.imgpreload.min.js', array('jquery'), '1.6.2', false );
 
-		// youtube iframe api
-		if (is_page_template('page-gallery.php') || is_singular('shows')) {
-			wp_register_script( 'youtube-api', 'https://www.youtube.com/iframe_api', array(), '', true );
-		}
-
 		// register main stylesheet
 		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -148,6 +143,11 @@ function bones_scripts_and_styles() {
 
 		//adding scripts file in the footer
 		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+
+		// youtube iframe api
+		if (is_page_template('page-gallery.php') || is_singular('shows')) {
+			wp_register_script( 'youtube-api', 'https://www.youtube.com/iframe_api', array('bones-js'), '', true );
+		}
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'bones-modernizr' );
