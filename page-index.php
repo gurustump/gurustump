@@ -104,7 +104,7 @@
 														<a href="<?php echo $customPostLinkMeta; ?>" target="_blank"><?php echo $customPostLinkMeta; ?></a>
 													</div>
 													<?php } ?>
-													<?php echo $item->post_content; ?>
+													<?php echo wpautop($item->post_content); ?>
 													</div>
 													<?php } ?>
 													<?php $gallery_meta_name = '_gurustump_'.$customPostTypeMeta.'_gallery';

@@ -323,7 +323,6 @@ jQuery(document).ready(function($) {
 		}
 	}
 	function simpleAccordion() {
-		console.log('what the hell');
 		$('.TOGGLE_ACCORDION').click(function() {
 			var thisAccordionItem = $(this).closest('.ACCORDION_ITEM');
 			var thisAccordionContainer = thisAccordionItem.closest('.SIMPLE_ACCORDION');
