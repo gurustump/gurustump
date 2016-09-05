@@ -498,6 +498,13 @@ POSTS & CONTENT STYLES
 }
 
 /* entry content */
+body.page {
+	.hentry {
+		.entry-content {
+			padding-bottom:1.5em;
+		}
+	}
+}
 .entry-content {
 	padding: 1.5em 1.5em 0;
 
@@ -1284,7 +1291,9 @@ COMMENT FORM STYLES
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
+	margin-bottom:1.5em;
+}
 
 	.widgettitle {}
 

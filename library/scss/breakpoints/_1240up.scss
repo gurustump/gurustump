@@ -69,7 +69,6 @@ POSTS & CONTENT STYLES
 *********************/
 .hentry {
 	header {
-		padding-bottom:0;
 		.post-thumb-container {
 			margin-right:-300px;
 			margin-bottom:0;
@@ -90,6 +89,13 @@ POSTS & CONTENT STYLES
 	}
 
 } /* end .hentry */
+body.single-post {
+	.hentry {
+		header {
+			padding-bottom:0;
+		}
+	}
+}
 
 /* image gallery styles */
 .thumb-index {
