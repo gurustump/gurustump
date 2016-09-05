@@ -64,6 +64,32 @@ html.scrolled {
 		}
 	}
 }
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.hentry {
+	header {
+		padding-bottom:0;
+		.post-thumb-container {
+			margin-right:-300px;
+			margin-bottom:0;
+			float:left;
+			img {
+				max-width:300px;
+			}
+		}
+		@include clearfix;
+	}
+	.header-text-container {
+		float:left;
+		margin-left:300px;
+		margin-bottom:1.5em;
+	}
+	.entry-content {
+		clear:left;
+	}
+
+} /* end .hentry */
 
 /* image gallery styles */
 .thumb-index {

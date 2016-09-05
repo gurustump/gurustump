@@ -412,16 +412,21 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 .hentry {
-	background-color: $white;
-	border-radius: 3px;
-	margin-bottom: 1.5em;
-	border: 1px solid $border-color;
-
+	background-color:$white;
+	margin-bottom:1.5em;
 	header {
-		border-bottom: 1px solid $light-gray;
-		padding: 1.5em;
+		border-bottom:1px solid $light-gray;
+		padding:1.5em;
+		.post-thumb-container {
+			margin:-1.5em -1.5em 1.5em;
+			img {
+				display:block;
+				max-width:100%;
+				height:auto;
+				margin:0 auto
+			}
+		}
 	}
-
 	footer {
 		padding: 1.5em;
 		border-top: 1px solid $light-gray;
@@ -459,12 +464,17 @@ POSTS & CONTENT STYLES
 .tag-slug {}        /* style by tag (i.e. tag-news) */
 
 /* post meta */
-.byline {
+.byline, .post-categories {
 	color: $meta-gray;
-	font-style: italic;
-	margin: 0;
+	font-family:$headingfont;
+	font-size:.8em;
+	text-transform:uppercase;
+	margin:.5em 0 0;
 
 	time {}
+}
+.byline {
+	margin-top:1.5em;
 }
 
 .data-table {
@@ -676,7 +686,7 @@ POSTS & CONTENT STYLES
 				width:100%;
 				height:auto;
 				display:block;
-				
+				margin:0;
 			}
 		}
 	}
@@ -1747,6 +1757,9 @@ body.page-template-page-index {
 				ul.info {
 					line-height:1.8em;
 					font-size:.9em;
+				}
+				.accordion-content {
+					max-height:3000px;
 				}
 			}
 		}
