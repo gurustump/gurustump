@@ -764,7 +764,7 @@ body#tinymce.wp-editor tr {
 }
 /* line 125, ../scss/editor-style.scss */
 body#tinymce.wp-editor tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
 }
 /* line 130, ../scss/editor-style.scss */
 body#tinymce.wp-editor td {
@@ -777,7 +777,7 @@ body#tinymce.wp-editor td:last-child {
 }
 /* line 139, ../scss/editor-style.scss */
 body#tinymce.wp-editor th {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
   border-bottom: 1px solid #eaeaea;
   border-right: 1px solid #eaeaea;
 }
@@ -818,7 +818,7 @@ body#tinymce.wp-editor .size-thumbnail {
 /* line 182, ../scss/editor-style.scss */
 body#tinymce.wp-editor pre {
   background: black;
-  color: rgba(0, 0, 0, 0.1);
+  color: #fafafa;
   font-size: 0.9em;
   padding: 1.5em;
   margin: 0 0 1.5em;

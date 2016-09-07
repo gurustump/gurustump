@@ -1171,6 +1171,22 @@ body.page-template-page-index .embedded-custom-post > ul > li .btn-external:befo
   transform: translateX(-50%);
 }
 
+/******************************************
+ABOUT PAGE
+******************************************/
+/* line 370, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-about #container #content {
+  background-size: cover;
+}
+/* line 374, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-about .main-image {
+  display: none;
+}
+/* line 377, ../scss/breakpoints/_1030up.scss */
+body.page-template-page-about #main > article {
+  background-color: rgba(3, 3, 3, 0.6);
+}
+
 /*
 you can call the larger styles if you want, but there's really no need
 */

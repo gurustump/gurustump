@@ -25,7 +25,7 @@ $alert-blue:        #d5edf8;
 $black:             #000;
 $white:             #fff;
 
-$light-gray:        rgba($black, .1);
+$light-gray:        #fafafa;
 $gray:              #eaeaea;
 $text-color:        #555;
 $meta-gray:         #999;
@@ -46,6 +46,7 @@ $link-hover:        darken($link-color, 15%);
 
 $btnbgcolor:		#444;
 
+$border-gray:       rgba($black, .1);
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 

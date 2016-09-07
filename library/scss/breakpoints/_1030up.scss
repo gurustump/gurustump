@@ -361,3 +361,20 @@ body.page-template-page-index {
 		}
 	}
 }
+
+/******************************************
+ABOUT PAGE
+******************************************/
+body.page-template-page-about {
+	#container {
+		#content {
+			background-size:cover;
+		}
+	}
+	.main-image {
+		display:none;
+	}
+	#main > article {
+		background-color:rgba(#030303, .6);
+	}
+}
