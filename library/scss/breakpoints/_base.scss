@@ -481,9 +481,19 @@ POSTS & CONTENT STYLES
 	.subheading {
 		background:rgba($white, .1);
 	}
-	td {
+	td, th {
 		padding:7px 15px;
 		vertical-align:top;
+	}
+}
+.credits-list {
+	font-size:.9em;
+	tr {
+		th {
+			background:none;
+			text-align:left;
+			border-right:0;
+		}
 	}
 }
 .episode-guide {
