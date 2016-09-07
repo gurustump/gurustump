@@ -488,6 +488,7 @@ POSTS & CONTENT STYLES
 }
 .credits-list {
 	font-size:.9em;
+	margin-bottom:1.8em;
 	tr {
 		th {
 			background:none;
@@ -694,6 +695,9 @@ body.page {
 // the tag output
 .tags {
 	margin: 0;
+}
+body.single .thumb-index {
+	clear:both;
 }
 .thumb-index, .video-thumb-index {
 	.thumb-index-list {
