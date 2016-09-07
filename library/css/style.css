@@ -5476,27 +5476,30 @@ This is for the larger monitors and possibly full screen viewers.
   }
   /* line 82, ../scss/breakpoints/_1240up.scss */
   .hentry .header-text-container {
-    float: left;
-    margin-left: 300px;
     margin-bottom: 1.5em;
   }
-  /* line 87, ../scss/breakpoints/_1240up.scss */
+  /* line 84, ../scss/breakpoints/_1240up.scss */
+  .hentry .header-text-container.has-post-thumb {
+    float: left;
+    margin-left: 300px;
+  }
+  /* line 89, ../scss/breakpoints/_1240up.scss */
   .hentry .entry-content {
     clear: left;
   }
 
   /* end .hentry */
-  /* line 94, ../scss/breakpoints/_1240up.scss */
+  /* line 96, ../scss/breakpoints/_1240up.scss */
   body.single-post .hentry header {
     padding-bottom: 0;
   }
 
   /* image gallery styles */
-  /* line 102, ../scss/breakpoints/_1240up.scss */
+  /* line 104, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-list {
     margin-right: -.5%;
   }
-  /* line 104, ../scss/breakpoints/_1240up.scss */
+  /* line 106, ../scss/breakpoints/_1240up.scss */
   .thumb-index .thumb-index-list > li {
     width: 24.5%;
     margin: 0 .5% .5% 0;
@@ -5510,7 +5513,7 @@ This is for the larger monitors and possibly full screen viewers.
     visibility: hidden;
     clear: both;
   }
-  /* line 113, ../scss/breakpoints/_1240up.scss */
+  /* line 115, ../scss/breakpoints/_1240up.scss */
   .video-thumb-index .thumb-index-list > li {
     width: 25%;
   }
@@ -5518,7 +5521,7 @@ This is for the larger monitors and possibly full screen viewers.
   /*********************
   FOOTER STYLES
   *********************/
-  /* line 123, ../scss/breakpoints/_1240up.scss */
+  /* line 125, ../scss/breakpoints/_1240up.scss */
   .footer {
     height: 400px;
   }
@@ -5529,21 +5532,21 @@ This is for the larger monitors and possibly full screen viewers.
   /******************************************
   HOME PAGE
   ******************************************/
-  /* line 136, ../scss/breakpoints/_1240up.scss */
+  /* line 138, ../scss/breakpoints/_1240up.scss */
   body.home .home-logo h1 {
     font-size: 5em;
   }
-  /* line 138, ../scss/breakpoints/_1240up.scss */
+  /* line 140, ../scss/breakpoints/_1240up.scss */
   body.home .home-logo h1 span {
     padding-left: 280px;
   }
-  /* line 140, ../scss/breakpoints/_1240up.scss */
+  /* line 142, ../scss/breakpoints/_1240up.scss */
   body.home .home-logo h1 span:after {
     height: 250px;
     width: 300px;
     top: -64px;
   }
-  /* line 147, ../scss/breakpoints/_1240up.scss */
+  /* line 149, ../scss/breakpoints/_1240up.scss */
   body.home .home-logo h2 {
     font-size: 2.09em;
     padding-left: 280px;
@@ -5552,16 +5555,16 @@ This is for the larger monitors and possibly full screen viewers.
   /******************************************
   INDEX PAGE
   ******************************************/
-  /* line 161, ../scss/breakpoints/_1240up.scss */
+  /* line 163, ../scss/breakpoints/_1240up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-small {
     display: none;
   }
-  /* line 164, ../scss/breakpoints/_1240up.scss */
+  /* line 166, ../scss/breakpoints/_1240up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-large {
     display: block;
     max-width: 50%;
   }
-  /* line 168, ../scss/breakpoints/_1240up.scss */
+  /* line 170, ../scss/breakpoints/_1240up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .thumb-index {
     max-width: 50%;
   }

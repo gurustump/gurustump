@@ -80,9 +80,11 @@ POSTS & CONTENT STYLES
 		@include clearfix;
 	}
 	.header-text-container {
-		float:left;
-		margin-left:300px;
 		margin-bottom:1.5em;
+		&.has-post-thumb {
+			float:left;
+			margin-left:300px;
+		}
 	}
 	.entry-content {
 		clear:left;

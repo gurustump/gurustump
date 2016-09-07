@@ -17,12 +17,12 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
 					<header class="article-header entry-header">
-						<?php if (has_post_thumbnail) { ?>
+						<?php if (has_post_thumbnail()) { ?>
 						<div class="post-thumb-container">
 							<?php the_post_thumbnail('movie-thumb'); ?>
 						</div>
 						<?php } ?>
-						<div class="header-text-container">
+						<div class="header-text-container<?php echo has_post_thumbnail() ? ' has-post-thumb' : ''; ?>">
 							<h1 class="entry-title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
 
 							<p class="byline entry-meta vcard">
