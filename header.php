@@ -12,6 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title><?php wp_title(' &mdash; '); ?></title>
+		<meta property="og:title" content="<?php wp_title(' | '); ?>" />
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -27,6 +28,10 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/library/images/icon-180x180.png">
 		<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo get_template_directory_uri(); ?>/library/images/icon-192x192.png">
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+		
+		<?php if (is_front_page()) { ?>
+		<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/library/images/jack-card-small.png" />
+		<?php } ?>
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
