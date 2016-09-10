@@ -349,11 +349,13 @@ jQuery(document).ready(function($) {
 		});
 		playButton.click(function(e) {
 			e.preventDefault();
+			console.log('video play clicked');
 			playWhenReady();
 		});
 		if (isVideoIndex) {
 			$('.REEL_PLAY').click(function(e) {
 				e.preventDefault();
+				console.log('reel play clicked');
 				playWhenReady();
 			});
 		}
@@ -373,9 +375,11 @@ jQuery(document).ready(function($) {
 		});
 		var queryString = getQueryString();
 		if (queryString['videoplay']) {
+			console.log('query string videoplay');
 			playWhenReady();
 		}
 		function playWhenReady() {
+			console.log('play when ready');
 			if (videoCanPlayThrough) {
 				playVideo();
 			} else {
@@ -385,6 +389,7 @@ jQuery(document).ready(function($) {
 			}
 		}
 		function playVideo() {
+			console.log('play video');
 			playerContainer.addClass('active');
 			player.play();
 		}
