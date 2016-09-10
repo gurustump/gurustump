@@ -352,14 +352,16 @@ VIDEO GALLERY PAGE
 body.video-gallery {
 	.body-content {
 		@include clearfix;
-		& > div {
+		.body-content-inner {
 			float:left;
-			width:70%;
-			margin-right:2%;
+			width:60%;
+			padding-right:20px;
+			margin-top:49px;
+			@include box-sizing;
 		}
-		& > select {
+		.cat-selector {
 			float:left;
-			width:28%;
+			width:40%;
 		}
 	}
 }

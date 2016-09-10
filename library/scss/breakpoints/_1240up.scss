@@ -174,3 +174,41 @@ body.page-template-page-index {
 		}
 	}
 }
+
+/******************************************
+VIDEO GALLERY PAGE
+******************************************/
+body.video-gallery {
+	.body-content {
+		position:relative;
+		@include clearfix;
+		.body-content-inner {
+			width:43%;
+			margin-top:0;
+			@include v-center;
+			position:absolute;
+			p {
+				margin:0;
+			}
+		}
+		.cat-selector {
+			float:right;
+			width:55%;
+			max-width:575px;
+			h2 {
+				float:left;
+				width:180px;
+				margin-right:-100%;
+				margin-bottom:0;
+				line-height:60px;
+			}
+			.select-container {
+				margin-left:180px;
+				select {
+					margin-bottom:0;
+					height:60px;
+				}
+			}
+		}
+	}
+}

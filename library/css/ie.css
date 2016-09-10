@@ -674,32 +674,38 @@ body.video-gallery .body-content:after {
   clear: both;
 }
 /* line 355, ../scss/breakpoints/_768up.scss */
-body.video-gallery .body-content > div {
+body.video-gallery .body-content .body-content-inner {
   float: left;
-  width: 70%;
-  margin-right: 2%;
+  width: 60%;
+  padding-right: 20px;
+  margin-top: 49px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
-/* line 360, ../scss/breakpoints/_768up.scss */
-body.video-gallery .body-content > select {
+/* line 362, ../scss/breakpoints/_768up.scss */
+body.video-gallery .body-content .cat-selector {
   float: left;
-  width: 28%;
+  width: 40%;
 }
 
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
 ******************************************/
-/* line 372, ../scss/breakpoints/_768up.scss */
+/* line 374, ../scss/breakpoints/_768up.scss */
 body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
   margin-left: 0;
   margin-right: 0;
 }
 
-/* line 379, ../scss/breakpoints/_768up.scss */
+/* line 381, ../scss/breakpoints/_768up.scss */
 body.single-people .person-vid-gallery {
   margin-left: 0;
   margin-right: 0;
 }
-/* line 382, ../scss/breakpoints/_768up.scss */
+/* line 384, ../scss/breakpoints/_768up.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0;
 }

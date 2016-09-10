@@ -31,13 +31,18 @@
 									<div class="body-content-inner"><?php the_content(); ?></div>
 									<?php } ?>
 									<?php if ($galleryType == 'movie-gallery') { ?>
-										<?php $showCats = (get_terms('show_cat')); ?>
-										<select class="CAT_SELECT">
-											<option value="">All</option>
-											<?php foreach($showCats as $cat) { ?>?
-											<option value="cat-<?php echo $cat->slug; ?>"<?php echo $cat->slug == 'featured' ? ' selected="selected"' : ''; ?>><?php echo $cat->name; ?></option>
-											<?php } ?>
-										</select>
+										<div class="cat-selector">
+											<h2>Now Showing:</h2>
+											<?php $showCats = (get_terms('show_cat')); ?>
+											<div class="select-container">
+												<select class="CAT_SELECT">
+													<option value="">All</option>
+													<?php foreach($showCats as $cat) { ?>
+													<option value="cat-<?php echo $cat->slug; ?>"<?php echo $cat->slug == 'featured' ? ' selected="selected"' : ''; ?>><?php echo $cat->name; ?></option>
+													<?php } ?>
+												</select>
+											</div>
+										</div>
 									<?php } ?>
 								</section>
 								<?php 

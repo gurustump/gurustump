@@ -96,6 +96,20 @@ body.page-template-page-index {
 }
 
 /******************************************
+VIDEO GALLERY PAGE
+******************************************/
+body.video-gallery {
+	.body-content {
+		.body-content-inner {
+			width:65%;
+		}
+		.cat-selector {
+			width:35%;
+		}
+	}
+}
+
+/******************************************
 SINGLE VIDEO (SHOW) PAGE, PERSON PAGE
 ******************************************/
 body {
