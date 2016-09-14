@@ -153,6 +153,7 @@ jQuery(document).ready(function($) {
 	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('video-gallery') || $('body').hasClass('single-shows');
 	if (typeof isVideoGallery === "undefined") var isVideoGallery = $('body').hasClass('video-gallery');
 	if (typeof isSingleShow === "undefined") var isSingleShow = $('body').hasClass('single-shows');
+	if (typeof isSingleBlog === "undefined") var isSingleBlog = $('body').hasClass('single-post');
 	
 	/*
 	* You can remove this if you don't need it
@@ -276,7 +277,7 @@ jQuery(document).ready(function($) {
 		}
 		//setGalleryOvSize();
 	});
-	$('.GALLERY').on('click', '.GALLERY_ITEM', function(e) {
+	$('body').on('click', '.GALLERY_ITEM', function(e) {
 		e.preventDefault();
 		var thisItem = $(this);
 		var galOv = $('#gallery_item_ov');
@@ -334,6 +335,34 @@ jQuery(document).ready(function($) {
 	}
 	simpleAccordion();
 	
+	
+	// Picasa Gallery functions
+	function picasaGallery() {
+		$('a.picasa-source').each(function() {
+			var thisSource = $(this);
+			$(thisSource).wrap('<div class="picasa-gallery-container"></div>');
+			var thisGalleryContainer = $(thisSource).parents('.picasa-gallery-container');
+			$.ajax({ 
+				url: $(this).attr('href'),
+				success: function (data,status){
+					var albums = data.feed.entry;
+					$(thisSource).after('<div class="thumb-index"><div class="thumb-index-inner"><ul class="thumb-index-list gallery GALLERY"></ul></div></div>');
+					var thisGallery = $(thisSource).parent('.picasa-gallery');
+					$.each(albums,function(){
+						var thisDescription = (this.media$group.media$description.$t.length > 0)?'<p class="caption">'+this.media$group.media$description.$t+'</p>':'';
+						$('<li class="gallery-item GALLERY_ITEM"><img src='+this.media$group.media$thumbnail[0].url+' alt="" /><input class="IMG_SRC" type="hidden" value="'+this.content.src+'" /><span class="item-content"><span class="view-item">View Image</span></span></li>').appendTo($(thisGalleryContainer).find('.thumb-index-list'));
+						// $('<li class="img_'+this.gphoto$id.$t+'"><img src='+this.media$group.media$thumbnail[0].url+' alt="Image" /></li>').appendTo($(thisGalleryContainer).find('.thumb-index-list'));
+					});
+				},
+				timeout: 10000,
+				error: function(message) {
+					console.log(message);
+				},
+				dataType: 'jsonp'
+			});
+		});
+	}
+	
 	// SPECIFIC PAGES
 	if (isIndex) {
 		simpleAutoCarousel($('.SUBHEAD_CAROUSEL'), 15000);
@@ -364,6 +393,7 @@ jQuery(document).ready(function($) {
 		});
 		video.on('waiting', function() {
 			playerContainer.addClass('waiting');
+			console.log('waiting');
 		});
 		playerContainer.find('.OV_CLOSE').click(function() {
 			player.pause();
@@ -571,6 +601,11 @@ jQuery(document).ready(function($) {
 		}
 		function toggleCrew() {
 			castCrew.toggleClass('hide-crew');
+		}
+	}
+	if (isSingleBlog) {
+		if ($('.picasa-source').length > 0) {
+			picasaGallery();
 		}
 	}
 
