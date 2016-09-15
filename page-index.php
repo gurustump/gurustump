@@ -145,7 +145,7 @@
 			</div> <?php // end content ?>
 			<?php $fileMeta = get_post_meta(get_the_ID(), '_gurustump_page_file', true);
 			if ($fileMeta) { ?>
-			<div class="ov vid-player-container OV VID_PLAYER_OV">
+			<div class="ov vid-player-container OV VID_PLAYER_OV waiting">
 				<div class="vid-player-wrapper ov-inner-wrapper VID_PLAYER_WRAPPER">
 					<video preload="auto" controls>
 						<source src="<?php echo $fileMeta; ?>" type="video/mp4">

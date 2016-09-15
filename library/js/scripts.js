@@ -388,6 +388,10 @@ jQuery(document).ready(function($) {
 				playWhenReady();
 			});
 		}
+		video.on('play', function() {
+			console.log('play');
+			playerContainer.removeClass('waiting');
+		});
 		video.on('ended', function() {
 			playerContainer.removeClass('active').addClass('waiting');
 		});
@@ -410,6 +414,7 @@ jQuery(document).ready(function($) {
 		}
 		function playWhenReady() {
 			console.log('play when ready');
+			playerContainer.addClass('active');
 			if (videoCanPlayThrough) {
 				playVideo();
 			} else {
