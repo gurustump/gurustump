@@ -269,11 +269,14 @@ jQuery(document).ready(function($) {
 	// GALLERY OVERLAY
 	$('#gallery_item_ov').on('click', '.PREV, .NEXT', function(e) {
 		e.preventDefault();
-		if ($(this).hasClass('disabled')) { return false; }
+		// if ($(this).hasClass('disabled')) { return false; }
+		var current = $('#gallery_item_ov').data('current');
 		if ($(this).hasClass('PREV')) {
-			$('#gallery_item_ov').data('current').prev().click();
+			var prev = current.prev().length > 0 ? current.prev() : current.siblings().last();
+			prev.click();
 		} else if ($(this).hasClass('NEXT')) {
-			$('#gallery_item_ov').data('current').next().click();
+			var next = current.next().length > 0 ? current.next() : current.siblings().first();
+			next.click();
 		}
 		//setGalleryOvSize();
 	});
@@ -300,6 +303,7 @@ jQuery(document).ready(function($) {
 		if (thisItem.next().length > 0) {
 			imgPreloadArray.push(thisItem.next().find('.IMG_SRC').val());
 		}
+		/*
 		if (thisItem.is(':first-child')) {
 			$('#gallery_item_ov .PREV').addClass('disabled');
 		} else {
@@ -310,6 +314,7 @@ jQuery(document).ready(function($) {
 		} else {
 			$('#gallery_item_ov .NEXT').removeClass('disabled');
 		}
+		*/
 		$.imgpreload(imgPreloadArray);
 	});
 	// Both the fade out of the previous image and the load of the next image must be complete before the new image can fade in. Both events run this function.
