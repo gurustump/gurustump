@@ -898,6 +898,12 @@ body.single .thumb-index {
 				}
 			}
 		}
+		&.fullHD {
+			.vid-player-wrapper {
+				height:1080px;
+				width:1920px;
+			}
+		}
 	}
 	&.gallery-item-ov {
 		& > img {
