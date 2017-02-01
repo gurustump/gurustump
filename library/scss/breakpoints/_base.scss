@@ -773,6 +773,17 @@ body.single .thumb-index {
 						background:url(../images/ic-mag.png) no-repeat 50% 100%;
 						padding-bottom:40px;
 					}
+					&.gallery-caption {
+						font-size:.8em;
+						color:$white;
+						background:rgba($black, .5);
+						padding:10px;
+						position:absolute;
+						top:auto !important;
+						bottom:0;
+						width:100%;
+						@include box-sizing;
+					}
 				}
 			}
 			&:hover {
