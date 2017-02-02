@@ -55,6 +55,15 @@ body {
   	-moz-osx-font-smoothing:grayscale;
 }
 
+.clearboth {
+	clear:both;
+}
+.clearleft {
+	clear:left;
+}
+.clearright {
+	clear:right;
+}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -632,7 +641,7 @@ body.page {
 		margin: 0 0 1.5em;
 		border-radius: 3px;
 	}
-	.video-embed-container {
+	.video-embed {
 		position:relative;
 		padding-bottom:56.25%;
 		height:0;
@@ -673,10 +682,18 @@ body.page {
 	}
 
 } /* end .wp-caption */
-.entry-content .wp-caption {
-	margin-bottom:1.5em;
-	& > p {
-		margin:0;
+.entry-content {
+	.wp-caption, .image-embed {
+		margin-bottom:1.5em;
+		& > p {
+			margin:0;
+		}
+	}
+}
+.captionTable {
+	td, th {
+		padding:2px 12px;
+		text-align:center;
 	}
 }
 
