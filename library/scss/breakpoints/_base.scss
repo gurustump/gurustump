@@ -668,8 +668,17 @@ body.page {
 		margin: 4px 0 7px;
 		text-align: center;
 	}
+	& > p {
+		margin:0;
+	}
 
 } /* end .wp-caption */
+.entry-content .wp-caption {
+	margin-bottom:1.5em;
+	& > p {
+		margin:0;
+	}
+}
 
 /* Blog Style */
 .blog-index-list {
