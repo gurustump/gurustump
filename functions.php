@@ -75,6 +75,7 @@ if ( ! isset( $content_width ) ) {
 // Thumbnail sizes
 add_image_size( 'movie-thumb', 512, 288, true );
 add_image_size( 'extra-large', 2000, 2000 );
+add_image_size( 'small', 468, 468 );
 
 /*
 to add more sizes, simply copy a line from above
@@ -102,6 +103,7 @@ function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'movie-thumb' => __('Movie Thumbnail'),
         'extra-large' => __('Extra Large'),
+        'small' => __('Small'),
     ) );
 }
 

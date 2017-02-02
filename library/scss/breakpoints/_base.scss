@@ -632,6 +632,9 @@ body.page {
 		margin: 0 0 1.5em;
 		border-radius: 3px;
 	}
+	iframe {
+		max-width:100%;
+	}
 
 } /* end .entry-content */
 
