@@ -257,6 +257,15 @@ function root_path_shortcode() {
 }
 add_shortcode('root_path', 'root_path_shortcode');
 
+// Video embed shortcode: adds container for variable width and height
+function video_embed_shortcode($atts) {
+	$a = shortcode_atts( array(
+		'embed' => ''
+	), $atts);
+	return '<div class="video-embed-container">'.$a['embed'].'</div>';
+}
+add_shortcode('video_embed','video_embed_shortcode');
+
 // filtering gallery shortcode
 add_shortcode('gallery', 'gurustump_gallery_shortcode');
 
