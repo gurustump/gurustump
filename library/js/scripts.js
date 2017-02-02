@@ -383,18 +383,15 @@ jQuery(document).ready(function($) {
 		});
 		playButton.click(function(e) {
 			e.preventDefault();
-			console.log('video play clicked');
 			playWhenReady();
 		});
 		if (isVideoIndex) {
 			$('.REEL_PLAY').click(function(e) {
 				e.preventDefault();
-				console.log('reel play clicked');
 				playWhenReady();
 			});
 		}
 		video.on('play', function() {
-			console.log('play');
 			playerContainer.removeClass('waiting');
 		});
 		video.on('ended', function() {
@@ -402,7 +399,6 @@ jQuery(document).ready(function($) {
 		});
 		video.on('waiting', function() {
 			playerContainer.addClass('waiting');
-			console.log('waiting');
 		});
 		playerContainer.find('.OV_CLOSE').click(function() {
 			player.pause();
@@ -414,11 +410,9 @@ jQuery(document).ready(function($) {
 		});
 		var queryString = getQueryString();
 		if (queryString['videoplay']) {
-			console.log('query string videoplay');
 			playWhenReady();
 		}
 		function playWhenReady() {
-			console.log('play when ready');
 			playerContainer.addClass('active');
 			if (videoCanPlayThrough) {
 				playVideo();
@@ -429,7 +423,6 @@ jQuery(document).ready(function($) {
 			}
 		}
 		function playVideo() {
-			console.log('play video');
 			playerContainer.addClass('active');
 			player.play();
 		}
@@ -522,8 +515,6 @@ jQuery(document).ready(function($) {
 				events: {
 					onReady: function() {
 						if (isSingleShow) {
-							console.log('video ready');
-							console.log(player);
 							var queryString = getQueryString();
 							if (queryString['autoplay']) {
 								$('.TRIGGER_VIDEO').click();
@@ -537,6 +528,10 @@ jQuery(document).ready(function($) {
 							clearVideoIntervalCheck();
 						}
 					}
+				},
+				playerVars: {
+					'rel':0,
+					'showinfo':0
 				}
 			});
 		});

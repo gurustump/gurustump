@@ -43,7 +43,7 @@ NAVIGATION STYLES
 		position: relative;
 		a {
 			border-bottom: 0;
-			@include transition(background-color .5s, color  .5s);
+			@include transition(background-color .5s, color  .5s, height .275s, line-height .275s);
 			background:none;
 			font-size:18px;
 			height:65px;
