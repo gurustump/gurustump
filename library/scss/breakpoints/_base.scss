@@ -246,6 +246,7 @@ HEADER STYLES
 	margin:0 0 0 15px;
 	height:50px;
 	line-height:50px;
+	position:relative;
 	a {
 		color: $white;
 		display:block;
@@ -641,6 +642,9 @@ body.page {
 		margin: 0 0 1.5em;
 		border-radius: 3px;
 	}
+	.video-embed-container {
+		max-width:100%;
+	}
 	.video-embed {
 		position:relative;
 		padding-bottom:56.25%;
@@ -685,12 +689,16 @@ body.page {
 .entry-content {
 	.wp-caption, .image-embed {
 		margin-bottom:1.5em;
+		max-width:100%;
 		& > p {
 			margin:0;
 		}
 	}
 }
 .captionTable {
+	table {
+		margin:0 auto;
+	}
 	td, th {
 		padding:2px 12px;
 		text-align:center;

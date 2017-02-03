@@ -264,8 +264,6 @@ function video_embed_shortcode($atts) {
 		'width' => '',
 		'align' => 'alignnone'
 	), $atts);
-	//return ($a['width'] ?  '<div class="video-embed-container" style="width:'.$a['width'].'px">' : '').'<div class="video-embed '.$a['align'].'">'.$a['embed'].'</div>'.($a['width'] ?  '</div>' : '');
-	
 	return '<div class="video-embed-container'.($a['align'] ?  ' '.$a['align'] : '').'"'.($a['width'] ?  ' style="width:'.$a['width'].'px"' : '').'><div class="video-embed">'.$a['embed'].'</div></div>';
 }
 add_shortcode('video_embed','video_embed_shortcode');
