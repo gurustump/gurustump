@@ -24,3 +24,13 @@ start customizing. All admin functions are located in lib/admin/
 #_gurustump_page_post_type_description {
 	max-height:200px;
 }
+.cmb2-metabox {
+	.cmb-type-custom-attached-posts .has-thumbnails.connected {
+		height:124px;
+	}
+	.cmb-type-custom-attached-posts .has-thumbnails li img {
+		margin:-9px 10px -9px -9px;
+		width:38px;
+		height:auto;
+	}
+}

@@ -73,9 +73,9 @@ really slow down your CSS. Don't overdo it.
 	$otherBrowserDirectionString: "";
 	$basicDirectionString: "";
 	@if $vstart or $vend or $hstart or $hend {
-		$webkitDirectionString1: linear, unquote($hstart) unquote($vstart), unquote($hstart) unquote($vend), ;
-		$otherBrowserDirectionString: unquote($hstart) unquote($vstart), ;
-		$basicDirectionString: to unquote($hend) unquote($vend), ;
+		$webkitDirectionString1: linear, unquote($hstart) unquote($vstart), unquote($hstart) unquote($vend);
+		$otherBrowserDirectionString: unquote($hstart) unquote($vstart);
+		$basicDirectionString: to unquote($hend) unquote($vend);
 	} @else {
 		$webkitDirectionString1: "";
 		$otherBrowserDirectionString: "";
