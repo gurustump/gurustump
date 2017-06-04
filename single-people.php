@@ -71,23 +71,27 @@
 											$showMeta = get_post_meta($show->ID);
 											$castMeta = get_post_meta($show->ID, '_gurustump_show_cast', true);
 											$inCast = false;
-											foreach($castMeta as $item) {
-												// in case there is more than one person playing a character, create an array of the actors and check if this person's ID is in it
-												if (in_array(get_the_ID(), explode(',', str_replace(' ', '', $item[name])))) {
-													$inCast = true;
-													break;
+											if (count($castMeta[0]) > 0 && $castMeta[0] != '' && !ctype_space($castMeta[0])) {
+												foreach($castMeta as $item) {
+													// in case there is more than one person playing a character, create an array of the actors and check if this person's ID is in it
+													if (in_array(get_the_ID(), explode(',', str_replace(' ', '', $item[name])))) {
+														$inCast = true;
+														break;
+													}
 												}
 											}
 											$crewMeta = get_post_meta($show->ID, '_gurustump_show_other_crew', true);
 											$inCrew = false;
-											foreach($crewMeta as $key => $item) {
-												// same as for cast above, create an array for each crew position and check if this person is in it
-												if (in_array(get_the_ID(), explode(',', str_replace(' ', '', $item[name])))) {
-													$inCrew = true;
-													break;
-												}
-											} ?>
-											<?php 
+											
+											if (count($crewMeta[0]) > 0 && $crewMeta[0] != '' && !ctype_space($crewMeta[0])) {
+												foreach($crewMeta as $key => $item) {
+													// same as for cast above, create an array for each crew position and check if this person is in it
+													if (in_array(get_the_ID(), explode(',', str_replace(' ', '', $item[name])))) {
+														$inCrew = true;
+														break;
+													}
+												} 
+											} 
 											// filter the movies so only the ones where this person was in the cast or crew get written into the page
 											if ($showMeta['_gurustump_show_director'][0] == get_the_ID() || 
 												$showMeta['_gurustump_show_producer'][0] == get_the_ID() || 
