@@ -32,6 +32,10 @@
 		<?php if (is_front_page()) { ?>
 		<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/library/images/jack-card-small.png" />
 		<?php } ?>
+		
+		<?php if (is_singular() && has_post_thumbnail(get_the_ID())) { ?>
+		<meta property="og:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'extra-large'); ?>" />
+		<?php } ?>
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
