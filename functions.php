@@ -278,9 +278,6 @@ function image_embed_shortcode($atts, $content) {
 }
 add_shortcode('image_embed','image_embed_shortcode');
 
-// filtering gallery shortcode
-add_shortcode('gallery', 'gurustump_gallery_shortcode');
-
 // Allow editing of content on Posts page (blog, or index.php)
 add_action( 'edit_form_after_title', 'posts_page_edit_form' );
 function posts_page_edit_form( $post ) {
@@ -289,6 +286,9 @@ function posts_page_edit_form( $post ) {
 		add_post_type_support( 'page', 'editor' );
 	}
 }
+
+// filtering gallery shortcode
+add_shortcode('gallery', 'gurustump_gallery_shortcode');
 
 /**
  * The Gallery shortcode.

@@ -67,8 +67,10 @@
 													$itemThumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'movie-thumb'); $itemMeta = get_post_meta(get_the_ID());
 													$show_cats = get_the_terms($item->ID, 'show_cat');
 													$show_cat_class_string = '';
-													foreach($show_cats as $show_cat) {
-														$show_cat_class_string .= ' cat-'.$show_cat->slug;
+													if ($show_cats) {
+														foreach($show_cats as $show_cat) {
+															$show_cat_class_string .= ' cat-'.$show_cat->slug;
+														}
 													}
 													$nextVideoUrl = get_permalink($itemMeta['_gurustump_show_next_video'][0]);
 													$nextVideoMeta = get_post_meta($itemMeta['_gurustump_show_next_video'][0]);
