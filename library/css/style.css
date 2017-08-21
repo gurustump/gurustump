@@ -4324,6 +4324,69 @@ body.page-template-page-about .main-image {
   margin: 0 auto;
 }
 
+/******************************************
+FULL PAGE EMBED
+******************************************/
+/* line 2175, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed {
+  color: #fafafa;
+}
+/* line 2177, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed #content, body.page-template-page-full-embed #inner-content, body.page-template-page-full-embed #main, body.page-template-page-full-embed .hentry, body.page-template-page-full-embed .entry-content {
+  height: 100%;
+}
+/* line 2180, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed #main {
+  margin-top: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 2184, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .article-header {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+/* line 2188, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .page-title {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+/* line 2192, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .hentry {
+  background: none;
+  margin-bottom: 0;
+}
+/* line 2195, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .hentry header {
+  border-bottom: 0;
+  height: 58px;
+}
+/* line 2199, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .hentry .entry-content {
+  margin-top: -58px;
+  padding-top: 58px !important;
+  padding-bottom: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 2204, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .hentry .entry-content p {
+  margin: 0;
+  height: 100%;
+}
+/* line 2209, ../scss/breakpoints/_base.scss */
+body.page-template-page-full-embed .hentry iframe {
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
