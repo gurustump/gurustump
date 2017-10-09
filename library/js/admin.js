@@ -20,6 +20,11 @@ function toggleMetaboxes($) {
 	} else {
 		$('.cmb2-id--gurustump-page-index-gallery, .cmb2-id--gurustump-page-submenu').hide();
 	}
+	if (pageTemplate == 'page-randomizer.php' ) {
+		$('.cmb2-id--gurustump-page-randomizer').show();
+	} else {
+		$('.cmb2-id--gurustump-page-randomizer').hide();
+	}
 	if ($('#_gurustump_page_post_type').val() == '') {
 		$('.cmb2-id--gurustump-page-post-type-heading, .cmb2-id--gurustump-page-post-type-description').hide();
 	} else {

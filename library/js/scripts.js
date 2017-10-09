@@ -55,7 +55,7 @@ var timeToWaitForLast = 100;
  * If we want to only do it on a certain page, we can setup checks so we do it
  * as efficient as possible.
  *
- * if( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
+ * if( typeof is_home === "undefined" ) var is_home = body.hasClass('home');
  *
  * This once checks to see if you're on the home page based on the body class
  * We can then use that check to perform actions on the home page only
@@ -135,6 +135,9 @@ window.onYouTubeIframeAPIReady = function(){
 */
 jQuery(document).ready(function($) {
 	var win = $(window);
+	var html = $('html');
+	var body = $('body');
+	var stylesheetDirectory = guruDirectories.stylesheetDirectory;
 	
 	// Hide wp admin bar
 	$('#wpadminbar').addClass('hidden').append('<div class="wpadminbar-activator"></div>').hover(
@@ -147,13 +150,14 @@ jQuery(document).ready(function($) {
 	)
 
 	// Check what page we're on
-	if (typeof isHome === "undefined") var isHome = $('body').hasClass('home');
-	if (typeof isIndex === "undefined") var isIndex = $('body').hasClass('page-template-page-index');
-	if (typeof isVideoIndex === "undefined") var isVideoIndex = $('body').hasClass('page-video-production');
-	if (typeof isVideo === "undefined") var isVideo = $('body').hasClass('video-gallery') || $('body').hasClass('single-shows');
-	if (typeof isVideoGallery === "undefined") var isVideoGallery = $('body').hasClass('video-gallery');
-	if (typeof isSingleShow === "undefined") var isSingleShow = $('body').hasClass('single-shows');
-	if (typeof isSingleBlog === "undefined") var isSingleBlog = $('body').hasClass('single-post');
+	if (typeof isHome === "undefined") var isHome = body.hasClass('home');
+	if (typeof isIndex === "undefined") var isIndex = body.hasClass('page-template-page-index');
+	if (typeof isVideoIndex === "undefined") var isVideoIndex = body.hasClass('page-video-production');
+	if (typeof isVideo === "undefined") var isVideo = body.hasClass('video-gallery') || body.hasClass('single-shows');
+	if (typeof isVideoGallery === "undefined") var isVideoGallery = body.hasClass('video-gallery');
+	if (typeof isSingleShow === "undefined") var isSingleShow = body.hasClass('single-shows');
+	if (typeof isSingleBlog === "undefined") var isSingleBlog = body.hasClass('single-post');
+	if (typeof isRandomizer === "undefined") var isRandomizer = body.hasClass('page-template-page-randomizer');
 	
 	/*
 	* You can remove this if you don't need it
@@ -184,11 +188,11 @@ jQuery(document).ready(function($) {
 	}
 	function mobileDeviceBodyClass() {
 		if (mobileDeviceType() == 'mobile') {
-			$('body').addClass('mobile').removeClass('tablet');
+			body.addClass('mobile').removeClass('tablet');
 		} else if (mobileDeviceType() == 'tablet') {
-			$('body').addClass('tablet').removeClass('mobile');
+			body.addClass('tablet').removeClass('mobile');
 		} else {
-			$('body').removeClass('mobile tablet');
+			body.removeClass('mobile tablet');
 		}
 	}
 	mobileDeviceBodyClass();
@@ -197,22 +201,25 @@ jQuery(document).ready(function($) {
 		var scrollTrigger = 0;
 		var secondaryScrollTrigger = isHome ? $('.HOME_LOGO').outerHeight()*.50: 0;
 		if (win.scrollTop() > scrollTrigger) {
-			$('html').addClass('scrolled');
+			html.addClass('scrolled');
 		} else {
-			$('html').removeClass('scrolled');
+			html.removeClass('scrolled');
 		}
 		if (win.scrollTop() > secondaryScrollTrigger) {
-			$('html').addClass('secondary-scrolled');
+			html.addClass('secondary-scrolled');
 		} else {
-			$('html').removeClass('secondary-scrolled');
+			html.removeClass('secondary-scrolled');
 		}
+	}
+	function randomIntFromInterval(min,max) {
+		return Math.floor(Math.random()*(max-min+1)+min);
 	}
 	
 	// Control mobile main nav
 	$('.TRIGGER_NAV').click(function(e) {
 		e.preventDefault();
 		$(this).add('.MAIN_NAV').toggleClass('active');
-		$('html').toggleClass('mobile-nav-active');
+		html.toggleClass('mobile-nav-active');
 	});
 	
 	$('.MAIN_NAV').on('click','a',function(e) {
@@ -280,7 +287,7 @@ jQuery(document).ready(function($) {
 		}
 		//setGalleryOvSize();
 	});
-	$('body').on('click', '.GALLERY_ITEM', function(e) {
+	body.on('click', '.GALLERY_ITEM', function(e) {
 		e.preventDefault();
 		var thisItem = $(this);
 		var galOv = $('#gallery_item_ov');
@@ -612,6 +619,93 @@ jQuery(document).ready(function($) {
 		if ($('.picasa-source').length > 0) {
 			picasaGallery();
 		}
+	}
+	if (isRandomizer) {
+		var randomizeList = $('.RANDOMIZE_LIST');
+		var spinnerContainer = $('.SPINNER_CONTAINER');
+		var spinner = $('.SPINNER');
+		var spinnerClose = $('.SPINNER_CLOSE');
+		var beep = new Audio(stylesheetDirectory+'/library/sounds/PremiumBeat_0046_sci_fi_beep_electric_3.wav');
+		// reset all radio buttons to present
+		randomizeList.find('.RADIO_PRESENT').prop('checked',true);
+		// set up toggle of radio buttons
+		randomizeList.on('click', 'li', function() {
+			console.log('clicked');
+			$(this).toggleClass('present').find('input[type="radio"]').not(':checked').prop('checked', true);
+		});
+		// launch randomizer on pressing SPIN button
+		$('.SPIN').click(function(e) {
+			e.preventDefault();
+			// iterate through list of randomizer items and their likelihood modifiers to create an array from which to choose the winner
+			// each item will get a number of representitives in the likelihood array equal to its likelihood modifier
+			// if the likelihood modifier is zero, that item will not appear in the likelihood array
+			var likelihoodArray = [];
+			randomizeList.find('li').each(function(index) {
+				if (!$(this).hasClass('present')) { return true; }
+				for (i = 0; i < $(this).find('.LIKELIHOOD_MODIFIER').val(); i++) {
+					likelihoodArray.push(index);
+				}
+			});
+			console.log(likelihoodArray);
+			// randomly choose an index in the likelihood array
+			randomSelectedIndex = randomIntFromInterval(0,(likelihoodArray.length) - 1);
+			console.log("Randomly selected index: "+randomSelectedIndex);
+			// identify the winner using the value at the chosen index in the likelihood array
+			var selectedIndex = likelihoodArray[randomSelectedIndex];
+			console.log("Actual Selection: "+selectedIndex);
+			// increase likelihood for each item not selected
+			randomizeList.find('li').each(function(i) {
+				var likelihoodModifier = $(this).find('.LIKELIHOOD_MODIFIER');
+				if (i == selectedIndex) {
+					likelihoodModifier.val(0);
+				} else {
+					if (parseInt(likelihoodModifier.val()) >= randomizeList.find('li').length && $(this).find('.RADIO_ABSENT').is(':checked')) { return true; }
+					likelihoodModifier.val(parseInt(likelihoodModifier.val()) + 1);
+				}
+			});
+			// launch the spinner animation
+			spinnerContainer.addClass('active');
+			body.addClass('scroll-lock');
+			var initialSpinTime = randomIntFromInterval(2500,7500);
+			var spinDownTime = randomIntFromInterval(2500,7500);
+			spinner.slick({
+				arrows:false,
+				autoplay:true,
+				autoplaySpeed:0,
+				draggable:false,
+				pauseOnFocus:false,
+				pauseOnHover:false,
+				swipe:false,
+				speed:150,
+				vertical:true
+			});
+			spinner.on('afterChange',function() {
+				beep.play();
+			});
+			var startSpinDown = setTimeout(function() {
+				spinner.on('afterChange', function(e,slick,current) {
+					// console.log(current + ' ' +$(slick.$slides.get(current)).text());
+					var currentSpeed = spinner.slick('slickGetOption','speed');
+					spinner.slick('slickSetOption','speed',currentSpeed*1.1);
+				});
+				var spinDown = setTimeout(function() {
+					spinner.on('afterChange', function(e,slick,current) {
+						//console.log(current);
+						//console.log(typeof current);
+						if (current == selectedIndex) {
+							spinner.slick('slickPause');
+							spinnerContainer.addClass('selected');
+						}
+					});
+				}, spinDownTime);
+			}, initialSpinTime);
+		});
+		spinnerClose.click(function(e) {
+			e.preventDefault();
+			spinnerContainer.removeClass('active');
+			body.removeClass('scroll-lock');
+			$('#randomizer_form').submit();
+		});
 	}
 
 }); /* end of as page load scripts */
