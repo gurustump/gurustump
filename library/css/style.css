@@ -4652,6 +4652,12 @@ body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+3) {
 body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+4) {
   background: #7dd667;
 }
+/* line 2323, ../scss/breakpoints/_base.scss */
+body.page-template-page-randomizer .play-beep {
+  position: fixed;
+  z-index: -1;
+  opacity: 0;
+}
 
 /*********************
 LARGER MOBILE DEVICES

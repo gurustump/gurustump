@@ -626,6 +626,15 @@ jQuery(document).ready(function($) {
 		var spinner = $('.SPINNER');
 		var spinnerClose = $('.SPINNER_CLOSE');
 		var beep = new Audio(stylesheetDirectory+'/library/sounds/PremiumBeat_0046_sci_fi_beep_electric_3.wav');
+		var playBeep = $('.PLAY_BEEP');
+		/*beep.addEventListener('play', function() {
+			beep.pause();
+			beep.removeEventListener('play', arguments.callee, false);
+		}, false);*/
+		playBeep.click(function(e) {
+			e.preventDefault();
+			beep.play();
+		});
 		// reset all radio buttons to present
 		randomizeList.find('.RADIO_PRESENT').prop('checked',true);
 		// set up toggle of radio buttons
@@ -636,6 +645,7 @@ jQuery(document).ready(function($) {
 		// launch randomizer on pressing SPIN button
 		$('.SPIN').click(function(e) {
 			e.preventDefault();
+			playBeep.click();
 			// iterate through list of randomizer items and their likelihood modifiers to create an array from which to choose the winner
 			// each item will get a number of representitives in the likelihood array equal to its likelihood modifier
 			// if the likelihood modifier is zero, that item will not appear in the likelihood array
@@ -680,7 +690,7 @@ jQuery(document).ready(function($) {
 				vertical:true
 			});
 			spinner.on('afterChange',function() {
-				beep.play();
+				$('.PLAY_BEEP').click();
 			});
 			var startSpinDown = setTimeout(function() {
 				spinner.on('afterChange', function(e,slick,current) {

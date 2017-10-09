@@ -125,4 +125,5 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && isset
 					<?php } ?>
 				</div>
 			</div>
+			<a class="play-beep PLAY_BEEP">Play Beep</a>
 <?php get_footer(); ?>
