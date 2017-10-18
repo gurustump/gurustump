@@ -2325,4 +2325,7 @@ body.page-template-page-randomizer {
 		z-index:-1;
 		opacity:0;
 	}
+	#wp-submit {
+		@extend .btn;
+	}
 }

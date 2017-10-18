@@ -55,6 +55,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && isset
 									<?php
 										the_content();
 									?>
+									<?php if (is_user_logged_in() && current_user_can('install_themes')) { ?>
 									<div class="actions">
 										<a href="#" class="btn SPIN">Spin</a>
 									</div>
@@ -97,6 +98,11 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty($_POST['post_id']) && isset
 										</div>
 										*/ ?>
 									</form>
+									<?php } elseif (is_user_logged_in()) { ?>
+										<h2>Your current role on this website does not permit you to run the randomizer.</h2>
+									<?php } else {
+										wp_login_form();
+									} ?>
 								</section>
 							</article>
 							<?php endwhile; else : ?>

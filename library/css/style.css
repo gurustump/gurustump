@@ -1299,7 +1299,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 /* line 26, ../scss/modules/_buttons.scss */
-.btn, .btn-blue, .comment-reply-link, #submit, .btn-blue:visited, .comment-reply-link:visited, .btn-gallery, body.video-gallery .cat-selector select, .btn:visited, .btn-blue:visited, .comment-reply-link:visited, #submit:visited, .btn-gallery:visited, body.video-gallery .cat-selector select:visited {
+.btn, body.page-template-page-randomizer #wp-submit, .btn-blue, .comment-reply-link, #submit, .btn-blue:visited, .comment-reply-link:visited, .btn-gallery, body.video-gallery .cat-selector select, .btn:visited, body.page-template-page-randomizer #wp-submit:visited, .btn-blue:visited, .comment-reply-link:visited, #submit:visited, .btn-gallery:visited, body.video-gallery .cat-selector select:visited {
   display: inline-block;
   position: relative;
   font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1333,14 +1333,14 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   transition: background-color 0.375s ease-in-out;
 }
 /* line 48, ../scss/modules/_buttons.scss */
-.btn:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-gallery:hover, body.video-gallery .cat-selector select:hover, .btn:focus, .btn-blue:focus, .comment-reply-link:focus, #submit:focus, .btn-gallery:focus, body.video-gallery .cat-selector select:focus, .btn:visited:hover, .btn-blue:visited:hover, .comment-reply-link:visited:hover, #submit:visited:hover, .btn-gallery:visited:hover, body.video-gallery .cat-selector select:visited:hover, .btn:visited:focus, .btn-blue:visited:focus, .comment-reply-link:visited:focus, #submit:visited:focus, .btn-gallery:visited:focus, body.video-gallery .cat-selector select:visited:focus {
+.btn:hover, body.page-template-page-randomizer #wp-submit:hover, .btn-blue:hover, .comment-reply-link:hover, #submit:hover, .btn-gallery:hover, body.video-gallery .cat-selector select:hover, .btn:focus, body.page-template-page-randomizer #wp-submit:focus, .btn-blue:focus, .comment-reply-link:focus, #submit:focus, .btn-gallery:focus, body.video-gallery .cat-selector select:focus, .btn:visited:hover, body.page-template-page-randomizer #wp-submit:visited:hover, .btn-blue:visited:hover, .comment-reply-link:visited:hover, #submit:visited:hover, .btn-gallery:visited:hover, body.video-gallery .cat-selector select:visited:hover, .btn:visited:focus, body.page-template-page-randomizer #wp-submit:visited:focus, .btn-blue:visited:focus, .comment-reply-link:visited:focus, #submit:visited:focus, .btn-gallery:visited:focus, body.video-gallery .cat-selector select:visited:focus {
   color: white;
   text-decoration: none;
   outline: none;
   background-color: #303030;
 }
 /* line 56, ../scss/modules/_buttons.scss */
-.btn:active, .btn-blue:active, .comment-reply-link:active, #submit:active, .btn-gallery:active, body.video-gallery .cat-selector select:active, .btn:visited:active, .btn-blue:visited:active, .comment-reply-link:visited:active, #submit:visited:active, .btn-gallery:visited:active, body.video-gallery .cat-selector select:visited:active {
+.btn:active, body.page-template-page-randomizer #wp-submit:active, .btn-blue:active, .comment-reply-link:active, #submit:active, .btn-gallery:active, body.video-gallery .cat-selector select:active, .btn:visited:active, body.page-template-page-randomizer #wp-submit:visited:active, .btn-blue:visited:active, .comment-reply-link:visited:active, #submit:visited:active, .btn-gallery:visited:active, body.video-gallery .cat-selector select:visited:active {
   top: 1px;
 }
 
@@ -2834,7 +2834,7 @@ body.single .thumb-index {
   display: none;
 }
 /* line 809, ../scss/breakpoints/_base.scss */
-.thumb-index .thumb-index-list > li .item-content > *.btn {
+.thumb-index .thumb-index-list > li .item-content > *.btn, .thumb-index .thumb-index-list > li body.page-template-page-randomizer .item-content > *#wp-submit, body.page-template-page-randomizer .thumb-index .thumb-index-list > li .item-content > *#wp-submit {
   -webkit-transition: left 0.5s ease-in-out 0.2s, background-color 0.35s;
   -moz-transition: left 0.5s ease-in-out 0.2s, background-color 0.35s;
   -ms-transition: left 0.5s ease-in-out 0.2s, background-color 0.35s;
@@ -3783,7 +3783,7 @@ body.home .promo.services .actions {
   text-align: center;
 }
 /* line 1679, ../scss/breakpoints/_base.scss */
-body.home .promo.services .actions .btn {
+body.home .promo.services .actions .btn, body.home .promo.services .actions body.page-template-page-randomizer #wp-submit, body.page-template-page-randomizer body.home .promo.services .actions #wp-submit {
   margin: 0 10px 10px;
 }
 
