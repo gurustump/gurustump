@@ -4095,20 +4095,88 @@ body.video-gallery .video-thumb-index .thumb-index-list > li.selected {
   display: block;
 }
 
+/* line 1914, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .vid-container {
+  position: relative;
+  clear: both;
+}
+/* line 1918, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-player-static-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-right: 250px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 1927, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-player-static-container .vid-player-wrapper {
+  position: relative;
+}
+/* line 1929, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-player-static-container .vid-player-wrapper:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+/* line 1937, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-player-static-container .vid-playing-next {
+  display: none;
+}
+/* line 1940, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-player-static-container #video_player {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+/* line 1948, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-thumb-index {
+  margin-bottom: 30px;
+  float: right;
+  margin-left: -250px;
+}
+/* line 1953, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li {
+  float: right;
+  clear: right;
+  width: 250px;
+  -webkit-transition: width 375ms;
+  -moz-transition: width 375ms;
+  -ms-transition: width 375ms;
+  -o-transition: width 375ms;
+  transition: width 375ms;
+}
+/* line 1958, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li:hover {
+  width: 500px;
+}
+/* line 1961, ../scss/breakpoints/_base.scss */
+body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li.cat-featured {
+  display: block;
+}
+
 /******************************************
 SINGLE VIDEO (SHOW) PAGE
 ******************************************/
-/* line 1918, ../scss/breakpoints/_base.scss */
+/* line 1973, ../scss/breakpoints/_base.scss */
 body.single-shows .video-wrapper {
   margin: 0 -15px 15px;
 }
-/* line 1921, ../scss/breakpoints/_base.scss */
+/* line 1976, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls {
   position: relative;
   display: block;
   border: none;
 }
-/* line 1925, ../scss/breakpoints/_base.scss */
+/* line 1980, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play {
   position: absolute;
   width: 100%;
@@ -4120,15 +4188,15 @@ body.single-shows .video-controls .btn-play {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1931, ../scss/breakpoints/_base.scss */
+/* line 1986, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 1933, ../scss/breakpoints/_base.scss */
+/* line 1988, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 1937, ../scss/breakpoints/_base.scss */
+/* line 1992, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:before {
   background-color: rgba(0, 0, 0, 0.7);
   top: 50%;
@@ -4143,11 +4211,11 @@ body.single-shows .video-controls .btn-play:before {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1943, ../scss/breakpoints/_base.scss */
+/* line 1998, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-play:after {
   top: 50%;
 }
-/* line 1947, ../scss/breakpoints/_base.scss */
+/* line 2002, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external {
   height: 100%;
   width: 100%;
@@ -4160,19 +4228,19 @@ body.single-shows .video-controls .btn-external {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1954, ../scss/breakpoints/_base.scss */
+/* line 2009, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* line 1956, ../scss/breakpoints/_base.scss */
+/* line 2011, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
-/* line 1959, ../scss/breakpoints/_base.scss */
+/* line 2014, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:hover:after {
   opacity: 1;
 }
-/* line 1963, ../scss/breakpoints/_base.scss */
+/* line 2018, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:before {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -4189,7 +4257,7 @@ body.single-shows .video-controls .btn-external:before {
   -o-transition: background-color 0.375s;
   transition: background-color 0.375s;
 }
-/* line 1971, ../scss/breakpoints/_base.scss */
+/* line 2026, ../scss/breakpoints/_base.scss */
 body.single-shows .video-controls .btn-external:after {
   content: "Open External Link";
   font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4212,86 +4280,86 @@ body.single-shows .video-controls .btn-external:after {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 1987, ../scss/breakpoints/_base.scss */
+/* line 2042, ../scss/breakpoints/_base.scss */
 body.single-shows .video-thumb {
   border-bottom: 0;
   outline: none;
 }
-/* line 1990, ../scss/breakpoints/_base.scss */
+/* line 2045, ../scss/breakpoints/_base.scss */
 body.single-shows .video-thumb img {
   width: 100%;
   height: auto;
   display: block;
 }
-/* line 1996, ../scss/breakpoints/_base.scss */
+/* line 2051, ../scss/breakpoints/_base.scss */
 body.single-shows article {
   color: white;
 }
-/* line 1999, ../scss/breakpoints/_base.scss */
+/* line 2054, ../scss/breakpoints/_base.scss */
 body.single-shows .show-title {
   margin-bottom: 10px;
 }
-/* line 2002, ../scss/breakpoints/_base.scss */
+/* line 2057, ../scss/breakpoints/_base.scss */
 body.single-shows .show-info {
   font-size: .8em;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 2007, ../scss/breakpoints/_base.scss */
+/* line 2062, ../scss/breakpoints/_base.scss */
 body.single-shows .show-info, body.single-shows .cast-crew {
   margin: 0 -15px;
 }
-/* line 2010, ../scss/breakpoints/_base.scss */
+/* line 2065, ../scss/breakpoints/_base.scss */
 body.single-shows .show-content {
   margin-top: 10px;
 }
-/* line 2013, ../scss/breakpoints/_base.scss */
+/* line 2068, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 2019, ../scss/breakpoints/_base.scss */
+/* line 2074, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:before {
   content: "show";
 }
-/* line 2022, ../scss/breakpoints/_base.scss */
+/* line 2077, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .sub-cast td:after {
   border-bottom-color: transparent;
   border-top: 5px solid white;
   top: 55%;
 }
-/* line 2029, ../scss/breakpoints/_base.scss */
+/* line 2084, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-cast .data-table .cast, body.single-shows .cast-crew.hide-cast .data-table .cast td {
   display: block;
   overflow: hidden;
   height: 0;
   padding: 0;
 }
-/* line 2041, ../scss/breakpoints/_base.scss */
+/* line 2096, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:before {
   content: "show";
 }
-/* line 2044, ../scss/breakpoints/_base.scss */
+/* line 2099, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .sub-crew td:after {
   border-bottom-color: transparent;
   border-top: 5px solid white;
   top: 55%;
 }
-/* line 2051, ../scss/breakpoints/_base.scss */
+/* line 2106, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew.hide-crew .data-table .crew, body.single-shows .cast-crew.hide-crew .data-table .crew td {
   display: block;
   overflow: hidden;
   height: 0;
   padding: 0;
 }
-/* line 2059, ../scss/breakpoints/_base.scss */
+/* line 2114, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table {
   width: 100%;
 }
-/* line 2061, ../scss/breakpoints/_base.scss */
+/* line 2116, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading {
   cursor: pointer;
 }
-/* line 2063, ../scss/breakpoints/_base.scss */
+/* line 2118, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td {
   position: relative;
 }
@@ -4314,7 +4382,7 @@ body.single-shows .cast-crew .data-table .subheading td:after {
   top: 50%;
   border-bottom: 5px solid white;
 }
-/* line 2066, ../scss/breakpoints/_base.scss */
+/* line 2121, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td:before {
   content: "hide";
   text-transform: uppercase;
@@ -4322,16 +4390,16 @@ body.single-shows .cast-crew .data-table .subheading td:before {
   position: absolute;
   right: 30px;
 }
-/* line 2073, ../scss/breakpoints/_base.scss */
+/* line 2128, ../scss/breakpoints/_base.scss */
 body.single-shows .cast-crew .data-table .subheading td:after {
   position: absolute;
   right: 10px;
 }
-/* line 2081, ../scss/breakpoints/_base.scss */
+/* line 2136, ../scss/breakpoints/_base.scss */
 body.single-shows .show-gallery {
   padding: 20px 0;
 }
-/* line 2085, ../scss/breakpoints/_base.scss */
+/* line 2140, ../scss/breakpoints/_base.scss */
 body.single-shows .thumb-index .thumb-index-inner {
   margin: 0 -15px;
 }
@@ -4339,42 +4407,42 @@ body.single-shows .thumb-index .thumb-index-inner {
 /******************************************
 SINGLE PERSON PAGE
 ******************************************/
-/* line 2095, ../scss/breakpoints/_base.scss */
+/* line 2150, ../scss/breakpoints/_base.scss */
 body.single-people .headshot {
   margin: 0 -15px 20px;
 }
-/* line 2097, ../scss/breakpoints/_base.scss */
+/* line 2152, ../scss/breakpoints/_base.scss */
 body.single-people .headshot img {
   max-width: 100%;
   height: auto;
 }
-/* line 2102, ../scss/breakpoints/_base.scss */
+/* line 2157, ../scss/breakpoints/_base.scss */
 body.single-people article {
   color: white;
   margin-bottom: 20px;
 }
-/* line 2105, ../scss/breakpoints/_base.scss */
+/* line 2160, ../scss/breakpoints/_base.scss */
 body.single-people article.no-headshot {
   margin-top: 30px;
   padding-left: 0;
 }
-/* line 2110, ../scss/breakpoints/_base.scss */
+/* line 2165, ../scss/breakpoints/_base.scss */
 body.single-people .person-info {
   margin: 0 -15px 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8em;
 }
-/* line 2116, ../scss/breakpoints/_base.scss */
+/* line 2171, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery {
   clear: left;
   margin: 0 -15px 20px;
 }
-/* line 2119, ../scss/breakpoints/_base.scss */
+/* line 2174, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery h2 {
   padding: 0 15px;
 }
-/* line 2124, ../scss/breakpoints/_base.scss */
+/* line 2179, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a {
   position: absolute;
   top: 0;
@@ -4398,11 +4466,11 @@ body.single-people .person-vid-gallery .thumb-index-list > li a {
   -o-transition: opacity 0.375s;
   transition: opacity 0.375s;
 }
-/* line 2138, ../scss/breakpoints/_base.scss */
+/* line 2193, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a:hover {
   opacity: 1;
 }
-/* line 2141, ../scss/breakpoints/_base.scss */
+/* line 2196, ../scss/breakpoints/_base.scss */
 body.single-people .person-vid-gallery .thumb-index-list > li a span {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -4417,23 +4485,23 @@ body.single-people .person-vid-gallery .thumb-index-list > li a span {
 /******************************************
 ABOUT PAGE
 ******************************************/
-/* line 2154, ../scss/breakpoints/_base.scss */
+/* line 2209, ../scss/breakpoints/_base.scss */
 body.page-template-page-about {
   color: #fafafa;
 }
-/* line 2157, ../scss/breakpoints/_base.scss */
+/* line 2212, ../scss/breakpoints/_base.scss */
 body.page-template-page-about #container #content {
   background-size: 0;
   background-repeat: no-repeat;
   background-position: 90% 0;
   background-color: #030303;
 }
-/* line 2164, ../scss/breakpoints/_base.scss */
+/* line 2219, ../scss/breakpoints/_base.scss */
 body.page-template-page-about .page-title {
   border-bottom: 1px solid rgba(250, 250, 250, 0.3);
   margin-bottom: 8px;
 }
-/* line 2168, ../scss/breakpoints/_base.scss */
+/* line 2223, ../scss/breakpoints/_base.scss */
 body.page-template-page-about .main-image {
   max-width: 100%;
   display: block;
@@ -4443,15 +4511,15 @@ body.page-template-page-about .main-image {
 /******************************************
 FULL PAGE EMBED
 ******************************************/
-/* line 2178, ../scss/breakpoints/_base.scss */
+/* line 2233, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed {
   color: #fafafa;
 }
-/* line 2180, ../scss/breakpoints/_base.scss */
+/* line 2235, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed #content, body.page-template-page-full-embed #inner-content, body.page-template-page-full-embed #main, body.page-template-page-full-embed .hentry, body.page-template-page-full-embed .entry-content {
   height: 100%;
 }
-/* line 2183, ../scss/breakpoints/_base.scss */
+/* line 2238, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed #main {
   margin-top: 0;
   -webkit-box-sizing: border-box;
@@ -4460,27 +4528,27 @@ body.page-template-page-full-embed #main {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 2187, ../scss/breakpoints/_base.scss */
+/* line 2242, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .article-header {
   padding-top: 10px;
   padding-bottom: 0;
 }
-/* line 2191, ../scss/breakpoints/_base.scss */
+/* line 2246, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .page-title {
   border-bottom: 0;
   margin-bottom: 0;
 }
-/* line 2195, ../scss/breakpoints/_base.scss */
+/* line 2250, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .hentry {
   background: none;
   margin-bottom: 0;
 }
-/* line 2198, ../scss/breakpoints/_base.scss */
+/* line 2253, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .hentry header {
   border-bottom: 0;
   height: 58px;
 }
-/* line 2202, ../scss/breakpoints/_base.scss */
+/* line 2257, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .hentry .entry-content {
   margin-top: -58px;
   padding-top: 58px !important;
@@ -4491,12 +4559,12 @@ body.page-template-page-full-embed .hentry .entry-content {
   -o-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 2207, ../scss/breakpoints/_base.scss */
+/* line 2262, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .hentry .entry-content p {
   margin: 0;
   height: 100%;
 }
-/* line 2212, ../scss/breakpoints/_base.scss */
+/* line 2267, ../scss/breakpoints/_base.scss */
 body.page-template-page-full-embed .hentry iframe {
   height: 100%;
   width: 100%;
@@ -4506,12 +4574,12 @@ body.page-template-page-full-embed .hentry iframe {
 /******************************************
 RANDOMIZER PAGE
 ******************************************/
-/* line 2224, ../scss/breakpoints/_base.scss */
+/* line 2279, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .actions {
   text-align: center;
   margin: 20px 0;
 }
-/* line 2229, ../scss/breakpoints/_base.scss */
+/* line 2284, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items li {
   cursor: pointer;
   padding: .5em 1.5em;
@@ -4526,24 +4594,24 @@ body.page-template-page-randomizer .randomization-items li {
   -o-transition: all 375ms;
   transition: all 375ms;
 }
-/* line 2238, ../scss/breakpoints/_base.scss */
+/* line 2293, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items li:first-child {
   border: 0;
 }
-/* line 2241, ../scss/breakpoints/_base.scss */
+/* line 2296, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items li.present {
   background: #5bcb3f;
   color: white;
   opacity: 1;
 }
-/* line 2247, ../scss/breakpoints/_base.scss */
+/* line 2302, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items h2 {
   display: inline-block;
   margin: 0;
   height: 40px;
   line-height: 40px;
 }
-/* line 2253, ../scss/breakpoints/_base.scss */
+/* line 2308, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items label {
   font-size: 9px;
   text-transform: uppercase;
@@ -4557,11 +4625,11 @@ body.page-template-page-randomizer .randomization-items label {
   box-sizing: border-box;
   margin-left: 10px;
 }
-/* line 2261, ../scss/breakpoints/_base.scss */
+/* line 2316, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items label span {
   display: block;
 }
-/* line 2264, ../scss/breakpoints/_base.scss */
+/* line 2319, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .randomization-items label > span {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -4571,7 +4639,7 @@ body.page-template-page-randomizer .randomization-items label > span {
   position: relative;
   top: 50%;
 }
-/* line 2269, ../scss/breakpoints/_base.scss */
+/* line 2324, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner-container {
   opacity: 0;
   z-index: -1;
@@ -4588,20 +4656,20 @@ body.page-template-page-randomizer .spinner-container {
   -o-transition: opacity 375ms, background-color 375ms;
   transition: opacity 375ms, background-color 375ms;
 }
-/* line 2280, ../scss/breakpoints/_base.scss */
+/* line 2335, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner-container.active {
   z-index: 9999;
   opacity: 1;
 }
-/* line 2284, ../scss/breakpoints/_base.scss */
+/* line 2339, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner-container.selected {
   background: white;
 }
-/* line 2286, ../scss/breakpoints/_base.scss */
+/* line 2341, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner-container.selected .spinner h2 .hide-until-selected {
   opacity: 1;
 }
-/* line 2291, ../scss/breakpoints/_base.scss */
+/* line 2346, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -4611,14 +4679,14 @@ body.page-template-page-randomizer .spinner {
   position: relative;
   top: 50%;
 }
-/* line 2293, ../scss/breakpoints/_base.scss */
+/* line 2348, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner h2 {
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
   font-size: 70px;
 }
-/* line 2298, ../scss/breakpoints/_base.scss */
+/* line 2353, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner h2 .hide-until-selected {
   opacity: 0;
   -webkit-transition: opacity 375ms;
@@ -4627,32 +4695,32 @@ body.page-template-page-randomizer .spinner h2 .hide-until-selected {
   -o-transition: opacity 375ms;
   transition: opacity 375ms;
 }
-/* line 2303, ../scss/breakpoints/_base.scss */
+/* line 2358, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner .spinner-item {
   color: white;
   padding: 1.5em;
 }
-/* line 2306, ../scss/breakpoints/_base.scss */
+/* line 2361, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+0) {
   background: red;
 }
-/* line 2309, ../scss/breakpoints/_base.scss */
+/* line 2364, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+1) {
   background: orange;
 }
-/* line 2312, ../scss/breakpoints/_base.scss */
+/* line 2367, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+2) {
   background: #2980b9;
 }
-/* line 2315, ../scss/breakpoints/_base.scss */
+/* line 2370, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+3) {
   background: #f01d4f;
 }
-/* line 2318, ../scss/breakpoints/_base.scss */
+/* line 2373, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .spinner .spinner-item:nth-child(5n+4) {
   background: #7dd667;
 }
-/* line 2323, ../scss/breakpoints/_base.scss */
+/* line 2378, ../scss/breakpoints/_base.scss */
 body.page-template-page-randomizer .play-beep {
   position: fixed;
   z-index: -1;
@@ -5200,21 +5268,128 @@ you can add resource intensive styles.
     width: 40%;
   }
 
+  /* line 369, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .vid-container {
+    position: relative;
+    clear: both;
+  }
+  /* line 373, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding-right: 160px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 382, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container .vid-player-wrapper {
+    position: relative;
+  }
+  /* line 384, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container .vid-player-wrapper:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+  /* line 392, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container .vid-player-wrapper.next-video-triggered .vid-playing-next {
+    opacity: 1;
+  }
+  /* line 395, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container .vid-player-wrapper.next-video-triggered #video_player {
+    width: 49.5%;
+    max-width: none;
+  }
+  /* line 401, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container .vid-playing-next {
+    width: 49.5%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+  /* line 410, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container #video_player {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+  }
+  /* line 419, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index {
+    margin-bottom: 30px;
+    float: right;
+    margin-left: -160px;
+  }
+  /* line 424, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li {
+    float: right;
+    clear: right;
+    width: 160px;
+    -webkit-transition: width 375ms;
+    -moz-transition: width 375ms;
+    -ms-transition: width 375ms;
+    -o-transition: width 375ms;
+    transition: width 375ms;
+  }
+  /* line 429, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li:hover {
+    width: 320px;
+  }
+  /* line 432, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li.cat-featured {
+    display: block;
+  }
+  /* line 438, ../scss/breakpoints/_768up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .actions .btn-play {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   /******************************************
   SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE
   ******************************************/
-  /* line 374, ../scss/breakpoints/_768up.scss */
+  /* line 457, ../scss/breakpoints/_768up.scss */
   body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 381, ../scss/breakpoints/_768up.scss */
+  /* line 464, ../scss/breakpoints/_768up.scss */
   body.single-people .person-vid-gallery {
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 384, ../scss/breakpoints/_768up.scss */
+  /* line 467, ../scss/breakpoints/_768up.scss */
   body.single-people .person-vid-gallery h2 {
     padding: 0;
   }
@@ -5335,6 +5510,23 @@ you can add resource intensive styles.
     width: 35%;
   }
 
+  /* line 112, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container {
+    padding-right: 200px;
+  }
+  /* line 115, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index {
+    margin-left: -200px;
+  }
+  /* line 118, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li {
+    width: 200px;
+  }
+  /* line 120, ../scss/breakpoints/_1024up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li:hover {
+    width: 400px;
+  }
+
   /******************************************
   SINGLE VIDEO (SHOW) PAGE, PERSON PAGE
   ******************************************/
@@ -5346,16 +5538,16 @@ you can add resource intensive styles.
     visibility: hidden;
     clear: both;
   }
-  /* line 120, ../scss/breakpoints/_1024up.scss */
+  /* line 136, ../scss/breakpoints/_1024up.scss */
   body.single-shows .video-wrapper, body.single-shows .headshot, body.single-people .video-wrapper, body.single-people .headshot {
     float: left;
     width: 50%;
   }
-  /* line 124, ../scss/breakpoints/_1024up.scss */
+  /* line 140, ../scss/breakpoints/_1024up.scss */
   body.single-shows .show-info, body.single-shows .cast-crew, body.single-shows .person-info, body.single-people .show-info, body.single-people .cast-crew, body.single-people .person-info {
     margin-right: 0;
   }
-  /* line 127, ../scss/breakpoints/_1024up.scss */
+  /* line 143, ../scss/breakpoints/_1024up.scss */
   body.single-shows article, body.single-people article {
     float: left;
     width: 50%;
@@ -5366,12 +5558,12 @@ you can add resource intensive styles.
     box-sizing: border-box;
     padding-left: 25px;
   }
-  /* line 136, ../scss/breakpoints/_1024up.scss */
+  /* line 152, ../scss/breakpoints/_1024up.scss */
   body.single-shows .thumb-index .thumb-index-inner, body.single-people .thumb-index .thumb-index-inner {
     margin-left: 0;
     margin-right: 0;
   }
-  /* line 141, ../scss/breakpoints/_1024up.scss */
+  /* line 157, ../scss/breakpoints/_1024up.scss */
   body.single-shows .show-gallery, body.single-people .show-gallery {
     clear: both;
   }
@@ -5597,12 +5789,12 @@ you can add resource intensive styles.
   }
 
   /* Overlay styles */
-  /* line 174, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered {
+  /* line 173, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered {
     color: white;
   }
-  /* line 176, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered > iframe {
+  /* line 175, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered > iframe {
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -ms-transition: all 1s;
@@ -5612,64 +5804,64 @@ you can add resource intensive styles.
     max-height: 48%;
     margin-top: 66px;
   }
-  /* line 182, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next {
+  /* line 181, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next {
     display: block;
     width: 48%;
   }
-  /* line 185, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next p, .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next h3, .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions {
+  /* line 184, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next p, .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next h3, .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions {
     padding: 0 20px;
   }
-  /* line 188, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next p {
+  /* line 187, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next p {
     margin: 0;
   }
-  /* line 191, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next h3 {
+  /* line 190, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next h3 {
     margin-bottom: .5em;
   }
-  /* line 194, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next a {
+  /* line 193, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next a {
     border-bottom: 0;
     cursor: pointer;
   }
-  /* line 198, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .next-play-countdown {
+  /* line 197, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .next-play-countdown {
     color: orange;
     font-weight: bold;
   }
-  /* line 202, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .video-thumb {
+  /* line 201, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .video-thumb {
     display: block;
   }
-  /* line 204, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .video-thumb img {
+  /* line 203, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .video-thumb img {
     width: 100%;
     display: block;
   }
-  /* line 209, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions {
+  /* line 208, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions {
     text-transform: uppercase;
     margin-top: 15px;
   }
-  /* line 212, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions a {
+  /* line 211, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions a {
     font-size: 1.3em;
     line-height: 1em;
     position: relative;
   }
-  /* line 217, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .cancel {
+  /* line 216, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .cancel {
     float: right;
   }
-  /* line 220, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .play-now {
+  /* line 219, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .play-now {
     float: left;
     padding-right: 20px;
   }
   /* line 161, ../scss/partials/_mixins.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .play-now:after {
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .play-now:after {
     content: "";
     width: 0;
     height: 0;
@@ -5687,14 +5879,14 @@ you can add resource intensive styles.
     top: 50%;
     border-left: 15px solid orange;
   }
-  /* line 224, ../scss/breakpoints/_1030up.scss */
-  .ov.vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .play-now:after {
+  /* line 223, ../scss/breakpoints/_1030up.scss */
+  .vid-player-container .vid-player-wrapper.next-video-triggered .vid-playing-next .actions .play-now:after {
     position: absolute;
     right: 0;
   }
 
   /* simple accordion */
-  /* line 238, ../scss/breakpoints/_1030up.scss */
+  /* line 236, ../scss/breakpoints/_1030up.scss */
   .accordion-item .accordion-toggle {
     -webkit-transition: background-color 0.375s;
     -moz-transition: background-color 0.375s;
@@ -5702,7 +5894,7 @@ you can add resource intensive styles.
     -o-transition: background-color 0.375s;
     transition: background-color 0.375s;
   }
-  /* line 240, ../scss/breakpoints/_1030up.scss */
+  /* line 238, ../scss/breakpoints/_1030up.scss */
   .accordion-item .accordion-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -5710,7 +5902,7 @@ you can add resource intensive styles.
   /******************************************
   INDIVIDUAL PAGES
   ******************************************/
-  /* line 253, ../scss/breakpoints/_1030up.scss */
+  /* line 251, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .main-nav > li:hover > a, body.page-template-page-index .main-nav ul, body.page-template-page-index .main-nav a:hover, body.home .main-nav > li:hover > a, body.home .main-nav ul, body.home .main-nav a:hover {
     background: rgba(0, 0, 0, 0.5);
   }
@@ -5718,11 +5910,11 @@ you can add resource intensive styles.
   /******************************************
   HOME PAGE
   ******************************************/
-  /* line 264, ../scss/breakpoints/_1030up.scss */
+  /* line 262, ../scss/breakpoints/_1030up.scss */
   body.home .promo.services > ul > li {
     padding-left: 50px;
   }
-  /* line 266, ../scss/breakpoints/_1030up.scss */
+  /* line 264, ../scss/breakpoints/_1030up.scss */
   body.home .promo.services > ul > li:first-child {
     padding-left: 0;
     padding-right: 50px;
@@ -5731,7 +5923,7 @@ you can add resource intensive styles.
   /******************************************
   INDEX PAGE
   ******************************************/
-  /* line 280, ../scss/breakpoints/_1030up.scss */
+  /* line 278, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .page-header {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
@@ -5740,20 +5932,20 @@ you can add resource intensive styles.
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  /* line 283, ../scss/breakpoints/_1030up.scss */
+  /* line 281, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .page-header .page-title {
     font-size: 3em;
   }
-  /* line 287, ../scss/breakpoints/_1030up.scss */
+  /* line 285, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu {
     text-align: center;
     font-size: 2.5em;
   }
-  /* line 290, ../scss/breakpoints/_1030up.scss */
+  /* line 288, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li {
     display: inline-block;
   }
-  /* line 292, ../scss/breakpoints/_1030up.scss */
+  /* line 290, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li a {
     -webkit-transition: background-color 0.375s;
     -moz-transition: background-color 0.375s;
@@ -5776,7 +5968,7 @@ you can add resource intensive styles.
     border-right: 20px solid transparent;
     border-top: 15px solid orange;
   }
-  /* line 298, ../scss/breakpoints/_1030up.scss */
+  /* line 296, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li a:before {
     position: relative;
     left: 50%;
@@ -5787,12 +5979,12 @@ you can add resource intensive styles.
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
   }
-  /* line 304, ../scss/breakpoints/_1030up.scss */
+  /* line 302, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index #container .sub-header .index-menu > li a:hover {
     color: orange;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  /* line 318, ../scss/breakpoints/_1030up.scss */
+  /* line 316, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:after {
     content: "";
     width: 100%;
@@ -5809,15 +6001,15 @@ you can add resource intensive styles.
     -o-transition: opacity 0.375s;
     transition: opacity 0.375s;
   }
-  /* line 331, ../scss/breakpoints/_1030up.scss */
+  /* line 329, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover:after, body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover .btn-external {
     opacity: 1;
   }
-  /* line 335, ../scss/breakpoints/_1030up.scss */
+  /* line 333, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .post-thumb-container a:hover .btn-external:before {
     background-color: rgba(255, 255, 255, 0.2);
   }
-  /* line 342, ../scss/breakpoints/_1030up.scss */
+  /* line 340, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .btn-external {
     font-family: "Dosis", "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: block;
@@ -5838,7 +6030,7 @@ you can add resource intensive styles.
     -o-transition: opacity 0.375s;
     transition: opacity 0.375s;
   }
-  /* line 353, ../scss/breakpoints/_1030up.scss */
+  /* line 351, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-index .embedded-custom-post > ul > li .btn-external:before {
     position: absolute;
     top: 0;
@@ -5851,17 +6043,25 @@ you can add resource intensive styles.
   }
 
   /******************************************
-  ABOUT PAGE
+  VIDEO GALLERY PAGE
   ******************************************/
   /* line 370, ../scss/breakpoints/_1030up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list li:hover .actions {
+    opacity: 0;
+  }
+
+  /******************************************
+  ABOUT PAGE
+  ******************************************/
+  /* line 383, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-about #container #content {
     background-size: cover;
   }
-  /* line 374, ../scss/breakpoints/_1030up.scss */
+  /* line 387, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-about .main-image {
     display: none;
   }
-  /* line 377, ../scss/breakpoints/_1030up.scss */
+  /* line 390, ../scss/breakpoints/_1030up.scss */
   body.page-template-page-about #main > article {
     background-color: rgba(3, 3, 3, 0.6);
   }
@@ -6112,6 +6312,23 @@ This is for the larger monitors and possibly full screen viewers.
   body.video-gallery .body-content .cat-selector .select-container select {
     margin-bottom: 0;
     height: 60px;
+  }
+
+  /* line 216, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-gallery-switcher .video-player-static-container {
+    padding-right: 250px;
+  }
+  /* line 219, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index {
+    margin-left: -250px;
+  }
+  /* line 222, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li {
+    width: 250px;
+  }
+  /* line 224, ../scss/breakpoints/_1240up.scss */
+  body.page-template-page-gallery-switcher .video-thumb-index .thumb-index-list > li:hover {
+    width: 500px;
   }
 }
 @media only screen and (min-width: 1560px) {

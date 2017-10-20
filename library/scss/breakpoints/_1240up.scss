@@ -212,3 +212,19 @@ body.video-gallery {
 		}
 	}
 }
+body.page-template-page-gallery-switcher {
+	.video-player-static-container {
+		padding-right:250px;
+	}
+	.video-thumb-index {
+		margin-left:-250px;
+		.thumb-index-list {
+			& > li {
+				width:250px;
+				&:hover {
+					width:500px;
+				}
+			}
+		}
+	}
+}

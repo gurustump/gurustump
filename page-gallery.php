@@ -100,7 +100,7 @@
 														</div>
 													</li>
 												<?php } ?>
-											<ul>
+											</ul>
 										</div>
 									</div>
 									<?php } 

@@ -365,6 +365,89 @@ body.video-gallery {
 		}
 	}
 }
+body.page-template-page-gallery-switcher {
+	.vid-container {
+		position:relative;
+		clear:both;
+	}
+	.video-player-static-container {
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		padding-right:160px;
+		@include box-sizing;
+		.vid-player-container {
+		}
+		.vid-player-wrapper {
+			position:relative;
+			&:after {
+				content:"";
+				display:block;
+				width:100%;
+				height:0;
+				padding-bottom:56.25%;
+			}
+			&.next-video-triggered {
+				.vid-playing-next {
+					opacity:1;
+				}
+				#video_player {
+					width:49.5%;
+					max-width:none;
+				}
+			}
+		}
+		.vid-playing-next {
+			width:49.5%;
+			position:absolute;
+			left:0;
+			top:0;
+			display:block;
+			opacity:0;
+			@include transition(opacity .5s);
+		}
+		#video_player {
+			position:absolute;
+			right:0;
+			top:0;
+			height:100%;
+			width:100%;
+			@include transition(width .5s);
+		}
+	}
+	.video-thumb-index {
+		margin-bottom:30px;
+		float:right;
+		margin-left:-160px;
+		.thumb-index-list {
+			& > li {
+				float:right;
+				clear:right;
+				width:160px;
+				@include transition(width 375ms);
+				&:hover {
+					width:320px;
+				}
+				&.cat-featured {
+					display:block;
+				}
+			}
+		}
+		.actions {
+			.btn-play {
+				display:block;
+				position:absolute;
+				left:0;
+				top:50%;
+				z-index:1;
+				width:100%;
+				height:100%;
+				@include box-sizing;
+			}
+		}
+	}
+}
 
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, SINGLE PERSON PAGE

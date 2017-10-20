@@ -108,6 +108,22 @@ body.video-gallery {
 		}
 	}
 }
+body.page-template-page-gallery-switcher {
+	.video-player-static-container {
+		padding-right:200px;
+	}
+	.video-thumb-index {
+		margin-left:-200px;
+		.thumb-index-list {
+			& > li {
+				width:200px;
+				&:hover {
+					width:400px;
+				}
+			}
+		}
+	}
+}
 
 /******************************************
 SINGLE VIDEO (SHOW) PAGE, PERSON PAGE
