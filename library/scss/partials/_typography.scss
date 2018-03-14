@@ -1,21 +1,3 @@
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Typography
-
-Need to import a font or set of icons for your site? Drop them in
-here or just use this to establish your typographical grid. Or not.
-Do whatever you want to...GOSH!
-
-Helpful Articles:
-http://trentwalton.com/2012/06/19/fluid-type/
-http://ia.net/blog/responsive-typography-the-basics/
-http://alistapart.com/column/responsive-typography-is-a-physical-discipline
-
-******************************************************************/
-
-
 /*********************
 FONT FACE (IN YOUR FACE)
 *********************/
@@ -41,21 +23,10 @@ FONT FACE (IN YOUR FACE)
 */
 
 
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
-
-
 // font stacks
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
-/*
- i imported this one in the functions file so bones would look sweet.
- don't forget to remove it for your site.
-*/
 $bodyfont:			'Open Sans', $sans-serif;
 $headingfont:		'Dosis', $sans-serif;
 $buttonfont:			$headingfont;
