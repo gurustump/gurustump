@@ -152,10 +152,10 @@
 											<td colspan="2">Cast</td>
 										</tr>
 											<?php foreach($castMeta as $key => $castmember) { 
-												$castmemberArray = explode(',',$castmember[name]);
+												$castmemberArray = explode(',',$castmember['name']);
 												?>
 												<tr class="cast">
-													<td><?php echo $castmember[character]; ?></td>
+													<td><?php echo $castmember['character']; ?></td>
 													<td><?php
 														foreach($castmemberArray as $key => $item) { ?>
 															<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($castmemberArray) ? '' : ', '; ?>
@@ -170,10 +170,10 @@
 											<td colspan="2">Other Crew</td>
 										</tr>
 											<?php foreach($crewMeta as $key => $crewmember) { 
-												$crewmemberArray = explode(',',$crewmember[name]);
+												$crewmemberArray = explode(',',$crewmember['name']);
 												?>
 												<tr class="crew">
-													<td><?php echo $crewmember[title]; ?></td>
+													<td><?php echo $crewmember['title']; ?></td>
 													<td><?php
 														foreach($crewmemberArray as $key => $item) { ?>
 															<a href="<?php echo get_the_permalink($item); ?>"><?php echo get_the_title($item); ?></a><?php echo $key + 1 == count($crewmemberArray) ? '' : ', '; ?>
