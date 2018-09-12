@@ -36,6 +36,19 @@
 		<?php if (is_singular() && has_post_thumbnail(get_the_ID())) { ?>
 		<meta property="og:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'extra-large'); ?>" />
 		<?php } ?>
+		
+		<?php if (is_singular('shows')) { ?>
+			<?php $showVideoID = get_post_meta(get_the_ID(), '_gurustump_show_video_ID', true); 
+			if ($showVideoID) { ?>
+			<meta name="twitter:card" content="player" />
+				<?php if (has_post_thumbnail(get_the_ID())) { ?>
+			<meta name="twitter:image" content="<?php echo get_the_post_thumbnail_url(get_the_ID(),'extra-large'); ?>" />
+				<?php } ?>
+			<meta name="twitter:player" content="https://youtube.com/embed/<?php echo $showVideoID; ?>" />
+			<meta name="twitter:player:width" content="736" />
+			<meta name="twitter:player:height" content="414" />
+			<?php } ?>
+		<?php } ?>
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->

@@ -146,8 +146,8 @@
 											?></td>
 										</tr>
 										<?php } ?>
-										<?php $castMeta = get_post_meta(get_the_ID(), '_gurustump_show_cast', true); ?>
-										<?php if (count($castMeta[0]) > 0 && $castMeta[0] != '' && !ctype_space($castMeta[0])) { ?>
+										<?php $castMeta = get_post_meta(get_the_ID(), '_gurustump_show_cast', true);
+										if (gettype($castMeta) == 'array' && count($castMeta[0]) > 0 && $castMeta[0] != '' && !ctype_space($castMeta[0])) { ?>
 										<tr class="subheading sub-cast TOGGLE_CAST">
 											<td colspan="2">Cast</td>
 										</tr>
@@ -165,7 +165,7 @@
 											<?php } ?>
 										<?php } ?>
 										<?php $crewMeta = get_post_meta(get_the_ID(), '_gurustump_show_other_crew', true);
-										if (count($crewMeta[0]) > 0 && $crewMeta[0] != '' && !ctype_space($crewMeta[0])) { ?>
+										if (gettype($crewMeta) == 'array' && count($crewMeta[0]) > 0 && $crewMeta[0] != '' && !ctype_space($crewMeta[0])) { ?>
 										<tr class="subheading sub-crew TOGGLE_CREW">
 											<td colspan="2">Other Crew</td>
 										</tr>
