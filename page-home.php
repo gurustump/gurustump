@@ -15,7 +15,7 @@
 
 <?php get_header(); ?>
 			<div  class="home-logo HOME_LOGO">
-				<video class="bg-video" id="home_sizzle" autoplay loop>
+				<video class="bg-video" id="home_sizzle" autoplay loop muted>
 					<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.mp4" type="video/mp4"></source>
 					<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.webm" type="video/webm"></source>
 					<source src="<?php echo get_template_directory_uri(); ?>/library/video/home-sizzle.ogv" type="video/ogg"></source>

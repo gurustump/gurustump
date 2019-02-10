@@ -1029,7 +1029,7 @@ body.single .thumb-index {
 	.accordion-content {
 		overflow:hidden;
 		max-height:1500px;
-		@include transition(max-height .5s);
+		@include transition(max-height $transition-speed);
 	}
 	&.accordion-closed {
 		.accordion-toggle {
