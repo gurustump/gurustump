@@ -244,7 +244,7 @@ function person_custom_type() {
 add_action( 'init', 'person_custom_type');	
 
 
-// Person custom post type
+// Equipment custom post type
 function equipment_custom_type() { 
 	// creating (registering) the custom type 
 	register_post_type( 'equipment', // (http://codex.wordpress.org/Function_Reference/register_post_type) 

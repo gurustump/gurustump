@@ -1,11 +1,24 @@
 <!doctype html>
-
+<?php $CustomMainOptions = get_option('guru_main_options'); ?>
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="gurustump no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="gurustump no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="gurustump no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="gurustump no-js"><!--<![endif]-->
 
 	<head>
+		<?php if ($CustomMainOptions && array_key_exists('google_analytics_ID',$CustomMainOptions)) { ?>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?<?php echo $CustomMainOptions["google_analytics_ID"]; ?>"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', '<?php echo $CustomMainOptions["google_analytics_ID"]; ?>');
+		</script>
+		<?php } ?>
+
+	
 		<meta charset="utf-8">
 
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
@@ -65,6 +78,10 @@
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
+		
+		<?php if ($CustomMainOptions && array_key_exists('head_scripts',$CustomMainOptions)) {
+			echo $CustomMainOptions['head_scripts'];
+		} ?>
 
 	</head>
 	<?php // modify body class
